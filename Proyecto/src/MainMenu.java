@@ -1,4 +1,4 @@
-package proyecto;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,10 +26,25 @@ public class MainMenu extends JPanel {
 
     public void iniciarComponentes(){
         botones[0].setBounds(153, 109, 255, 200);
+        botones[0].setTitulo("Matematicas");
+        botones[0].setImagenBoton("src/Imagenes/Matematicas.png");
+
         botones[1].setBounds(460, 108, 255,200);
+        botones[1].setTitulo("Algebra Lineal");
+        botones[1].setImagenBoton("src/Imagenes/Algebra.png");
+
+
         botones[2].setBounds(765, 108, 255, 200);
+        botones[2].setTitulo("Fisica");
+        botones[2].setImagenBoton("src/Imagenes/Fisica.png");
+
         botones[3].setBounds(255, 450, 255, 200);
+        botones[3].setTitulo("Humanidades");
+        botones[3].setImagenBoton("src/Imagenes/cultura.png");
+
         botones[4].setBounds(664, 450, 255, 200);
+        botones[4].setTitulo("Constitucion");
+        botones[4].setImagenBoton("src/Imagenes/constitucion.png");
 
         border.setBounds(102, 36, 970, 700);
 
@@ -46,31 +61,26 @@ public class MainMenu extends JPanel {
     public void actBoundsMenu(){
         botones[0].setBounds((int) (getWidth()*0.095), (int) (getHeight()*0.136),
                 (int) (getWidth()*0.238), (int) (getHeight()*0.25));
-        botones[0].setTitulo("Matematicas");
         botones[0].getTitulo().setBounds(0, (int) (botones[0].getHeight()*0.75),
                 botones[0].getWidth(),botones[0].getHeight()/3);
 
         botones[1].setBounds((int) (getWidth()*0.38), (int) (getHeight()*0.136),
                 (int) (getWidth()*0.238), (int) (getHeight()*0.25));
-        botones[1].setTitulo("Algebra Lineal");
         botones[1].getTitulo().setBounds(0, (int) (botones[1].getHeight()*0.75),
                 botones[1].getWidth(),botones[1].getHeight()/3);
 
         botones[2].setBounds((int) (getWidth()*0.667), (int) (getHeight()*0.136),
                 (int) (getWidth()*0.238), (int) (getHeight()*0.25));
-        botones[2].setTitulo("Fisica");
         botones[2].getTitulo().setBounds(0, (int) (botones[2].getHeight()*0.75),
                 botones[2].getWidth(),botones[2].getHeight()/3);
 
         botones[3].setBounds((int) (getWidth()*0.19), (int) (getHeight()*0.563),
                 (int) (getWidth()*0.238), (int) (getHeight()*0.25));
-        botones[3].setTitulo("Humanidades");
         botones[3].getTitulo().setBounds(0, (int) (botones[3].getHeight()*0.75),
                 botones[3].getWidth(),botones[3].getHeight()/3);
 
         botones[4].setBounds((int) (getWidth()*0.571), (int) (getHeight()*0.563),
                 (int) (getWidth()*0.238), (int) (getHeight()*0.25));
-        botones[4].setTitulo("Constitucion");
         botones[4].getTitulo().setBounds(0, (int) (botones[4].getHeight()*0.75),
                 botones[4].getWidth(),botones[4].getHeight()/3);
 

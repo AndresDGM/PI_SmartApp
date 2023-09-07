@@ -1,4 +1,4 @@
-package proyecto;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,8 @@ import java.awt.event.MouseListener;
 public class Button extends JPanel {
 
     private JLabel titulo = new JLabel();
+    
+     private JLabel imagenBoton = new JLabel();
 
     private JPanel contenido = new JPanel();
 
@@ -19,9 +21,11 @@ public class Button extends JPanel {
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(Color.white);
         titulo.setFont(new Font("Arial",titulo.getFont().getStyle(),24));
+        imagenBoton.setBounds(60,5,140,140);
         setLayout(null);
         setOpaque(false);
         add(titulo);
+        add(imagenBoton);
         accionMouse();
         setVisible(true);
     }
@@ -84,6 +88,13 @@ public class Button extends JPanel {
 
     public void setTitulo(String texto) {
         titulo.setText(texto);
+    }
+    
+     public void setImagenBoton(String source){
+        ImageIcon imagen = new ImageIcon(source);
+        Icon icon = new ImageIcon(
+                imagen.getImage().getScaledInstance(140, 140,Image.SCALE_SMOOTH));
+        imagenBoton.setIcon(icon);
     }
 
 }

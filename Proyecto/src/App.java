@@ -1,5 +1,5 @@
 
-package proyecto;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,14 +7,23 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 public class App extends JFrame {
+    
+    
 
     public static MainMenu menu = new MainMenu();
+    
     public MathMenu menuMatematicas = new MathMenu();
+    
     public PhysicsMenu menuFisica = new PhysicsMenu();
+    
     public AlgebraMenu menuAlgebra = new AlgebraMenu();
+    
     public HumanidadesMenu menuHumanidades = new HumanidadesMenu();
+    
     public ConstitucionMenu menuConstitucion = new ConstitucionMenu();
+    
     public static JPanel lateralBar = new JPanel();
+    
     public App(){
         setSize(1124, 800);
 
@@ -31,6 +40,8 @@ public class App extends JFrame {
         menu.setBounds(0,0,getWidth()-lateralBar.getWidth(),getHeight());
         setContenidos();
 
+        ImageIcon icon = new ImageIcon("src/Imagenes/logo.jpg");
+        setIconImage(icon.getImage());
         setLocale(null);
         getContentPane().setBackground(new Color(46, 46, 46));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
