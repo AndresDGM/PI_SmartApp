@@ -21,7 +21,7 @@ public class Button extends JPanel {
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(Color.white);
         titulo.setFont(new Font("Arial",titulo.getFont().getStyle(),24));
-        imagenBoton.setBounds(60,5,140,140);
+        imagenBoton.setBounds(10,20,330,160);
         setLayout(null);
         setOpaque(false);
         add(titulo);
@@ -93,7 +93,7 @@ public class Button extends JPanel {
      public void setImagenBoton(String source){
         ImageIcon imagen = new ImageIcon(source);
         Icon icon = new ImageIcon(
-                imagen.getImage().getScaledInstance(140, 140,Image.SCALE_SMOOTH));
+                imagen.getImage().getScaledInstance(imagenBoton.getWidth(), imagenBoton.getHeight(),Image.SCALE_DEFAULT));
         imagenBoton.setIcon(icon);
     }
 

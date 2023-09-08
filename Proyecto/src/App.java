@@ -19,9 +19,7 @@ public class App extends JFrame {
     public AlgebraMenu menuAlgebra = new AlgebraMenu();
     
     public HumanidadesMenu menuHumanidades = new HumanidadesMenu();
-    
-    public ConstitucionMenu menuConstitucion = new ConstitucionMenu();
-    
+        
     public static JPanel lateralBar = new JPanel();
     
     public App(){
@@ -53,7 +51,6 @@ public class App extends JFrame {
         add(menuAlgebra);
         add(menuFisica);
         add(menuHumanidades);
-        add(menuConstitucion);
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -76,6 +73,5 @@ public class App extends JFrame {
         b[1].setContenido(menuAlgebra);
         b[2].setContenido(menuFisica);
         b[3].setContenido(menuHumanidades);
-        b[4].setContenido(menuConstitucion);
     }
 }
