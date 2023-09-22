@@ -8,8 +8,6 @@ import java.awt.event.ComponentEvent;
 
 public class App extends JFrame {
     
-    
-
     public static MainMenu menu = new MainMenu();
     
     public MathMenu menuMatematicas = new MathMenu();
@@ -69,9 +67,9 @@ public class App extends JFrame {
 
     public void setContenidos() {
         Button[] b = menu.getBotones();
-        b[0].setContenido(menuMatematicas);
-        b[1].setContenido(menuAlgebra);
-        b[2].setContenido(menuFisica);
-        b[3].setContenido(menuHumanidades);
+        b[0].setContenido(menuMatematicas, menu);
+        b[1].setContenido(menuAlgebra, menu);
+        b[2].setContenido(menuFisica, menu);
+        b[3].setContenido(menuHumanidades, menu);
     }
 }

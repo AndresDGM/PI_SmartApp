@@ -6,8 +6,9 @@ import java.awt.*;
 public class MainMenu extends JPanel {
 
     private Button[] botones = new Button[4];
-    private BorderMenu border = new BorderMenu();
+    private RoundBorder border = new RoundBorder();
     private JLabel tituloMenu = new JLabel("Menu principal");
+    
     public MainMenu() {
         setSize(1074, 800);
         iniciarBotones();
@@ -33,7 +34,6 @@ public class MainMenu extends JPanel {
         botones[1].setTitulo("Algebra Lineal");
         botones[1].setImagenBoton("src/Imagenes/Algebra.png");
 
-
         botones[2].setBounds(255, 450, 341, 250);
         botones[2].setTitulo("Fisica");
         botones[2].setImagenBoton("src/Imagenes/Fisica.png");
@@ -42,7 +42,9 @@ public class MainMenu extends JPanel {
         botones[3].setTitulo("Humanidades");
         botones[3].setImagenBoton("src/Imagenes/cultura.png");
 
-        border.setBounds(102, 36, 970, 700);
+        border.setLocation(102, 36);
+        border.setW(970);
+        border.setH(700);
 
         tituloMenu.setBounds(460, 54,255, 46);
         tituloMenu.setHorizontalAlignment(JLabel.CENTER);
@@ -75,8 +77,9 @@ public class MainMenu extends JPanel {
         botones[3].getTitulo().setBounds(0, (int) (botones[3].getHeight()*0.75),
                 botones[3].getWidth(),botones[3].getHeight()/3);
 
-        border.setBounds((int) (getWidth()*0.047), (int) (getHeight()*0.046),
-                (int) (getWidth()*0.904), (int) (getHeight()*0.875));
+        border.setLocation((int) (getWidth()*0.047), (int) (getHeight()*0.046));
+        border.setW((int) (getWidth()*0.904));
+        border.setH((int) (getHeight()*0.875));
 
 
         tituloMenu.setBounds((int) (getWidth()*0.38), (int) (getHeight()*0.067),

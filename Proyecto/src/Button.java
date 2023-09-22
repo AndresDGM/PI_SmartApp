@@ -1,5 +1,4 @@
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -9,7 +8,9 @@ public class Button extends JPanel {
 
     private JLabel titulo = new JLabel();
     
-     private JLabel imagenBoton = new JLabel();
+    private JLabel imagenBoton = new JLabel();
+    
+    private JPanel contenedor = new JPanel();
 
     private JPanel contenido = new JPanel();
 
@@ -34,8 +35,9 @@ public class Button extends JPanel {
         return contenido;
     }
 
-    public void setContenido(JPanel contenido) {
+    public void setContenido(JPanel contenido, JPanel contenedor) {
         this.contenido = contenido;
+        this.contenedor = contenedor;
     }
 
     @Override
@@ -50,22 +52,21 @@ public class Button extends JPanel {
 
 
     private void accionMouse() {
+        
         MouseListener m = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                App.menu.setVisible(false);
+                contenedor.setVisible(false);
                 contenido.setVisible(true);
                 App.lateralBar.getComponent(1).setVisible(true);
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
             @Override
@@ -90,7 +91,7 @@ public class Button extends JPanel {
         titulo.setText(texto);
     }
     
-     public void setImagenBoton(String source){
+    public void setImagenBoton(String source){
         ImageIcon imagen = new ImageIcon(source);
         Icon icon = new ImageIcon(
                 imagen.getImage().getScaledInstance(imagenBoton.getWidth(), imagenBoton.getHeight(),Image.SCALE_DEFAULT));
