@@ -1,12 +1,16 @@
-
+//menu principal
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainMenu extends JPanel {
 
+    //arreglo con los botones de las categorias pricipales
     private Button[] botones = new Button[4];
+
+    //borde azul del menu
     private RoundBorder border = new RoundBorder();
+    
     private JLabel tituloMenu = new JLabel("Menu principal");
     
     public MainMenu() {
@@ -18,6 +22,7 @@ public class MainMenu extends JPanel {
         setVisible(true);
     }
 
+    //inicializa los botones del arreglo
     public void iniciarBotones(){
         for (int i = 0; i < botones.length; i++){
             botones[i] = new Button();
@@ -25,6 +30,7 @@ public class MainMenu extends JPanel {
         }
     }
 
+    //asigna tamaño, coordenadas y recursos correspondientes para cada componente
     public void iniciarComponentes(){
         botones[0].setBounds(255, 109, 341, 250);
         botones[0].setTitulo("Matematicas");
@@ -56,26 +62,31 @@ public class MainMenu extends JPanel {
         add(tituloMenu);
     }
 
+    //reescala y posiciona los componentes segun el tamaño del contenedor
     public void actBoundsMenu(){
         botones[0].setBounds((int) (getWidth()*0.142), (int) (getHeight()*0.1875),
                 (int) (getWidth()*0.333), (int) (getHeight()*0.3125));
         botones[0].getTitulo().setBounds(0, (int) (botones[0].getHeight()*0.75),
                 botones[0].getWidth(),botones[0].getHeight()/3);
+        botones[0].actBounds();
 
         botones[1].setBounds((int) (getWidth()*0.523), (int) (getHeight()*0.1875),
                 (int) (getWidth()*0.333), (int) (getHeight()*0.3125));
         botones[1].getTitulo().setBounds(0, (int) (botones[1].getHeight()*0.75),
                 botones[1].getWidth(),botones[1].getHeight()/3);
+        botones[1].actBounds();
 
         botones[2].setBounds((int) (getWidth()*0.142), (int) (getHeight()*0.563),
                 (int) (getWidth()*0.333), (int) (getHeight()*0.3125));
         botones[2].getTitulo().setBounds(0, (int) (botones[2].getHeight()*0.75),
                 botones[2].getWidth(),botones[2].getHeight()/3);
+        botones[2].actBounds();
 
         botones[3].setBounds((int) (getWidth()*0.523), (int) (getHeight()*0.563),
                 (int) (getWidth()*0.333), (int) (getHeight()*0.3125));
         botones[3].getTitulo().setBounds(0, (int) (botones[3].getHeight()*0.75),
                 botones[3].getWidth(),botones[3].getHeight()/3);
+        botones[3].actBounds();
 
         border.setLocation((int) (getWidth()*0.047), (int) (getHeight()*0.046));
         border.setW((int) (getWidth()*0.904));
@@ -86,6 +97,7 @@ public class MainMenu extends JPanel {
                 (int) (getWidth()*0.238), (int) (getHeight()*0.063));
     }
 
+    //retorna el arreglo de botones
     public Button[] getBotones() {
         return botones;
     }

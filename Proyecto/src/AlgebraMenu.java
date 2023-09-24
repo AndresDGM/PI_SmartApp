@@ -1,9 +1,10 @@
-
+//Menu de algebra
 
 import javax.swing.*;
 import java.awt.*;
 
 public class AlgebraMenu extends JPanel {
+        
     public AlgebraMenu(){
         setSize(1074, 800);
         setBackground(new Color(46, 46, 46));

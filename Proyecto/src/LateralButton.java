@@ -1,5 +1,7 @@
-
-
+/*
+clase de boton encargado de expandir y contraer la barra lateral y
+de transformar botones contenidos en ella.
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -7,9 +9,14 @@ import java.awt.event.MouseListener;
 
 public class LateralButton extends JPanel {
 
+    //copia de la barra lateral para modificarla mas facilmente
     private JPanel lateralBar;
 
+    //alterna entre expandir y comtraer la barra
     private boolean band = false;
+
+    //esta activa mientras la barra se expande o contrae para no causar conflictos cn el hilo
+    private boolean running = false;
 
     public LateralButton(){
         setBounds(0,0,50,50);
@@ -21,6 +28,7 @@ public class LateralButton extends JPanel {
         setVisible(true);
     }
 
+    //clase que dibuja las tres barras del boton
     private static class Lines extends JPanel{
         private Lines(){
             setBounds(0,0,50,50);
@@ -50,18 +58,44 @@ public class LateralButton extends JPanel {
     }
 
 
+    //escuchante del raton para que la clase se comporte como un boton
     private void accionMouse() {
         MouseListener m = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(!band){
-                    lateralBar.setSize(140,lateralBar.getHeight());
-                    setSize(140,getHeight());
-                }else {
-                    lateralBar.setSize(50,lateralBar.getHeight());
-                    setSize(50,getHeight());
-                }
-                band=!band;
+                Thread run = new Thread(new Runnable(){
+                    @Override
+                    public void run() {
+                        if(!band && !running){
+                            running = true;
+                            //expande la barra 7 pixeles cada 1 ms
+                            for (int i = 50; i <= 190; i+=7) {
+                                try{
+                                    Thread.sleep(1);
+                                }catch(Exception e){
+                                    System.out.println(e);
+                                }
+                                lateralBar.setSize(i,lateralBar.getHeight());
+                            }
+                            running = false;
+                            band=!band;//dentro del if para no causar conflictos con la alternacia
+                        }else if(!running){
+                            running = true;
+                            //contrae la barra 7 pixeles cada 1 ms
+                            for (int i = 190; i >= 50; i-=7) {
+                                try{
+                                    Thread.sleep(1);
+                                }catch(Exception e){
+                                    System.out.println(e);
+                                }
+                                lateralBar.setSize(i,lateralBar.getHeight());
+                            }
+                            running = false;
+                            band=!band;//dentro del else para no causar conflictos con la alternacia
+                        }
+                    }
+                });
+                run.start();
             }
 
             @Override

@@ -1,6 +1,3 @@
-
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -13,11 +10,11 @@ public class App extends JFrame {
     public MathMenu menuMatematicas = new MathMenu();
     
     public PhysicsMenu menuFisica = new PhysicsMenu();
-    
+
     public AlgebraMenu menuAlgebra = new AlgebraMenu();
     
     public HumanidadesMenu menuHumanidades = new HumanidadesMenu();
-        
+            
     public static JPanel lateralBar = new JPanel();
     
     public App(){
@@ -29,11 +26,10 @@ public class App extends JFrame {
         LateralButton lB = new LateralButton();
         BackButton bB = new BackButton();
         lB.setLateralBar(lateralBar);
-        bB.setLateralBar(lateralBar);
         lateralBar.add(lB);
         lateralBar.add(bB);
 
-        menu.setBounds(0,0,getWidth()-lateralBar.getWidth(),getHeight());
+        menu.setLocation(50,0);
         setContenidos();
 
         ImageIcon icon = new ImageIcon("src/Imagenes/logo.jpg");
@@ -49,6 +45,9 @@ public class App extends JFrame {
         add(menuAlgebra);
         add(menuFisica);
         add(menuHumanidades);
+
+        //se añade el listener de redimencion del la ventana y se sobreescribe el componentResize()
+        //para agregar el actBounds()
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -59,12 +58,14 @@ public class App extends JFrame {
         setVisible(true);
     }
 
+    //funcion para actualizar las coordenadas y tamaños de los componentes segun el tamaño de la ventana
     public void actBounds(){
         menu.setBounds(50, 0, getWidth()-50, getHeight());
         menu.actBoundsMenu();
         lateralBar.setBounds(0,0, lateralBar.getWidth(),getHeight());
     }
 
+    //asigna los contenidos a mostrar y ocultar por los botones respectivamente
     public void setContenidos() {
         Button[] b = menu.getBotones();
         b[0].setContenido(menuMatematicas, menu);

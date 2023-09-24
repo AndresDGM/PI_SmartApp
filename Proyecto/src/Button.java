@@ -1,3 +1,4 @@
+//boton basico encargado de mostra y ocultar secciones de la aplicacion
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,15 +10,17 @@ public class Button extends JPanel {
     private JLabel titulo = new JLabel();
     
     private JLabel imagenBoton = new JLabel();
-    
+
+    //atributo que corresponde al objeto que contiene al boton
     private JPanel contenedor = new JPanel();
 
+    //atributo que corresponde al contenido que muestra el boton
     private JPanel contenido = new JPanel();
 
     public Button() {
         setBackground(new Color(80, 80, 80));
-        setSize(255,200);
-        titulo.setBounds(0, 150, getWidth(),50);
+        setSize(341,250);
+        titulo.setBounds(0, 200, getWidth(),50);
         titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(Color.white);
@@ -35,11 +38,13 @@ public class Button extends JPanel {
         return contenido;
     }
 
+    // este metodo se setea el contenido y contenedor de forma directa
     public void setContenido(JPanel contenido, JPanel contenedor) {
         this.contenido = contenido;
         this.contenedor = contenedor;
     }
 
+    //rectangulo redondeado que da la forma del boton
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
@@ -49,16 +54,22 @@ public class Button extends JPanel {
         super.paintComponent(g);
     }
 
-
-
+    //escuchante del raton para que la clase se comporte como un boton
     private void accionMouse() {
         
         MouseListener m = new MouseListener() {
+            /*logica al clickear el mouse, desactiva el contenedor, activa el contenido
+            y activa el boton de volver a la vez que agrega el contenido visitado actual
+            */
             @Override
             public void mouseClicked(MouseEvent e) {
                 contenedor.setVisible(false);
                 contenido.setVisible(true);
-                App.lateralBar.getComponent(1).setVisible(true);
+                BackButton b = (BackButton) App.lateralBar.getComponent(1);
+                b.getAntContenidos().add(contenido);
+                if(!b.isVisible()){
+                    b.setVisible(true);
+                }
             }
 
             @Override
@@ -69,15 +80,21 @@ public class Button extends JPanel {
             public void mouseReleased(MouseEvent e) {
             }
 
+            //expande el boton cuando el mouse pasa sobre el
             @Override
             public void mouseEntered(MouseEvent e) {
-                setSize(getWidth() + 3, getHeight() + 3);
+                setSize(getWidth() + 4, getHeight() + 4);
+                setLocation(getX() - 2,getY() - 2);
+                imagenBoton.setLocation(imagenBoton.getX() + 2, imagenBoton.getY() + 2);
                 titulo.setBounds(0, (int) (getHeight()*0.75), getWidth(),getHeight()/3);
             }
 
+            //contrae el boton cuando el mouse sale de el
             @Override
             public void mouseExited(MouseEvent e) {
-                setSize(getWidth() - 3, getHeight() - 3);
+                setSize(getWidth() - 4, getHeight() - 4);
+                setLocation(getX() + 2,getY() + 2);
+                imagenBoton.setLocation(imagenBoton.getX() - 2, imagenBoton.getY() - 2);
                 titulo.setBounds(0, (int) (getHeight()*0.75), getWidth(),getHeight()/3);
             }
         };
@@ -96,6 +113,12 @@ public class Button extends JPanel {
         Icon icon = new ImageIcon(
                 imagen.getImage().getScaledInstance(imagenBoton.getWidth(), imagenBoton.getHeight(),Image.SCALE_DEFAULT));
         imagenBoton.setIcon(icon);
+    }
+
+    //mantiene la imagen en el centro del boton al redimencionar
+    public void actBounds(){
+        int x = getWidth()/2 - imagenBoton.getWidth()/2;
+        imagenBoton.setLocation(x,5);
     }
 
 }

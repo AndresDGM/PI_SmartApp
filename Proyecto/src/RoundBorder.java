@@ -2,33 +2,29 @@ import javax.swing.*;
 import java.awt.*;
 
 public class RoundBorder extends JPanel {
-    
-    private int arcWidth = 100;
-    
-    private int arcHeight = 100;
-    
+
+    //redondeo horizontal
+    private int arcWidth = 50;
+
+    //redondeo vertical
+    private int arcHeight = 50;
+
+    //ancho del borde
     private int w = 0;
-    
+
+    //alto del borde
     private int h = 0;
-    
+
+    //valor del grosor de la linea
     private int stroke = 4;
-            
+
     public RoundBorder(){
         setSize(w,h);
         setBackground(new Color(0, 188, 255));
         setOpaque(false);
         setVisible(true);
     }
-    
-    public RoundBorder(int w, int h){
-        this.w = w;
-        this.h = h;
-        setSize(w,h);
-        setBackground(new Color(0, 188, 255));
-        setOpaque(false);
-        setVisible(true);
-    }
-    
+
     public RoundBorder(int w, int h, int arcWidth, int arcHeight, int stroke){
         this.w = w;
         this.h = h;
@@ -40,7 +36,8 @@ public class RoundBorder extends JPanel {
         setOpaque(false);
         setVisible(true);
     }
-    
+
+    //logica de pintado del borde
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
