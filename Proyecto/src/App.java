@@ -34,7 +34,7 @@ public class App extends JFrame {
 
         ImageIcon icon = new ImageIcon("src/Imagenes/logo.jpg");
         setIconImage(icon.getImage());
-        setLocale(null);
+        setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(46, 46, 46));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
