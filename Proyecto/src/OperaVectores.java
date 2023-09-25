@@ -40,7 +40,8 @@ public class OperaVectores{
         double resultado = 0.0f; // inicializamos una variable para almacenar el resultado
 
         for (int i = 0; i < tam; i++) {
-         resultado += vector1[i] * vector2[i]; // multiplicar elementos en la misma posicion y sumar al resultado
+            // multiplicar elementos en la misma posicion y sumar al resultado
+            resultado += vector1[i] * vector2[i]; 
         }
 
         JOptionPane.showMessageDialog(
@@ -51,7 +52,8 @@ public class OperaVectores{
         double resultado = 0.0f; // inicializamos una variable para almacenar el resultado
 
         for (int i = 0; i < tam; i++) {
-            vectorR[i]= vector1[i] - vector2[i]; // multiplicar elementos en la misma posicion y sumar al resultado
+            // restar los elementos de la misma posicion y guardarlos en el vector resultado en esa misma posicion
+            vectorR[i]= vector1[i] - vector2[i]; 
         }
         JOptionPane.showMessageDialog(
             null, "El resultado de la resta de vectores es \n Vector Solucion: ");
@@ -63,7 +65,8 @@ public class OperaVectores{
         double vectorR[]= new double[tam];
        
         for (int i = 0; i < tam; i++) {
-            vectorR[i]= vector1[i] + vector2[i]; // multiplicar elementos en la misma posicion y sumar al resultado
+            // sumar los elementos de la misma posicion y guardarlos en el vector resultado en esa misma posicion
+            vectorR[i]= vector1[i] + vector2[i]; 
         }
         System.out.println( "El resultado de la suma de vectores es \n Vector Solucion: ");
         for(int i=0;i<tam;i++){
