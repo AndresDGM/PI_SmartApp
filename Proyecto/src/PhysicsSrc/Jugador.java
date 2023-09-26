@@ -8,8 +8,8 @@ public class Jugador extends Entity{
     public Jugador() {
     }
     
-    public Jugador(JLabel sprite, Vector2f vector, Collider hitBox){
-        super(sprite, vector, hitBox);
+    public Jugador(Vector2f vector, Collider hitBox){
+        super(vector, hitBox);
     }
 
     @Override
