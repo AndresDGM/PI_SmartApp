@@ -32,7 +32,7 @@ public class App extends JFrame {
         menu.setLocation(50,0);
         setContenidos();
 
-        ImageIcon icon = new ImageIcon("src/Imagenes/logo.jpg");
+        ImageIcon icon = new ImageIcon("src/Imagenes/logo.png");
         setIconImage(icon.getImage());
         setLocale(null);
         getContentPane().setBackground(new Color(46, 46, 46));
