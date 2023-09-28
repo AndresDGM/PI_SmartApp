@@ -4,11 +4,18 @@
  */
 package PhysicsSrc;
 
+import java.awt.*;
+
 /**
  *
  * @author david
  */
 public class Bullet extends Entity{
+
+    @Override
+    public void render(Graphics g) {
+
+    }
 
     @Override
     protected void attack() {

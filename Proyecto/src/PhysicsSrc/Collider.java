@@ -11,9 +11,7 @@ public class Collider {
     private int h = 0;
     
     private boolean solid = false;
-    
-    public Collider(){
-    }
+
     
     public Collider(Vector2f vector, int w, int h, boolean solid){
         this.vector = vector;

@@ -32,22 +32,18 @@ public abstract class Entity extends JPanel{
 
     @Override
     public void paint(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        BufferedImage subSprite = sprite.getSubimage((int)spriteScene*32,0,32,32);
-        g2d.drawImage(subSprite, 0, 0, wSprite, hSprite, null);
-        if(spriteScene < 9){
-            spriteScene+=1;
-        }else{
-            spriteScene = 0;
-        }
+        render(g);
         super.paint(g);
     }
 
     protected void move(Vector2f v){
         vector.add(v);
         setLocation((int) vector.x, (int) vector.y);
+        hitBox.setVector(vector);
         repaint();
     }
+
+    public abstract void render(Graphics g);
     
     protected abstract void attack();
 
