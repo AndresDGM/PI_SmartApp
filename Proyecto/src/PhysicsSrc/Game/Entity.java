@@ -1,4 +1,4 @@
-package PhysicsSrc;
+package PhysicsSrc.Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -38,9 +38,8 @@ public abstract class Entity extends JPanel{
 
     protected void move(Vector2f v){
         vector.add(v);
+        hitBox.getVector().add(v);
         setLocation((int) vector.x, (int) vector.y);
-        hitBox.setVector(vector);
-        repaint();
     }
 
     public abstract void render(Graphics g);

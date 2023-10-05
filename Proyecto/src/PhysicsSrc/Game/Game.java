@@ -1,4 +1,4 @@
-package PhysicsSrc;
+package PhysicsSrc.Game;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -10,27 +10,30 @@ public class Game extends JPanel implements Runnable{
 
     private double deltaTime = 0;
 
-    private final int fpsLimit = 120;
+    private final int fpsLimit = 60;
 
     private int fps = 0;
 
-    private float speed = 40;
+    private final float speed = 40;
     
-    private Jugador jugador;
+    private static Jugador jugador;
     
     private Enemy enemigos;
     
     private Map mapa = new Map();
 
-    private boolean gameRun = false;
+    private static boolean gameRun = true;
 
     private Keylisten teclas = new Keylisten(this);
 
     public Game(){
-        Vector2f vector = new Vector2f(0,0);
-        Vector2f vector2 = new Vector2f(50,50);
-        Collider hitBox = new Collider(vector, 100, 100, true);
-        Collider hitBox2 = new Collider(vector2, 100, 100, true);
+        Vector2f vector = new Vector2f(200,200);
+        Vector2f vector2 = new Vector2f(0,0);
+        //Vector2f vectorCol = new Vector2f(216,210);
+        Vector2f vectorCol = new Vector2f(200,200);
+        //Collider hitBox = new Collider(vectorCol, 42, 44, true);
+        Collider hitBox = new Collider(vectorCol, 64, 64, true);
+        Collider hitBox2 = new Collider(vector2, 64, 64, true);
         jugador = new Jugador(vector, hitBox);
         enemigos = new Enemy(vector2, hitBox2);
         setSize(1074, 800);
@@ -44,25 +47,22 @@ public class Game extends JPanel implements Runnable{
     }
     
     public void importImgSrc(){
-        jugador.setSpriteSize(100,100);
-        enemigos.setSpriteSize(100, 100);
+        jugador.setSpriteSize(64,64);
+        enemigos.setSpriteSize(64, 64);
         BufferedImage sprite = null;
-        BufferedImage sprite2 = null;
         try {
             sprite = ImageIO.read(
                     getClass().getClassLoader().getResource("PhysicsSrc/Sprites/SpriteCat-0001.png"));
-            sprite2 = ImageIO.read(
-                    getClass().getClassLoader().getResource("Imagenes/cultura.png"));
         } catch (IOException e) {
             e.printStackTrace();
-        };
+        }
         jugador.setSprite(sprite);
-        enemigos.setSprite(sprite2);
     }
     public void gameUpdate(){
         moverJugador();
         moverEnemigos();
         getCollitions();
+        render();
     }
 
     public void moverJugador(){
@@ -93,7 +93,7 @@ public class Game extends JPanel implements Runnable{
         Vector2f v2 = new Vector2f(enemigos.vector.x, enemigos.vector.y);
         v.sub(v2);
         v.normalize();
-        v.scale((float) deltaTime * speed * 0.8f);
+        v.scale((float) deltaTime * speed * 0.5f);
         enemigos.move(v);
     }
 
@@ -101,20 +101,24 @@ public class Game extends JPanel implements Runnable{
         jugador.repaint();
         enemigos.repaint();
     }
-    
+
+    public static Jugador getJugador() {
+        return jugador;
+    }
+
+    public static void gameOver(){
+        gameRun = false;
+        JOptionPane.showMessageDialog(null, "Game over");
+    }
+
     public void getCollitions(){
-        if(enemigos.hitBox.Collition(jugador.hitBox)){
-            stop();
+        if(enemigos.hitBox.Collition(jugador.hitBox)) {
+            enemigos.attack();
         }
     }
 
     public synchronized void star(){
-        gameRun = true;
         new Thread(this).start();
-    }
-
-    public synchronized void stop(){
-        gameRun = false;
     }
 
     @Override

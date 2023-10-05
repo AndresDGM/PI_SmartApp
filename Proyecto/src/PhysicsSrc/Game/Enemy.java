@@ -1,4 +1,4 @@
-package PhysicsSrc;
+package PhysicsSrc.Game;
 
 import javax.vecmath.Vector2f;
 import java.awt.*;
@@ -18,7 +18,6 @@ public class Enemy extends Entity{
 
     @Override
     protected void attack() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            Game.getJugador().perderSalud();
     }
-    
 }

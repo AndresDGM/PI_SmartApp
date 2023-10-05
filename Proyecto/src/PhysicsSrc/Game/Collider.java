@@ -1,19 +1,21 @@
-package PhysicsSrc;
+package PhysicsSrc.Game;
 
 import javax.vecmath.Vector2f;
+import java.awt.*;
 
-public class Collider {
-    
+public class Collider extends Rectangle {
+
     private Vector2f vector;
 
-    private int w = 0;
-    
-    private int h = 0;
-    
-    private boolean solid = false;
+    private float w;
+
+    private float h;
+
+    private boolean solid;
 
     
     public Collider(Vector2f vector, int w, int h, boolean solid){
+        super((int) vector.x,(int) vector.y, w, h);
         this.vector = vector;
         this.w = w;
         this.h = h;
@@ -21,8 +23,14 @@ public class Collider {
     }
     
     public boolean Collition(Collider c){
-        return (vector.x < c.vector.x + c.w &&  vector.x + w > c.vector.x && 
-                       vector.y < c.vector.y + c.h && vector.y + h < c.vector.y);
+        return (vector.x < c.vector.x + c.w &&  vector.x + w > c.vector.x &&
+                vector.y < c.vector.y + c.h && vector.y + h < c.vector.y);
+    }
+
+    public void showCollider(Graphics g){
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.red);
+        g2d.drawRect(x, y, (int) w, (int) h);
     }
 
     public Vector2f getVector() {
@@ -33,7 +41,7 @@ public class Collider {
         this.vector = vector;
     }
 
-    public int getW() {
+    public float getW() {
         return w;
     }
 
@@ -41,7 +49,7 @@ public class Collider {
         this.w = w;
     }
 
-    public int getH() {
+    public float getH() {
         return h;
     }
 
