@@ -216,12 +216,19 @@ public class HumanidadesMenu extends JPanel {
         URL url = getClass().getResource("imagenes/logo.png");
 
         capitulo1.setText(
-                "<div align='center'><font face='Arial' size='5' color='red'><b>Ejemplo JEditorPane</b></font></div><br>"
-                + "<strong>El paquete Swing - La clase JEditorPane | GUI en Java</strong><br><br>"
-                + "Definición del componente. Creación de un JEditorPane que visualiza texto en formato HTML. Se aplican formato al texto y se muestra un imagen. Ejemplo en código fuente.<br><br>"
-                + "<div align='center'><img src=" + url + " width=200 height=200></div><br>"
-                + "{ ... } <a href = 'https://bit.ly/3uEnVup'>Código fuente</a><br>"
-                + "🎬 <a href = 'https://youtube.com/playlist?list=PLV3xT3LjqLpbPIkOtVRui6Faxu3y6wEer'>Lista de reproducción - GUI en Java</a><br><br>");
+    "<html><body style='background-color: #2E2E2E; color: white;'>"
+    + "<div align='center'><font face='Arial' size='5' color='red'><b>Ejemplo JEditorPane</b></font></div><br>"
+    + "<strong>El paquete Swing - La clase JEditorPane | GUI en Java</strong><br><br>"
+    + "Definición del componente. Creación de un JEditorPane que visualiza texto en formato HTML. Se aplica formato al texto y se muestra una imagen. Ejemplo en código fuente.<br><br>"
+    + "<div align='center'><img src=" + url + " width=200 height=200></div><br>"
+    + "{ ... } <a href='https://bit.ly/3uEnVup'>Código fuente</a><br>"
+    + "hola golda"
+    + "<p>sebastian tiene una nariz monumental</p>"
+    + "<h1>Taller de diagnóstico Álgebra Lineal</h1>"
+    + "🎬 <a href='https://youtube.com/playlist?list=PLV3xT3LjqLpbPIkOtVRui6Faxu3y6wEer'>Lista de reproducción - GUI en Java</a><br><br>"
+    + "</body></html>");
+
+
 
         capitulo1.setEditable(false);//mostrar solo codigo HTML
 
