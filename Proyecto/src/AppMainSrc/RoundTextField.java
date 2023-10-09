@@ -1,3 +1,8 @@
+/*Clase que imita el funcionamiento del textField
+con una modificacion de diseño para este ser de
+bordes redondeados
+ */
+
 package AppMainSrc;
 
 import javax.swing.*;
@@ -5,7 +10,7 @@ import java.awt.*;
 
 public class RoundTextField extends JPanel {
 
-    private RoundBorder border;
+    private RoundBorder border;//borde del textField
 
     private JTextField textField = new JTextField();
     public RoundTextField(int w, int h){
@@ -35,8 +40,12 @@ public class RoundTextField extends JPanel {
 
     public void setText(String text){
         textField.setText(text);
-        textField.setFocusable(false);
     }
+
+    public String getText(){
+        return textField.getText();
+    }
+
     public RoundBorder getRoundBorder(){
         return border;
     }

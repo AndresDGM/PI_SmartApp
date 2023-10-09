@@ -1,3 +1,8 @@
+/*clase para realizar operaciones con vectores
+todavia no se vuelve estatic para usar las
+operaciones sin necesidad de instanciar
+ */
+
 package AlgebraPack;
 
 import javax.swing.JOptionPane;

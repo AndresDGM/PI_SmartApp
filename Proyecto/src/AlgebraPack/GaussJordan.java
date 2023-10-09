@@ -1,5 +1,8 @@
+//contenido de la calculadora de sistemas de ecuaciones
+
 package AlgebraPack;
 
+import AppMainSrc.BasicButton;
 import AppMainSrc.RoundBorder;
 import AppMainSrc.RoundTextField;
 
@@ -8,19 +11,25 @@ import java.awt.*;
 
 public class GaussJordan extends JPanel {
 
-    private AlgOptionButton[] optionButtons = new AlgOptionButton[4];
+    private AlgOptionButton[] optionButtons = new AlgOptionButton[4];// botones para elegir el tamaño del sistema
 
-    private JLabel[] tituloVar = new JLabel[6];
+    private JLabel[] tituloVar = new JLabel[6];//titulos de las variables
 
     private RoundTextField[][] matriz = new RoundTextField[5][5];
 
     private RoundTextField[] vector = new RoundTextField[5];
 
+    private double[][] mat;
+
+    private double[] vec;
+
+    private int[] coordsTemp = new int[3];
+
     private RoundBorder border;
 
     private Line l;
 
-    private ButtonGauss bGuass;
+    private BasicButton bGuass;
 
     private JLabel warning = new JLabel("Sistema sin solucion o con infinitas soluciones");
 
@@ -42,7 +51,13 @@ public class GaussJordan extends JPanel {
         add(l);
         initOptionButton();
         initTextFields();
-        bGuass = new ButtonGauss(this);
+        bGuass = new BasicButton(160, 54, "Resolver") {
+            @Override
+            public void clickEvent() {
+                clickFun();
+            }
+        };
+        bGuass.setLocation(457, 650);
         add(bGuass);
         add(border);
         setVisible(false);
@@ -59,7 +74,7 @@ public class GaussJordan extends JPanel {
         optionButtons[0].setActive(true);
     }
 
-    public void initTextFields(){
+    public void initTextFields(){//inicializa los textFields y los titulos de las variables
         int x, y;
 
         for (int i = 0; i < 5; i++){
@@ -77,6 +92,7 @@ public class GaussJordan extends JPanel {
             tituloVar[i] = new JLabel("X" + (i+1));
             tituloVar[i].setFont(new Font("Arial Rounded MT Bold",Font.PLAIN,32));
             tituloVar[i].setForeground(new Color(0, 188, 255));
+            tituloVar[i].setHorizontalAlignment(JLabel.CENTER);
             tituloVar[i].setVisible(false);
             add(tituloVar[i]);
         }
@@ -105,7 +121,79 @@ public class GaussJordan extends JPanel {
         }
     }
 
-    public class Line extends JPanel{
+    public void clickFun(){//funcion del boton resolver
+        warning.setVisible(false);
+        if (!bGuass.isClicked()) {// si el boton no se ha presionado resuleve el sistema y muestra el resultodo
+            obtenerValores();
+            if (OperaMatrices.det(mat) != 0) {
+                OperaMatrices.SolveSystem(mat, vec, vec.length);
+                changeActive(false);
+                coordsTemp = new int[]{tituloVar[0].getX(), tituloVar[0].getY(),
+                        tituloVar[1].getX() - tituloVar[0].getX()};
+
+                for (int i = 0; i < vec.length; i++) {
+                    tituloVar[i].setBounds(border.getX() + 10,
+                            vector[i].getY() + vector[i].getHeight() / 2 - 12,
+                            border.getW() - 20, 33);
+                    tituloVar[i].setText(tituloVar[i].getText() + " = " + vec[i]);
+                }
+                bGuass.setClicked(true);
+                bGuass.setText("Regresar");
+            } else
+               warning.setVisible(true);
+        }else{//volver a mostrar los textFields y reacomodar los titulos de variables
+            changeActive(true);
+            int x = coordsTemp[0];
+            for (int i = 0; i < vec.length; i++) {
+                tituloVar[i].setBounds(x,coordsTemp[1], 39, 33);
+                tituloVar[i].setText("X" + (i+1));
+
+                x += coordsTemp[2];
+            }
+            bGuass.setClicked(false);
+            bGuass.setText("Resolver");
+        }
+    }
+
+    public void obtenerValores() {//se extren los datos para guardarlos en la matriz y vector solucion
+        int n = 0;
+
+        for (AlgOptionButton c: optionButtons) {
+            if (c.isActive()) {
+                n = c.getValor();
+            }
+        }
+
+        mat = new double[n][n];
+        vec = new double[n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                mat[i][j] = matriz[i][j].getNumText();
+            }
+            vec[i] =vector[i].getNumText();
+        }
+    }
+
+    public void changeActive(boolean active){// desactiva o activa los componentes la seccion de sistema de ecuaciones
+
+        for (int i = 0; i < 4; i++) {
+            optionButtons[i].setFocusable(active);
+        }
+
+        for (int i = 0; i < vec.length; i++) {
+            for (int j = 0; j < vec.length; j++) {
+                matriz[i][j].setVisible(active);
+                matriz[i][j].getTextField().setText("0");
+            }
+            vector[i].setVisible(active);
+            vector[i].getTextField().setText("0");
+        }
+        tituloVar[5].setVisible(active);
+        l.setVisible(active);
+    }
+
+    public class Line extends JPanel{//linea que separa la matriz y el vector solucion en la Gui
 
         private int h;
         public Line(int w, int h){
@@ -134,63 +222,31 @@ public class GaussJordan extends JPanel {
         return optionButtons;
     }
 
-    public void setOptionButtons(AlgOptionButton[] optionButtons) {
-        this.optionButtons = optionButtons;
-    }
-
     public JLabel[] getTituloVar() {
         return tituloVar;
-    }
-
-    public void setTituloVar(JLabel[] tituloVar) {
-        this.tituloVar = tituloVar;
     }
 
     public RoundTextField[][] getMatriz() {
         return matriz;
     }
 
-    public void setMatriz(RoundTextField[][] matriz) {
-        this.matriz = matriz;
-    }
-
     public RoundTextField[] getVector() {
         return vector;
-    }
-
-    public void setVector(RoundTextField[] vector) {
-        this.vector = vector;
     }
 
     public RoundBorder getBorde() {
         return border;
     }
 
-    public void setBorde(RoundBorder border) {
-        this.border = border;
-    }
-
-    public ButtonGauss getbGuass() {
-        return bGuass;
-    }
-
-    public void setbGuass(ButtonGauss bGuass) {
-        this.bGuass = bGuass;
-    }
-
     public Line getL() {
         return l;
-    }
-
-    public void setL(Line l) {
-        this.l = l;
     }
 
     public JLabel getWarning() {
         return warning;
     }
 
-    public void setWarning(JLabel warning) {
-        this.warning = warning;
+    public BasicButton getbGuass() {
+        return bGuass;
     }
 }

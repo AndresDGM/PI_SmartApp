@@ -1,10 +1,7 @@
 package AppMainSrc;
 
-import AlgebraPack.GaussJordan;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
 public class App extends JFrame {
     
@@ -41,7 +38,7 @@ public class App extends JFrame {
         getContentPane().setBackground(new Color(46, 46, 46));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
-        setResizable(true);
+        setResizable(false);
         add(lateralBar);
         add(menu);
         add(menuMatematicas);
@@ -49,24 +46,8 @@ public class App extends JFrame {
         add(menuFisica);
         add(menuHumanidades);
         add(menuAlgebra.gaussJordan);
-
-        //se añade el listener de redimencion del la ventana y se sobreescribe el componentResize()
-        //para agregar el actBounds()
-        addComponentListener(new ComponentAdapter() {
-            @Override
-            public void componentResized(ComponentEvent e) {
-                actBounds();
-                super.componentResized(e);
-            }
-        });
+        add(menuAlgebra.detCalculator);
         setVisible(true);
-    }
-
-    //funcion para actualizar las coordenadas y tamaños de los componentes segun el tamaño de la ventana
-    public void actBounds(){
-        menu.setBounds(50, 0, getWidth()-50, getHeight());
-        menu.actBoundsMenu();
-        lateralBar.setBounds(0,0, lateralBar.getWidth(),getHeight());
     }
 
     //asigna los contenidos a mostrar y ocultar por los botones respectivamente
