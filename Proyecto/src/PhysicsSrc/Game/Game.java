@@ -30,10 +30,10 @@ public class Game extends JPanel implements Runnable{
         Vector2f vector = new Vector2f(200,200);
         Vector2f vector2 = new Vector2f(0,0);
         //Vector2f vectorCol = new Vector2f(216,210);
-        Vector2f vectorCol = new Vector2f(200,200);
+        Vector2f vectorCol = new Vector2f(225,216);
         //Collider hitBox = new Collider(vectorCol, 42, 44, true);
-        Collider hitBox = new Collider(vectorCol, 64, 64, true);
-        Collider hitBox2 = new Collider(vector2, 64, 64, true);
+        Collider hitBox = new Collider(vectorCol, 59, 68, false);
+        Collider hitBox2 = new Collider(vector2, 100, 100, false);
         jugador = new Jugador(vector, hitBox);
         enemigos = new Enemy(vector2, hitBox2);
         setSize(1074, 800);
@@ -47,8 +47,8 @@ public class Game extends JPanel implements Runnable{
     }
     
     public void importImgSrc(){
-        jugador.setSpriteSize(64,64);
-        enemigos.setSpriteSize(64, 64);
+        jugador.setSpriteSize(100,100);
+        enemigos.setSpriteSize(100, 100);
         BufferedImage sprite = null;
         try {
             sprite = ImageIO.read(
@@ -59,9 +59,9 @@ public class Game extends JPanel implements Runnable{
         jugador.setSprite(sprite);
     }
     public void gameUpdate(){
+        getCollitions();
         moverJugador();
         moverEnemigos();
-        getCollitions();
         render();
     }
 
@@ -112,9 +112,11 @@ public class Game extends JPanel implements Runnable{
     }
 
     public void getCollitions(){
-        if(enemigos.hitBox.Collition(jugador.hitBox)) {
+        boolean b = enemigos.hitBox.Collition(jugador.hitBox);
+        if(b) {
             enemigos.attack();
         }
+        System.out.println(b);
     }
 
     public synchronized void star(){

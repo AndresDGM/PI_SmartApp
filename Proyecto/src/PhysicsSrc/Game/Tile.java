@@ -8,10 +8,12 @@ import java.io.IOException;
 
 public class Tile extends JPanel {
 
+    private Collider hitbox;
+
     public BufferedImage image = null;
 
     public Tile(){
-        setSize(64,64);
+        setSize(100,100);
         initImage();
         setOpaque(false);
         setVisible(true);
@@ -26,10 +28,17 @@ public class Tile extends JPanel {
         }
     }
 
+    public void setHitbox(Collider hitbox) {
+        this.hitbox = hitbox;
+    }
+
+    public Collider getHitbox() {
+        return hitbox;
+    }
+
     @Override
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
-        g2d.drawImage(image,0, 0, 64, 64, null);
-        super.paint(g);
+        g2d.drawImage(image,0, 0, 100, 100, null);
     }
 }
