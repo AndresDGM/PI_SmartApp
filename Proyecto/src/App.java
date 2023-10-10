@@ -45,6 +45,7 @@ public class App extends JFrame {
         add(menuAlgebra);
         add(menuFisica);
         add(menuHumanidades);
+        add(menuHumanidades.caps);
 
         //se añade el listener de redimencion del la ventana y se sobreescribe el componentResize()
         //para agregar el actBounds()
