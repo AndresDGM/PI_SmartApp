@@ -127,7 +127,6 @@ public class DetCalculator extends JPanel {
             else warning.setText("Tamaño hasta 6x6");
             warning.setVisible(true);
         }
-        System.out.println(getComponents().length);
     }
 
     public void resolver() {// toma los valores para resolver la determinante

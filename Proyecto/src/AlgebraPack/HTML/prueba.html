@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web Sencilla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            color: #030303;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Agregado para acomodar los cuadros */
+            justify-content: space-between;
+        }
+        .box {
+            flex-basis: calc(50% - 10px); /* Agregado para acomodar los cuadros */
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        /* Agregado para acomodar los cuadros */
+        .container.flex {
+          display: flex;
+        }
+        
+        /* Agregado para acomodar los cuadros */
+        .container.flex .box:nth-child(3) {
+          flex-basis: calc(50% - 10px);
+          margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Taller de diagnóstico Álgebra Lineal</h1>
+    </header>
+    <main>
+        <h2>1) Primera pregunta</h2>
+        <p>Una matriz es cuadrada cuando:</p>
+        
+        <div class="container">
+            <div class="box">
+                <p>Cuadro 1</p>
+                <p>Texto del cuadro 1</p>
+            </div>
+            <div class="box">
+                <p>Cuadro 2</p>
+                <p>Texto del cuadro 2</p>
+            </div>
+        </div>
+        
+        <!-- Agregado para acomodar los cuadros -->
+        <div class="container flex">
+          <div class="box">
+              <p>Cuadro 3</p>
+              <p>Texto del cuadro 3</p>
+          </div>
+          <div class="box">
+              <p>Cuadro 4</p>
+              <p>Texto del cuadro 4</p>
+          </div>
+      </div>
+
+    </main>
+</body>
+</html>
+
