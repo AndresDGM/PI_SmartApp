@@ -39,7 +39,7 @@ public class DetCalculator extends JPanel {
         tamText.setHorizontalAlignment(JLabel.CENTER);
         warning.setForeground(new Color(214, 20, 45));
         warning.setFont(new Font("Arial", Font.PLAIN, 18));
-        warning.setBounds(437, 128,200, 50);
+        warning.setBounds(437, 85,200, 50);
         warning.setHorizontalAlignment(JLabel.CENTER);
         warning.setVisible(false);
         resultado.setForeground(Color.WHITE);
@@ -77,7 +77,7 @@ public class DetCalculator extends JPanel {
         botones[1] = new BasicButton() {
             @Override
             public void clickEvent() {
-                if (d != 0) resolver();
+                if (matriz != null) resolver();
             }
         };
         botones[1].setText("Resolver");
@@ -87,7 +87,7 @@ public class DetCalculator extends JPanel {
         botones[2] = new BasicButton() {
             @Override
             public void clickEvent() {
-                if(d != 0) limpiar();
+                if(matriz != null) limpiar();
             }
         };
         botones[2].setText("Limpiar");
@@ -99,8 +99,7 @@ public class DetCalculator extends JPanel {
     public void initMat(){
         d = (int) tamInput.getNumText();
 
-        if(d > 0) {//asegura que el valor sea mayor que cero
-            warning.setText("Tamaño invalido");
+        if(d > 0 && d <7) {
             warning.setVisible(false);
             matriz = new RoundTextField[d][d];
             mat = new double[d][d];
@@ -123,12 +122,17 @@ public class DetCalculator extends JPanel {
             resultado.setVisible(true);
             matrizText.setLocation(407 - (98*d-20)/2, 375);
             matrizText.setVisible(true);
-        }else warning.setVisible(true); // si el valor es cero activa la advertencia
+        }else{
+            if (d <= 0) warning.setText("Tamaño invalido");
+            else warning.setText("Tamaño hasta 6x6");
+            warning.setVisible(true);
+        }
+        System.out.println(getComponents().length);
     }
 
     public void resolver() {// toma los valores para resolver la determinante
-        for (int i = 0; i < d; i++) {
-            for (int j = 0; j < d; j++) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
                 mat[i][j] = matriz[i][j].getNumText();
             }
         }
@@ -137,8 +141,8 @@ public class DetCalculator extends JPanel {
     }
 
     public void limpiar(){
-        for (int i = 0; i < d; i++) {
-            for (int j = 0; j < d; j++) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
                 matriz[i][j].setText("0");
             }
         }
@@ -146,23 +150,16 @@ public class DetCalculator extends JPanel {
     }
 
     public void cargar(){//borra los elemtontos del contenedor y vuelve a inicializar las matrices con el nuevo valor ingresado
-        if(tamInput.getNumText() != matriz.length &&
-                tamInput.getNumText() < 7){ //se limita a un tamaño de 6 para no tener errores de diseño (probablemente temporal hasta implementar ScrollBars)
-            if (matriz != null &&
-                    tamInput.getNumText() > 0){
-                for (int i = 0; i < d; i++) {
-                    for (int j = 0; j < d; j++) {
+        if(matriz != null) { //se limita a un tamaño de 6 para no tener errores de diseño (probablemente temporal hasta implementar ScrollBars)
+            if(tamInput.getNumText() > 0 && tamInput.getNumText() < 7) {
+                for (int i = 0; i < matriz.length; i++) {
+                    for (int j = 0; j < matriz.length; j++) {
                         matriz[i][j].setVisible(false);
                         remove(matriz[i][j]);
                     }
                 }
             }
-            initMat();
         }
-
-        if(tamInput.getNumText() > 6) {
-            warning.setText("Tamaño hasta 6x6");
-            warning.setVisible(true);
-        }
+        initMat();
     }
 }
