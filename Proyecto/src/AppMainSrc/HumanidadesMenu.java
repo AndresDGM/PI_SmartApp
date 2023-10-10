@@ -1,15 +1,15 @@
-//Menu de Fisica
+package AppMainSrc;
+
+//Menu de humanidades
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class PhysicsMenu extends JPanel {
+public class HumanidadesMenu extends JPanel {
 
-    private JLabel titulo = new JLabel("Fisica");
-
-    public PhysicsMenu(){
+    private JLabel titulo = new JLabel("Humanidades");
+        
+    public HumanidadesMenu(){
         setSize(1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
@@ -28,3 +28,4 @@ public class PhysicsMenu extends JPanel {
                 (int) (getWidth()*0.238), (int) (getHeight()*0.063));
     }
 }
+

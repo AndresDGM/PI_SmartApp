@@ -1,3 +1,5 @@
+package AppMainSrc;
+
 //menu principal
 
 import javax.swing.*;

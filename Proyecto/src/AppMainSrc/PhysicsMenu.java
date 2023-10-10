@@ -1,13 +1,17 @@
-//Menu de algebra
+package AppMainSrc;
+
+//Menu de Fisica
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class AlgebraMenu extends JPanel {
+public class PhysicsMenu extends JPanel {
 
-    private JLabel titulo = new JLabel("Algebra Lineal");
+    private JLabel titulo = new JLabel("Fisica");
 
-    public AlgebraMenu(){
+    public PhysicsMenu(){
         setSize(1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);

@@ -1,3 +1,5 @@
+package AppMainSrc;
+
 /*
 clase de boton encargado de expandir y contraer la barra lateral y
 de transformar botones contenidos en ella.

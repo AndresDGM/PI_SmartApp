@@ -1,3 +1,5 @@
+package AppMainSrc;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -45,6 +47,7 @@ public class App extends JFrame {
         add(menuAlgebra);
         add(menuFisica);
         add(menuHumanidades);
+        add(menuMatematicas.graficadora);
 
         //se añade el listener de redimencion del la ventana y se sobreescribe el componentResize()
         //para agregar el actBounds()

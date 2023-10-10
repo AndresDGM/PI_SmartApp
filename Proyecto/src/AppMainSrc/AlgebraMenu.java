@@ -1,13 +1,15 @@
-//Menu de humanidades
+package AppMainSrc;
+
+//Menu de algebra
 
 import javax.swing.*;
 import java.awt.*;
 
-public class HumanidadesMenu extends JPanel {
+public class AlgebraMenu extends JPanel {
 
-    private JLabel titulo = new JLabel("Humanidades");
-        
-    public HumanidadesMenu(){
+    private JLabel titulo = new JLabel("Algebra Lineal");
+
+    public AlgebraMenu(){
         setSize(1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
@@ -26,4 +28,3 @@ public class HumanidadesMenu extends JPanel {
                 (int) (getWidth()*0.238), (int) (getHeight()*0.063));
     }
 }
-
