@@ -27,7 +27,7 @@ public class GaussJordan extends JPanel {
 
     private RoundBorder border;
 
-    private Line l;
+    private Line l; //linea que separa el vector solucion
 
     private BasicButton bGuass;
 
