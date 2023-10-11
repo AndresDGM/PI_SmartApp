@@ -1,4 +1,7 @@
 package PhysicsSrc.Game;
+//codigo en construccion del juego en el que aplicaran los vectores
+
+import AppMainSrc.BasicButton;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -26,6 +29,8 @@ public class Game extends JPanel implements Runnable{
 
     private Keylisten teclas = new Keylisten(this);
 
+    private BasicButton boton;
+
     public Game(){
         Vector2f vector = new Vector2f(200,200);
         Vector2f vector2 = new Vector2f(0,0);
@@ -36,6 +41,13 @@ public class Game extends JPanel implements Runnable{
         Collider hitBox2 = new Collider(vector2, 100, 100, false);
         jugador = new Jugador(vector, hitBox);
         enemigos = new Enemy(vector2, hitBox2);
+        boton = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                salir();
+            }
+        };
+        boton.setLocation(457, 10);
         setSize(1074, 800);
         setFocusable(true);
         importImgSrc();
@@ -116,7 +128,6 @@ public class Game extends JPanel implements Runnable{
         if(b) {
             enemigos.attack();
         }
-        System.out.println(b);
     }
 
     public synchronized void star(){
@@ -145,6 +156,30 @@ public class Game extends JPanel implements Runnable{
                 fps = 0;
             }
         }
+    }
+
+    public void salir() {
+        if (gameRun){
+            gameRun = false;
+            setDefault();
+            boton.setText("Comenzar");
+        }else{
+            gameRun = true;
+            star();
+            boton.setText("Detener");
+        }
+    }
+
+    public void setDefault(){
+        Vector2f vector = new Vector2f(200,200);
+        Vector2f vector2 = new Vector2f(0,0);
+        //Vector2f vectorCol = new Vector2f(216,210);
+        Vector2f vectorCol = new Vector2f(225,216);
+        //Collider hitBox = new Collider(vectorCol, 42, 44, true);
+        Collider hitBox = new Collider(vectorCol, 59, 68, false);
+        Collider hitBox2 = new Collider(vector2, 100, 100, false);
+        jugador = new Jugador(vector, hitBox);
+        enemigos = new Enemy(vector2, hitBox2);
     }
 
     public static void main(String[] args) {
