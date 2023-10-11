@@ -143,7 +143,9 @@ public class CapitulosHuma extends JPanel{
         URL cap1 = getClass().getResource("imagenes/ods4-1.png");
         URL cap2 = getClass().getResource("imagenes/ods4-2.png");
         URL cap3 = getClass().getResource("imagenes/ods4-3.png");
-        texts = new String[]{"<html><body style='background-color: #2E2E2E; color: white;'>"
+        texts = new String[]{
+    //capitulo 1
+    "<html><body style='background-color: #2E2E2E; color: white;'>"
     + "<div align='center'><font face='Arial' size='5' color='red'><b>INTRODUCCION AL ODS #4</b></font></div><br>"
     + "<strong><font face='Arial' size='5' color='red'>Definción</strong><br><br>"
     + "El ODS 4 es el cuarto Objetivo de Desarrollo Sostenible de la ONU, que tiene como objetivo garantizar una "
@@ -167,6 +169,7 @@ public class CapitulosHuma extends JPanel{
     + "🌐 <a href='https://www.ei-ie.org/es'>pagina web #3</a><br>"
     + "</body></html>",
     
+    //Capitulo 2
     "<html><body style='background-color: #2E2E2E; color: white;'>"
     + "<div align='center'><font face='Arial' size='5' color='red'><b>METAS ESPECIFICAS DEL ODS #4</b></font></div><br>"
     + "<strong><font face='Arial' size='5' color='red'>Las principales metas son:</strong><br><br>"

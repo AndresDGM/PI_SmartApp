@@ -2,15 +2,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkListener;
 
 
 public class HumanidadesMenu extends JPanel {
@@ -56,7 +47,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[0] = new BasicButton() {
             @Override
             public void clickEvent() {
-                funBoton(0);
+                botonFun(0);
             }
         };
         capitulos[0].setText("capitulo 1");
@@ -68,11 +59,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[1] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[1].setVisible(true);
-                caps.getTitulo().setText("Capitulo 2");
-                caps.setCapCont(1);
+                botonFun(1);
             }
         };
         capitulos[1].setText("capitulo 2");
@@ -84,11 +71,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[2] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[2].setVisible(true);
-                caps.getTitulo().setText("Capitulo 3");
-                caps.setCapCont(2);
+                botonFun(2);
             }
         };
         capitulos[2].setText("capitulo 3");
@@ -100,11 +83,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[3] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[3].setVisible(true);
-                caps.getTitulo().setText("Capitulo 4");
-                caps.setCapCont(3);
+                botonFun(3);
             }
         };
         capitulos[3].setText("capitulo 4");
@@ -116,11 +95,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[4] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[4].setVisible(true);
-                caps.getTitulo().setText("Capitulo 5");
-                caps.setCapCont(4);
+                botonFun(4);
             }
         };
         capitulos[4].setText("capitulo 5");
@@ -132,11 +107,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[5] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[5].setVisible(true);
-                caps.getTitulo().setText("Capitulo 6");
-                caps.setCapCont(5);
+                botonFun(5);
             }
         };
         capitulos[5].setText("capitulo 6");
@@ -148,11 +119,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[6] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[6].setVisible(true);
-                caps.getTitulo().setText("Capitulo 7");
-                caps.setCapCont(6);
+                botonFun(6);
             }
         };
         capitulos[6].setText("capitulo 7");
@@ -164,11 +131,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[7] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[7].setVisible(true);
-                caps.getTitulo().setText("Capitulo 8");
-                caps.setCapCont(7);
+                botonFun(7);
             }
         };
         capitulos[7].setText("capitulo 8");
@@ -180,11 +143,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[8] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[8].setVisible(true);
-                caps.getTitulo().setText("Capitulo 9");
-                caps.setCapCont(8);
+                botonFun(8);
             }
         };
         capitulos[8].setText("capitulo 9");
@@ -196,11 +155,7 @@ public class HumanidadesMenu extends JPanel {
         capitulos[9] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[9].setVisible(true);
-                caps.getTitulo().setText("Capitulo 5");
-                caps.setCapCont(9);
+                botonFun(9);
             }
         };
         capitulos[9].setText("capitulo 10");
@@ -224,7 +179,22 @@ public class HumanidadesMenu extends JPanel {
         App app = new App();
 
     }
+    
+    public void botonFun(int index){
+        setVisible(false);
+        ocultarCaps();
+        caps.setVisible(true);
+        caps.getCapitulos()[index].setVisible(true);
+        caps.getTitulo().setText("Capitulo " + (index + 1));
+        caps.setCapCont(index);
+        BackButton b = (BackButton) App.lateralBar.getComponent(1);
+        b.getAntContenidos().add(caps);
+    }
 
-  
+    public void ocultarCaps(){
+        for (int i = 0; i < 10; i++) {
+            caps.getCapitulos()[i].setVisible(false);
+        }
+    }
     
 }
