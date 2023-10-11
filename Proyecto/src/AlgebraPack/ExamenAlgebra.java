@@ -14,6 +14,7 @@ import java.awt.*;
 public class ExamenAlgebra  extends JPanel{
     
         private RoundBorder border;
+        public JlabelAlgebra jlabel[]= new JlabelAlgebra[20]; //añadir los jlabel para las preguntas
     //variables
     
     public ExamenAlgebra(){
