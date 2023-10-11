@@ -21,16 +21,16 @@ public class HumanidadesMenu extends JPanel {
 
     public BasicButton[] capitulos = new BasicButton[10];
     
+    public BackButton menup = new BackButton();
+    
     public CapitulosHuma caps = new CapitulosHuma();
+    
+    private RoundBorder border = new RoundBorder();
     
     public HumanidadesMenu() {
 
         setSize(1074, 800);
-        iniciar_caps();
-        caracteristicas();
-        paginas();
-        
-        
+        caracteristicas();        
         
         setBackground(new Color(46, 46, 46));
         setLayout(null);
@@ -48,25 +48,15 @@ public class HumanidadesMenu extends JPanel {
         titulo.setBounds((int) (getWidth() * 0.38), (int) (getHeight() * 0.067),
                 (int) (getWidth() * 0.238), (int) (getHeight() * 0.063));
     }
-
-    //inicializa los capitulos de los jpaneles
-    public void iniciar_caps() {
-        for (int i = 0; i < capitulos.length; i++) {
-            
-        }
-    }
    
     //asigna tamaño, coordenadas y recursos correspondientes para cada panel de cada capitulo
     public void caracteristicas() {
-
+        
+        
         capitulos[0] = new BasicButton() {
             @Override
             public void clickEvent() {
-                setVisible(false);
-                caps.setVisible(true);
-                caps.getCapitulos()[0].setVisible(true);
-                caps.getTitulo().setText("Capitulo 1");
-                caps.setCapCont(0);
+                funBoton(0);
             }
         };
         capitulos[0].setText("capitulo 1");
@@ -218,96 +208,14 @@ public class HumanidadesMenu extends JPanel {
         capitulos[9].setForeground(Color.red);
         capitulos[9].setFont(new Font("Arial", capitulos[9].getFont().getStyle(), 24));
         add(capitulos[9]);
-       
-        
-        
     }
-
-  
-    public void paginas() {
-        JEditorPane capitulo1 = new JEditorPane();
-        capitulo1.setContentType("text/html");
-
-        URL pagl = getClass().getResource("imagenes/logo.png");
-
-        capitulo1.setText(
-    "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>Ejemplo JEditorPane</b></font></div><br>"
-    + "<strong>El paquete Swing - La clase JEditorPane | GUI en Java</strong><br><br>"
-    + "Definición del componente. Creación de un JEditorPane que visualiza texto en formato HTML. Se aplica formato al texto y se muestra una imagen. Ejemplo en código fuente.<br><br>"
-    + "<div align='center'><img src=" + pagl + " width=200 height=200></div><br>"
-    + "{ ... } <a href='https://bit.ly/3uEnVup'>Código fuente</a><br>"
-    + "hola golda"
-    + "<p>sebastian tiene una nariz monumental</p>"
-    + "<h1>Taller de diagnóstico Álgebra Lineal</h1>"
-    + "🎬 <a href='https://youtube.com/playlist?list=PLV3xT3LjqLpbPIkOtVRui6Faxu3y6wEer'>Lista de reproducción - GUI en Java</a><br><br>"
-    + "</body></html>");
-
-
-
-        capitulo1.setEditable(false);//mostrar solo codigo HTML
-
-        capitulo1.addHyperlinkListener(new HyperlinkListener() {
-            public void hyperlinkUpdate(HyperlinkEvent e) {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if (Desktop.isDesktopSupported()) {
-                        try {
-                            Desktop.getDesktop().browse(e.getURL().toURI());
-                        } catch (IOException | URISyntaxException e1) {
-                            e1.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }
-        );
-
-        JScrollPane capi1 = new JScrollPane(capitulo1);
-        capi1.setBounds(0, 0, 900, 600);
-        
-        capitulo[0].add(capi1);
-        
-        JEditorPane capitulo2 = new JEditorPane();
-        capitulo2.setContentType("text/html");
-
-        URL pag2 = getClass().getResource("imagenes/logo.png");
-
-        capitulo2.setText(
-    "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>Ejemplo JEditorPane</b></font></div><br>"
-    + "<strong>El paquete Swing - La clase JEditorPane | GUI en Java</strong><br><br>"
-    + "Definición del componente. Creación de un JEditorPane que visualiza texto en formato HTML. Se aplica formato al texto y se muestra una imagen. Ejemplo en código fuente.<br><br>"
-    + "<div align='center'><img src=" + pag2 + " width=200 height=200></div><br>"
-    + "{ ... } <a href='https://bit.ly/3uEnVup'>Código fuente</a><br>"
-    + "hola golda"
-    + "<p>sebastian tiene una nariz monumental</p>"
-    + "<h1>Taller de diagnóstico Álgebra Lineal</h1>"
-    + "🎬 <a href='https://youtube.com/playlist?list=PLV3xT3LjqLpbPIkOtVRui6Faxu3y6wEer'>Lista de reproducción - GUI en Java</a><br><br>"
-    + "</body></html>");
-
-
-
-        capitulo2.setEditable(false);//mostrar solo codigo HTML
-
-        capitulo2.addHyperlinkListener(new HyperlinkListener() {
-            public void hyperlinkUpdate(HyperlinkEvent e) {
-                if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    if (Desktop.isDesktopSupported()) {
-                        try {
-                            Desktop.getDesktop().browse(e.getURL().toURI());
-                        } catch (IOException | URISyntaxException e1) {
-                            e1.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }
-        );
-
-        JScrollPane capi2 = new JScrollPane(capitulo2);
-        capi2.setBounds(0, 0, 900, 600);
-        
-        capitulo[1].add(capi2);
+    
+    public void funBoton(int i){
+        caps.setVisible(true);
+        caps.getCapitulos()[i].setVisible(true);
+        caps.getTitulo().setText("Capitulo " + (i+1));
+        caps.setCapCont(i);
+        setVisible(false);
     }
     
     
