@@ -207,6 +207,7 @@ public class GaussJordan extends JPanel {
             int stroke = 4;
             float[] fases = {25f, 25f};
             Graphics2D g2 = (Graphics2D) g;
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g2.setStroke(new BasicStroke(stroke, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 10f, fases, 0f));
             g2.setColor(new Color(0, 188, 255));
             g2.drawLine(3, 5, 3, h-5);

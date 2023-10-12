@@ -54,64 +54,62 @@ public class AlgOptionButton extends JPanel {
         MouseListener m = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(isFocusable()) {
-                    for (AlgOptionButton c : g.getOptionButtons()) {
-                        if (c.isActive()) {
-                            c.setActive(false);
-                            c.getBor().setBackground(getBackground());
-                        }
-                        setActive(true);
-                        getBor().setBackground(new Color(0, 188, 255));
-                        g.getWarning().setVisible(false);
+                for (AlgOptionButton c : g.getOptionButtons()) {
+                    if (c.isActive()) {
+                        c.setActive(false);
+                        c.getBor().setBackground(getBackground());
                     }
-
-                    switch (valor) {
-                        case 2:
-                            changeCoordsMat(240, 238, 250, 180, 118);
-                            changeCoordsText(280, 200, 238);
-                            g.getWarning().setLocation(237, 145);
-                            g.getBorde().setW(720);
-                            g.getBorde().setH(450);
-                            g.getBorde().setLocation(177, 173);
-                            g.getL().setBounds(656, 250, 15, 298);
-                            g.getL().setH(298);
-                            g.getbGuass().setLocation(457, 650);
-                            break;
-                        case 3:
-                            changeCoordsMat(250, 160, 250, 120, 98);
-                            changeCoordsText(280, 200, 160);
-                            g.getWarning().setLocation(237, 145);
-                            g.getBorde().setW(720);
-                            g.getBorde().setH(450);
-                            g.getBorde().setLocation(177, 173);
-                            g.getL().setBounds(696, 250, 15, 336);
-                            g.getL().setH(336);
-                            g.getbGuass().setLocation(457, 650);
-                            break;
-                        case 4:
-                            changeCoordsMat(237, 128, 218, 108, 88);
-                            changeCoordsText(262, 174, 128);
-                            g.getWarning().setLocation(237, 120);
-                            g.getBorde().setLocation(157, 151);
-                            g.getBorde().setW(760);
-                            g.getBorde().setH(520);
-                            g.getL().setBounds(728, 225, 15, 450);
-                            g.getL().setH(410);
-                            g.getbGuass().setLocation(457, 686);
-                            break;
-                        case 5:
-                            changeCoordsMat(228, 108, 195, 100, 78);
-                            changeCoordsText(248, 143, 108);
-                            g.getWarning().setLocation(237, 97);
-                            g.getBorde().setLocation(167, 127);
-                            g.getBorde().setW(740);
-                            g.getBorde().setH(566);
-                            g.getL().setBounds(750, 215, 15, 472);
-                            g.getL().setH(457);
-                            g.getbGuass().setLocation(457, 700);
-                            break;
-                    }
+                    setActive(true);
+                    getBor().setBackground(new Color(0, 188, 255));
+                    g.getWarning().setVisible(false);
                 }
+
+                switch (valor) {
+                    case 2:
+                        changeCoordsMat(240, 238, 250, 180, 118);
+                        changeCoordsText(280, 200, 238);
+                        g.getWarning().setLocation(237, 145);
+                        g.getBorde().setW(720);
+                        g.getBorde().setH(450);
+                        g.getBorde().setLocation(177, 173);
+                        g.getL().setBounds(656, 250, 15, 298);
+                        g.getL().setH(298);
+                        g.getbGuass().setLocation(457, 650);
+                        break;
+                    case 3:
+                        changeCoordsMat(250, 160, 250, 120, 98);
+                        changeCoordsText(280, 200, 160);
+                        g.getWarning().setLocation(237, 145);
+                        g.getBorde().setW(720);
+                        g.getBorde().setH(450);
+                        g.getBorde().setLocation(177, 173);
+                        g.getL().setBounds(696, 250, 15, 336);
+                        g.getL().setH(336);
+                        g.getbGuass().setLocation(457, 650);
+                        break;
+                    case 4:
+                        changeCoordsMat(237, 128, 218, 108, 88);
+                        changeCoordsText(262, 174, 128);
+                        g.getWarning().setLocation(237, 120);
+                        g.getBorde().setLocation(157, 151);
+                        g.getBorde().setW(760);
+                        g.getBorde().setH(520);
+                        g.getL().setBounds(728, 225, 15, 450);
+                        g.getL().setH(410);
+                        g.getbGuass().setLocation(457, 686);
+                        break;
+                    case 5:
+                        changeCoordsMat(228, 108, 195, 100, 78);
+                        changeCoordsText(248, 143, 108);
+                        g.getWarning().setLocation(237, 97);
+                        g.getBorde().setLocation(167, 127);
+                        g.getBorde().setW(740);
+                        g.getBorde().setH(566);
+                        g.getL().setBounds(750, 215, 15, 472);
+                        g.getL().setH(457);
+                        g.getbGuass().setLocation(457, 700);
+                        break;
+                    }
             }
 
             @Override

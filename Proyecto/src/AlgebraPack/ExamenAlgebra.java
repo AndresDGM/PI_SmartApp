@@ -5,6 +5,7 @@
 package AlgebraPack;
 
 import AppMainSrc.BasicButton;
+import AppMainSrc.OptionButton;
 import AppMainSrc.RoundBorder;
 import AppMainSrc.RoundTextField;
 
@@ -18,7 +19,6 @@ public class ExamenAlgebra  extends JPanel{
     //variables
     
     public ExamenAlgebra(){
-        
         setSize(1074, 800);
         setLayout(null);
         setLocation(50,0);
