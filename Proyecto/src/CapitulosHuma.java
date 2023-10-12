@@ -145,26 +145,28 @@ public class CapitulosHuma extends JPanel{
         URL cap3 = getClass().getResource("imagenes/ods4-3.png");
         URL cap4 = getClass().getResource("imagenes/ods4-4.png");
         URL cap5 = getClass().getResource("imagenes/ods4-5.png");
+        URL cap6 = getClass().getResource("imagenes/ods4-6.png");
         texts = new String[]{
     //capitulo 1
     "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>INTRODUCCION AL ODS #4</b></font></div><br>"
-    + "<strong><font face='Arial' size='5' color='red'>Definción</strong><br><br>"
-    + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>El ODS 4 es el cuarto Objetivo de Desarrollo Sostenible de la ONU, que tiene como objetivo garantizar una "
-    + "educación inclusiva, equitativa y de calidad para todos. Esto incluye desde la educación preescolar hasta "
-    + "la formación técnica y profesional, y abarca tanto la educación formal como la no formal. El ODS 4 tiene "
-    + "metas específicas para lograr este objetivo, y los gobiernos tienen un papel importante en su implementación.</h2></div><p>"
+    +"<div align='center'><font face='Arial' size='5' color='#38B8FA'><b>INTRODUCCION AL ODS #4</b></font></div><br>"
+    +"<strong><font face='Arial' size='5' color='#38B8FA'>DefinIción</strong><br><br>"
+    +"<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>El ODS 4 es el cuarto Objetivo de Desarrollo Sostenible de la ONU, que tiene como objetivo garantizar una "
+    +"educación inclusiva, equitativa y de calidad para todos. Esto incluye desde la educación preescolar hasta "
+    +"la formación técnica y profesional, y abarca tanto la educación formal como la no formal. El ODS 4 tiene "
+    +"metas específicas para lograr este objetivo, y los gobiernos tienen un papel importante en su implementación.</h2></div><p>"
     +"<div align='center: left;'><img src=" + cap1 + " width=675 height=400></div><br>"
-    + "<h1><font face='Arial' size='5' color='red'>En estos capítulos vamos a tratar temas como:</h1>"
-    + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>-Metas del ODS 4<br>" +
-    "-Acceso a la educación<br>" +
-    "-Educación inclusiva<br>" +
-    "-Formación de docentes<br>" +
-    "-Tecnología y educación<br>" +
-    "-Impacto global<br>" +
-    "-infraestructura educativa<br>" +
-    "-becas y apoyos para estudiantes<br>" +
-    "-Conclusión y llamado a la acción para apoyar el ODS 4</h2></div><p>"
+    +"<h1><font face='Arial' size='5' color='#38B8FA'>En estos capítulos vamos a tratar temas como:</h1>"
+    +"<div align='left'><h2><font color='White' face='Comic Sans MS' size='5'>"   
+    +"-Metas del ODS 4<br>" 
+    +"-Acceso a la educación<br>" 
+    +"-Educación inclusiva<br>" 
+    +"-Formación de docentes<br>" 
+    +"-Tecnología y educación<br>" 
+    +"-Impacto global<br>" 
+    +"-infraestructura educativa<br>" 
+    +"-becas y apoyos para estudiantes<br>" 
+    +"-Conclusión y llamado a la acción para apoyar el ODS 4.</h2></div><p>"
     + " <a href = 'https://www.youtube.com/watch?v=PhU0LAyR2KM'>Video de retroalimentacion</a><br>" 
     + " <a href='https://www.un.org/sustainabledevelopment/es/education/'>pagina web #1</a><br>"
     + " <a href='https://sdgs.un.org/es/goals/goal4?lang=es'>pagina web #2</a><br>"
@@ -173,8 +175,8 @@ public class CapitulosHuma extends JPanel{
     
     //Capitulo 2
     "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>METAS ESPECIFICAS DEL ODS #4</b></font></div><br>"
-    + "<strong><font face='Arial' size='5' color='red'>Las principales metas son:</strong><br><br>"
+    + "<div align='center'><font face='Arial' size='5' color='#38B8FA'><b>METAS ESPECIFICAS DEL ODS #4</b></font></div><br>"
+    + "<strong><font face='Arial' size='5' color='#38B8FA'>Las principales metas son:</strong><br><br>"
     + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>-Aseguraron que todos los niños completen debidamente la educación primaria y secundaria.<br>" 
     +"-Fomentar la educación de calidad desde temprana edad.<br>" 
     +"-Accesibilidad a la educación de calidad para llegar a más niños.<br>" 
@@ -193,8 +195,8 @@ public class CapitulosHuma extends JPanel{
        
     //capitulo 3            
     "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>ACCESO A LA EDUCACION</b></font></div><br>"
-    + "<strong><font face='Arial' size='5' color='red'>DEFINICION</strong><br><br>"
+    + "<div align='center'><font face='Arial' size='5' color='#38B8FA'><b>ACCESO A LA EDUCACION</b></font></div><br>"
+    + "<strong><font face='Arial' size='5' color='#38B8FA'>Definicion</strong><br><br>"
     + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>El acceso a la educacion es algo que "
     + "todo humano debe de tener, debe ser un derecho fundamental para poder"
     + "en el futuro tener muchas personas capacitadas para hacer cualquier tipo de trabajo y sobre todo ser unas personas de bien.<br>"
@@ -202,7 +204,12 @@ public class CapitulosHuma extends JPanel{
     + "de asistir a un centro educativo ya que no cabe dentro de sus posiblilidades, unos son porque no tienen el dinero para comprar"
     + "los materiales que se requieran para la educacion de calidad, tambien pueden que vivan en una zona que no les quede ningun colegio"
     + "cerca o los que tienen cerca son de pago y no tienen economia para pagarlo.</h2></div><p>"
-    +"<div align='center: left;'><img src=" + cap3 + " width=675 height=300></div><br>"
+    + "<div align='center: left;'><img src=" + cap3 + " width=675 height=300></div><br>"
+    + "<h1><font face='Comic Sans MS' size='5' color='#38B8FA'>Formas para mejorar el acceso a la educacion.</h1>"     
+    + "<div align='left'><h2><font color='White' face='Comic Sans MS' size='5'>"
+    + "-Garantizar los recursos basicos para que todos los niños.<br>"
+    + "-Mejorar la calidad de educacion, es necesaria la inversión en programas adaptados a los contextos culturales y educativos.</h2></div><br>"
+    + "Igualdad en los procesos de aprendizaje.</h2></div><br>"
     + "<a href = 'https://www.youtube.com/watch?v=1rPk7IJtmSs'>Video de retroalimentacion</a><br>" 
     + "<a href='https://plan-international.es/girls-get-equal/acceso-educacion'>pagina web 1</a><br>"
     + "<a href='https://es.wikipedia.org/wiki/Acceso_universal_a_la_educaci%C3%B3n'>pagina web 2</a><br>"
@@ -211,8 +218,8 @@ public class CapitulosHuma extends JPanel{
     
     //capitulo 4                              
     "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>EDUCACION INCLUSIVA</b></font></div><br>"
-    + "<strong><font face='Arial' size='6' color='red'>Definicion</strong><br><br>"
+    + "<div align='center'><font face='Arial' size='5' color='#38B8FA'><b>EDUCACION INCLUSIVA</b></font></div><br>"
+    + "<strong><font face='Arial' size='6' color='#38B8FA'>Definicion</strong><br><br>"
     + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>Para garantizar una educación de calidad es importante que todo los niños, niñas y adolescentes "
     + "participen en las actividades de aprendizaje, y hablando de esto hay que garantizar que todos los niños "
     + "tengan acceso garantizado a la educación, ya que esto es un derecho fundamental que debemos de tener todos los humanos,"
@@ -228,27 +235,46 @@ public class CapitulosHuma extends JPanel{
     
     //capitulo 5
     "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='6' color='red'><b>CAPACITACION DE DOCENTES</b></font></div><br>"
-    + "<strong><font face='Arial' size='5' color='red'>LOS PROFESORES TAMBIEN ESTUDIAN</strong><br><br>"
+    + "<div align='center'><font face='Arial' size='5' color='#38B8FA'><b>CAPACITACION DE DOCENTES</b></font></div><br>"
+    + "<strong><font face='Arial' size='5' color='#38B8FA'>Los profesores tambien estudian</strong><br><br>"
     + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>"
-    + ".</h2></div><p>"
+    + "Esta parte es fundamental para poder lograr una educacion de calidad excelente, ya que estos docentes son los que van a enseñar"
+    + "a nuestros estudiantes para que salgan capacitados y cumpliendo con todos los requerimientos, estos docentes tienen que estar"
+    + "capacitados para poder tener la capacidad de enseñar a cualquier niño y hacerlo de una manera excelente y de calidad<br>"
+    + "Pero lastimosamente a dia de hoy todavia hay profesores que no son tan buenas o se quedan mucho en lo antiguo, y eso aveces puede"
+    + "funcionar pero ya estamos en una epoca que han evolucionado muchas cosas y que deberian cambiar la metodologia de sus clases y de la forma en que enseñan.</h2></div><p>"
     + "<div align='center: left;'><img src=" + cap5 + " width=675 height=400></div><br>"
-    + " <a href = 'https://www.youtube.com/watch?v=pCNs2va3D18'>Video de retroalimentacion</a><br>"
+    + "<h1><font face='Comic Sans MS' size='5' color='#38B8FA'>Formas de mejorar como docente</h1>"     
+    + "<div align='left'><h2><font color='White' face='Comic Sans MS' size='5'>"
+    + "-Uno de los aspectos que puede mejorar un docente es la comunicacion con el estudiante ya que esta es importante"
+    + "ya que si hay buena comunicacion el estudiante va a resibir la informacion de buena manera y entendiendo.<br>"
+    + "-Un buen docente tiene que hacer tambien autoevaluacion para mirar y fijarse si esta haciendo las cosas bien"
+    + "y corregir en caso de que crea que esta fallando algo, ya que aunque sean profesores tambien tienen errores<br>"
+    + "-Al momento de planificar las clases hay que ser comprensivos y tener en cuenta que hay alumnos"
+    + "que no van a entender a la misma velocidad que otros o que se toman mas tiempo al momento de entender un tema.<br>"
+    + "-Siempre como docente se debe estar actualizado con lo ultimo, buscando y apoyandose de nuevas herramientas"
+    + "que van sacando con el paso del tiempo y que cada vez hay mas tecnologia.</h2></div><br>"           
+    + "<a href = 'https://www.youtube.com/watch?v=pCNs2va3D18'>Video de retroalimentacion</a><br>"
     + "<a href='https://mineducacion.gov.co/portal/adelante-maestros/Formacion/Formacion-Docente-para-la-Calidad-Educativa/'>pagina web 1</a><br>"
     + "<a href='https://educacion.nexos.com.mx/importancia-de-la-formacion-docente-en-la-actualidad/'>pagina web 2</a><br>"
     + "<a href='https://www.uaeh.edu.mx/scige/boletin/huejutla/n9/e2.html'>pagina web 3</a><br>" 
     + "</body></html>",
     
-    
-    "<html><body style='background-color: #2E2E2E; color: white;'>"
-    + "<div align='center'><font face='Arial' size='5' color='red'><b>Ejemplo JEditorPane</b></font></div><br>"
-    + "<strong>El paquete Swing - La clase JEditorPane | GUI en Java</strong><br><br>"
-    + "Definición del componente. Creación de un JEditorPane que visualiza texto en formato HTML. Se aplica formato al texto y se muestra una imagen. Ejemplo en código fuente.<br><br>"
-    + "{ ... } <a href='https://bit.ly/3uEnVup'>Código fuente</a><br>"
-    + "hola golda"
-    + "<p>sebastian tiene una nariz monumental</p>"
-    + "<h1>Taller de diagnóstico Álgebra Lineal</h1>"
-    + "🎬 <a href='https://youtube.com/playlist?list=PLV3xT3LjqLpbPIkOtVRui6Faxu3y6wEer'>Lista de reproducción - GUI en Java</a><br><br>"
+    //capitulo 6
+   "<html><body style='background-color: #2E2E2E; color: white;'>"
+    + "<div align='center'><font face='Lucida Bright' size='6' color='#38B8FA'><b>IMPACTO GLOBAL</b></font></div><br>"
+    + "<strong><font face='Lucida Bright' size='5' color='#38B8FA'>Educacion en todo el mundo</strong><br><br>"
+    + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>Para garantizar una educación de calidad es importante que todo los niños, niñas y adolescentes "
+    + "participen en las actividades de aprendizaje, y hablando de esto hay que garantizar que todos los niños "
+    + "tengan acceso garantizado a la educación, ya que esto es un derecho fundamental que debemos de tener todos los humanos,"
+    + "la educación hace un papel fundamental en las personas que vamos a hacer el día de mañana.<br>" 
+    + "Pero hablando de esto no solo es que se vaya  a tener preferencia a las personas con discapacidad,"
+    + " sino a todos alumnos a enseñar en general sin importar la raza, condición social, estrato ,genero, religión etc.</h2></div><p>"
+    + "<div align='center: left;'><img src=" + cap6 + " width=675 height=400></div><br>"
+    + " <a href = 'https://www.youtube.com/watch?v=gT_3Jxrdbgs'>Video de retroalimentacion</a><br>"
+    + "<a href='https://www.educo.org/Blog/Que-es-educacion-inclusiva-y-por-que-es-importante'>pagina web 1</a><br>"
+    + "<a href='https://www.unesco.org/es/education/inclusion'>pagina web 2</a><br>"
+    + "<a href='https://www.educacionyfp.gob.es/mc/sgctie/educacion-inclusiva.html'>pagina web 3</a><br>" 
     + "</body></html>",
     
     "<html><body style='background-color: #2E2E2E; color: white;'>"
