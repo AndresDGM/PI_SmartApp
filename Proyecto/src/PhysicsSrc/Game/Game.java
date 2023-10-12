@@ -34,11 +34,11 @@ public class Game extends JPanel implements Runnable{
     public Game(){
         Vector2f vector = new Vector2f(200,200);
         Vector2f vector2 = new Vector2f(0,0);
-        //Vector2f vectorCol = new Vector2f(216,210);
+        Vector2f vectorCol2 = new Vector2f(16,19);
         Vector2f vectorCol = new Vector2f(225,216);
         //Collider hitBox = new Collider(vectorCol, 42, 44, true);
         Collider hitBox = new Collider(vectorCol, 59, 68, false);
-        Collider hitBox2 = new Collider(vector2, 100, 100, false);
+        Collider hitBox2 = new Collider(vectorCol2, 53, 69, false);
         jugador = new Jugador(vector, hitBox);
         enemigos = new Enemy(vector2, hitBox2);
         boton = new BasicButton() {
@@ -62,13 +62,17 @@ public class Game extends JPanel implements Runnable{
         jugador.setSpriteSize(100,100);
         enemigos.setSpriteSize(100, 100);
         BufferedImage sprite = null;
+        BufferedImage sprite2 = null;
         try {
             sprite = ImageIO.read(
                     getClass().getClassLoader().getResource("PhysicsSrc/Sprites/SpriteCat-0001.png"));
+            sprite2 = ImageIO.read(
+                    getClass().getClassLoader().getResource("PhysicsSrc/Sprites/ProfeSprite-0001.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        jugador.setSprite(sprite);
+        jugador.setSpriteSheet(sprite);
+        enemigos.setSpriteSheet(sprite2);
     }
     public void gameUpdate(){
         getCollitions();

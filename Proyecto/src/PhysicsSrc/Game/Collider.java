@@ -27,12 +27,6 @@ public class Collider extends Rectangle {
                 vector.y < c.vector.y + c.h && vector.y + h < c.vector.y);
     }
 
-    public void showCollider(Graphics g){
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.red);
-        g2d.drawRect(x, y, (int) w, (int) h);
-    }
-
     public Vector2f getVector() {
         return vector;
     }

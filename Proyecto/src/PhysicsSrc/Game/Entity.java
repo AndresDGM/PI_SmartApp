@@ -8,13 +8,17 @@ import javax.vecmath.Vector2f;
 public abstract class Entity extends JPanel{
     protected Vector2f vector;
 
-    protected BufferedImage sprite;
+    protected BufferedImage[] spriteSheet;
 
     protected int wSprite = 0;
 
     protected int hSprite = 0;
 
-    protected float spriteScene = 0;
+    protected int spriteScene = 0;
+
+    protected int animationSpeed = 6;
+
+    protected int animationCont = 0;
 
     protected Collider hitBox;
 
@@ -62,12 +66,17 @@ public abstract class Entity extends JPanel{
         this.hitBox = hitBox;
     }
 
-    public BufferedImage getSprite() {
-        return sprite;
+    public BufferedImage[] getSpriteSheet() {
+        return spriteSheet;
     }
 
-    public void setSprite(BufferedImage sprite) {
-        this.sprite = sprite;
+    public void setSpriteSheet(BufferedImage sprite) {
+        int cantScenes = sprite.getWidth()/32;
+        System.out.println(cantScenes);
+        spriteSheet = new BufferedImage[cantScenes];
+        for (int i = 0; i < cantScenes; i++) {
+            spriteSheet[i] = sprite.getSubimage(i*32, 0, 32, 32);
+        }
     }
 
     public int getwSprite() {
@@ -84,11 +93,20 @@ public abstract class Entity extends JPanel{
         setSize(wSprite,hSprite);
     }
 
-    public float getSpriteScene() {
+    public int getSpriteScene() {
         return spriteScene;
     }
 
     public void setSpriteScene(int spriteScene) {
         this.spriteScene = spriteScene;
+    }
+
+    public void animated(){
+        animationCont++;
+        if (animationCont == animationSpeed){
+            if(spriteScene < spriteSheet.length-1) spriteScene++;
+            else spriteScene = 0;
+            animationCont = 0;
+        }
     }
 }

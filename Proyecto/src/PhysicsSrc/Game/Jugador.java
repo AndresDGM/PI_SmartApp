@@ -15,9 +15,9 @@ public class Jugador extends Entity{
     @Override
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        BufferedImage subSprite = sprite.getSubimage((int)spriteScene*32,0,32,32);
-        g2d.drawImage(subSprite, 0, 0, wSprite, hSprite, null);
-        hitBox.showCollider(g);
+        animated();
+        g2d.drawImage(spriteSheet[spriteScene], 0, 0, wSprite, hSprite, null);
+        showCollider(g);
     }
 
     public void perderSalud(){
@@ -28,6 +28,12 @@ public class Jugador extends Entity{
             Game.gameOver();
         }
         System.out.println(salud);
+    }
+
+    public void showCollider(Graphics g){
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.red);
+        g2d.drawRect((int) (hitBox.getVector().x - vector.x), (int) (hitBox.getVector().y - vector.y), (int) hitBox.getW(), (int) hitBox.getH());
     }
 
     @Override

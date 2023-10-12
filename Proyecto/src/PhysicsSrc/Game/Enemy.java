@@ -12,8 +12,15 @@ public class Enemy extends Entity{
     @Override
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.fillRect(0,0,getWidth(),getHeight());
-        g2d.setBackground(Color.BLUE);
+        animated();
+        g2d.drawImage(spriteSheet[spriteScene], 0, 0, wSprite, hSprite, null);
+        showCollider(g);
+    }
+
+    public void showCollider(Graphics g){
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.red);
+        g2d.drawRect((int) (hitBox.getVector().x - vector.x), (int) (hitBox.getVector().y - vector.y), (int) hitBox.getW(), (int) hitBox.getH());
     }
 
     @Override
