@@ -9,6 +9,8 @@ public class HumanidadesMenu extends JPanel {
     public JPanel[] capitulo = new JPanel[10];
 
     private JLabel titulo = new JLabel("Humanidades");
+    
+    private JLabel paneltitulo = new JLabel();
 
     public BasicButton[] capitulos = new BasicButton[10];
     
@@ -20,17 +22,21 @@ public class HumanidadesMenu extends JPanel {
     
     public HumanidadesMenu() {
 
-        setSize(1074, 800);
-        caracteristicas();        
         
+        caracteristicas();
+        paneltitulo.setBounds(340, 20, 500, 170);  
+        
+        cargarImagen();
+        add(paneltitulo);
+        setSize(1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
-        titulo.setBounds(460, 54, 255, 46);
+        /*titulo.setBounds(460, 54, 255, 46);
         titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(new Color(255, 255, 255));
         titulo.setFont(new Font("Arial", titulo.getFont().getStyle(), 24));
-        add(titulo);
+        add(titulo);*/
         setVisible(false);
     }
     
@@ -195,6 +201,12 @@ public class HumanidadesMenu extends JPanel {
         for (int i = 0; i < 10; i++) {
             caps.getCapitulos()[i].setVisible(false);
         }
+    }
+    public void cargarImagen(){
+        ImageIcon imagen = new ImageIcon("src/Imagenes/tituloo.jpg");
+        Icon icon = new ImageIcon(
+                imagen.getImage().getScaledInstance(paneltitulo.getWidth(), paneltitulo.getHeight(),Image.SCALE_DEFAULT));
+        paneltitulo.setIcon(icon);
     }
     
 }
