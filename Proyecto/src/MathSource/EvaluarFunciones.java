@@ -1,6 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ Esta clase se encarga de recibir las funciones ingresadas por el usuario con sus intervalos, procesarlas 
+y crear la gráfica.
+tareas pendientes: 
+Modificar el color de la gráfica
  */
 package MathSource;
 
@@ -25,9 +27,6 @@ public class EvaluarFunciones{
     XYSeries puntos_f1, puntos_f2;
     JFreeChart grafico;
 
-    public EvaluarFunciones() {
-    }
-    
     public EvaluarFunciones(String valores[]) {
         funcion1 = valores[0];
         funcion2 = valores[1];
@@ -35,47 +34,33 @@ public class EvaluarFunciones{
         interf1_2 = Double.parseDouble(valores[3]);
         interf2_1 = Double.parseDouble(valores[4]); 
         interf2_2 = Double.parseDouble(valores[5]);
-        evaluarfuncion1();
-        evaluarfuncion2();
+        evaluarFunciones(funcion1, interf1_1, interf1_2, puntos_f1, "Funcion 1");
+        evaluarFunciones(funcion2, interf2_1, interf2_2, puntos_f2, "Funcion 2");
         graficar();
     }
     
-    private void evaluarfuncion1() {
-        j1 = new JEP();
-        j1.addStandardFunctions();
-        j1.addStandardConstants();
-        j1.addVariable("x", interf1_1); //Inicializa la variable x en un valor 
-        j1.parseExpression(funcion1); //analiza el string y lo transforma en estructura de arbol para su evaluacion
+    private void Evaluar2Funciones(){
         
-        if(j1.hasError()){
-            JOptionPane.showMessageDialog(null,j1.getErrorInfo()); // Imprime el error
-        }
-        puntos_f1 = new XYSeries("Funcion 1"); //se crea una serie para la función1
-        for (double x = interf1_1;  x <= interf1_2; x+=0.01){
-            j1.addVariable("x", x); //se agregan los puntos en que se desea evaluar la funcion
-            double y = j1.getValue();
-            puntos_f1.add(x, y);
-        }
-        dataset.addSeries(puntos_f1);
     }
-    
-    private void evaluarfuncion2() {
+    private void evaluarFunciones(String funcion, double inicio, double fin, XYSeries serie, String nombreSerie) {
         j1 = new JEP();
-        j1.addStandardFunctions();
-        j1.addStandardConstants();
-        j1.addVariable("x", interf2_1); //Inicializa la variable x en un valor 
-        j1.parseExpression(funcion2); //analiza el string y lo transforma en estructura de arbol para su evaluacion
+        j1.addStandardFunctions(); //agrega las funciones trigonométricas
+        j1.addStandardConstants(); //agrega constantes (pi, e...)
+        j1.addVariable("x", inicio); //Inicializa la variable x en un valor (inicio de las dos funciones) 
+        j1.parseExpression(funcion); //analiza el string y lo transforma en estructura de arbol para su evaluacion
         
         if(j1.hasError()){
-            JOptionPane.showMessageDialog(null,j1.getErrorInfo()); // Imprime el error
+            JOptionPane.showMessageDialog(null, j1.getErrorInfo()); // Imprime el error
         }
-        puntos_f2 = new XYSeries("Funcion 2"); //se crea una serie para la función1
-        for (double x = interf2_1;  x <= interf2_2; x+=0.01){
+        else{
+        serie = new XYSeries(nombreSerie); //se crea una serie para la función
+        for (double x = inicio;  x <= fin; x+=0.01){
             j1.addVariable("x", x); //se agregan los puntos en que se desea evaluar la funcion
             double y = j1.getValue();
-            puntos_f2.add(x, y);
+            serie.add(x, y);
         }
-        dataset.addSeries(puntos_f2);
+        dataset.addSeries(serie);
+        }
     }
 
     private void graficar() {
@@ -86,7 +71,5 @@ public class EvaluarFunciones{
               true, 
               true, 
               false);
-        grafico.setBackgroundPaint(new Color(46,46,46));
-    }
-    
+    } 
 }

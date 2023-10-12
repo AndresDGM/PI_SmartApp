@@ -10,17 +10,19 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import org.jfree.chart.ChartPanel;
 
 
 public class Graficadora extends JPanel{
-    JLabel titulo, funcion1, funcion2, enunciado;
+    JLabel titulo, funcion1, funcion2, enunciado, warning_vacio, warning_borrar; 
     RoundTextField[] cajas = new RoundTextField[6];
     String[] info = new String[6];
     BasicButton graficar, borrar;
     EvaluarFunciones ev;
     JPanel ventana_grafico;
-    ChartPanel panel;
+    ChartPanel chartPanel;
+    Boolean validarText = false;
 
     public Graficadora() {
         setSize(1074, 800);
@@ -28,7 +30,7 @@ public class Graficadora extends JPanel{
         setBackground(new Color(46, 46, 46));
         setLayout(null);
         titulo = new JLabel("Grafica funciones");
-        titulo.setBounds(460, 54,255, 46);
+        titulo.setBounds(450, 54,255, 46);
         titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(new Color(255,255,255));
@@ -41,6 +43,12 @@ public class Graficadora extends JPanel{
     }
     
     private void crearGUI() {
+        RoundBorder bordePrincipal = new RoundBorder(450, 500, 30, 30, 3);
+        bordePrincipal.setLocation((int) (getWidth()*0.047), (int) (getHeight()*0.060));
+        bordePrincipal.setW((int) (getWidth()*0.904));
+        bordePrincipal.setH((int) (getHeight()*0.750));
+        add(bordePrincipal);
+         
         RoundBorder borde = new RoundBorder(450, 450, 30, 30, 3);
         borde.setLocation(470, 170);
         add(borde);
@@ -57,6 +65,22 @@ public class Graficadora extends JPanel{
         enunciado.setForeground(new Color(255,255,255));
         enunciado.setFont(new Font("Anton", enunciado.getFont().getStyle(),18));
         add(enunciado);
+        
+        warning_vacio = new JLabel("Llene todos los campos de texto");
+        warning_vacio.setBounds(35, 350, 500, 80);
+        warning_vacio.setForeground(new Color(255,87,87));
+        warning_vacio.setFont(new Font("Anton", warning_vacio.getFont().getStyle(),17));
+        warning_vacio.setHorizontalAlignment(JLabel.CENTER);
+        warning_vacio.setVisible(false);
+        add(warning_vacio);
+        
+        warning_borrar = new JLabel("No hay elementos para borrar");
+        warning_borrar.setBounds(35, 350, 500, 80);
+        warning_borrar.setForeground(new Color(255,87,87));
+        warning_borrar.setFont(new Font("Anton", warning_vacio.getFont().getStyle(),17));
+        warning_borrar.setHorizontalAlignment(JLabel.CENTER);
+        warning_borrar.setVisible(false);
+        add(warning_borrar);
         
         funcion1 = new JLabel("Función 1: ");
         funcion1.setBounds(55, 220, 150, 30);
@@ -134,44 +158,69 @@ public class Graficadora extends JPanel{
         cajas[5].setBackground(new Color(166,166,166));
     }
     
-    private void evento_graficar() {
-        extraerInfo();
-        ev = new EvaluarFunciones(info);
-        //Verifica si hay un panel
-        if(ventana_grafico.getComponents() != null){
-            eliminarGrafica();
-        }
-        panel = new ChartPanel(ev.grafico);
-        panel.setPreferredSize(new Dimension(420, 420));
-        ventana_grafico.add(panel);
-        ventana_grafico.revalidate();
-        ventana_grafico.repaint();
-        
-}
-    private void evento_borrar(){
-       eliminarInfo();
-       eliminarGrafica();
+    //método para mostrar por un determinado tiempo el mensaje de advertencia o error
+    private void MostrarError(JLabel aviso, int time){
+        Timer tiempo = new Timer(time, (e) -> {
+            aviso.setVisible(false);
+        });
+        tiempo.setRepeats(false);
+        tiempo.restart();
     }
+    
+    private void evento_graficar() {
+        
+        comprobarText();
+        if(!validarText){
+            warning_vacio.setVisible(true);
+            MostrarError(warning_vacio, 2000); //2 segundos
+        }else{
+            ev = new EvaluarFunciones(info);
+            eliminarGrafica();
+            
+            chartPanel = new ChartPanel(ev.grafico);
+            chartPanel.setPreferredSize(new Dimension(420, 420));
+            ventana_grafico.add(chartPanel);
+            ventana_grafico.revalidate();
+            ventana_grafico.repaint();   
+        }       
+}
+    
+    private void evento_borrar(){
+       if(validarText){
+           warning_borrar.setVisible(false);
+           eliminarInfo();
+           eliminarGrafica();
+       } 
+       else{
+           warning_borrar.setVisible(true);
+           MostrarError(warning_borrar, 2000); //2 segundos
+       }
+    }
+    
     private void eliminarInfo() {
-        for (int i = 0; i < cajas.length; i++) {
-           cajas[i].setText(" ");
+        for(int i = 0; i < cajas.length; i++) {
+           cajas[i].setText("");
         }
     }
     
     private void eliminarGrafica(){
-        // Verifica si el ChartPanel no es nulo y elimínalo del JPanel
-    if (panel != null) {
-        ventana_grafico.remove(panel);
-        ventana_grafico.revalidate();
-        ventana_grafico.repaint();
-        // Configura la referencia a null para liberar recursos
-        panel = null;
-    }
+        if(chartPanel != null){
+            ventana_grafico.remove(chartPanel);
+            ventana_grafico.revalidate();
+            ventana_grafico.repaint();
+            // Configura la referencia a null para liberar recursos
+            chartPanel = null;
+        }      
     }
     
-    private void extraerInfo() {
+    private void comprobarText() {
         for (int i = 0; i < cajas.length; i++) {
-            info[i] = cajas[i].getText();
+            if(cajas[i].getText().isEmpty()){
+                validarText = false;
+            }else{
+                info[i] = cajas[i].getText();
+                validarText = true;
+            }
         }
     }
 }
