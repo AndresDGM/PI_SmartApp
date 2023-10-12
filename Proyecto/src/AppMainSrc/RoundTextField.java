@@ -41,6 +41,10 @@ public class RoundTextField extends JPanel {
     public void setText(String text){
         textField.setText(text);
     }
+    
+    public void setEditable(Boolean valor){
+        textField.setEditable(valor);
+    }
 
     public String getText(){
         return textField.getText();
