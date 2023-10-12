@@ -261,15 +261,14 @@ public class CapitulosHuma extends JPanel{
     + "</body></html>",
     
     //capitulo 6
-   "<html><body style='background-color: #2E2E2E; color: white;'>"
+    "<html><body style='background-color: #2E2E2E; color: white;'>"
     + "<div align='center'><font face='Lucida Bright' size='6' color='#38B8FA'><b>IMPACTO GLOBAL</b></font></div><br>"
     + "<strong><font face='Lucida Bright' size='5' color='#38B8FA'>Educacion en todo el mundo</strong><br><br>"
-    + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>Para garantizar una educación de calidad es importante que todo los niños, niñas y adolescentes "
-    + "participen en las actividades de aprendizaje, y hablando de esto hay que garantizar que todos los niños "
-    + "tengan acceso garantizado a la educación, ya que esto es un derecho fundamental que debemos de tener todos los humanos,"
-    + "la educación hace un papel fundamental en las personas que vamos a hacer el día de mañana.<br>" 
-    + "Pero hablando de esto no solo es que se vaya  a tener preferencia a las personas con discapacidad,"
-    + " sino a todos alumnos a enseñar en general sin importar la raza, condición social, estrato ,genero, religión etc.</h2></div><p>"
+    + "<div align='justify'><h2><font color='White' face='Comic Sans MS' size='5'>"
+    + "Para que la educacion de calidad evolucione se tiene que expandir a todo el mundo, entre a mas personas"
+    + "llegue la educacion de calidad siempre va a ser maejor, porque asi se puede ayudar a muchas personas"
+    + "y el impacto global va a ser mucho mayor, y si se tiene un impacto positivo la gente va a hablar cada vez mas bien sobre "
+    + "la importancia de la educacion de calidad </h2></div><p>"
     + "<div align='center: left;'><img src=" + cap6 + " width=675 height=400></div><br>"
     + " <a href = 'https://www.youtube.com/watch?v=gT_3Jxrdbgs'>Video de retroalimentacion</a><br>"
     + "<a href='https://www.educo.org/Blog/Que-es-educacion-inclusiva-y-por-que-es-importante'>pagina web 1</a><br>"
