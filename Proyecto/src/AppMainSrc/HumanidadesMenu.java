@@ -1,4 +1,4 @@
-package HumanidadesPack;
+package AppMainSrc;
 
 //Menu de humanidades
 
@@ -6,6 +6,7 @@ import AppMainSrc.App;
 import AppMainSrc.RoundBorder;
 import AppMainSrc.BackButton;
 import AppMainSrc.BasicButton;
+import HumanidadesPack.CapitulosHuma;
 import javax.swing.*;
 import java.awt.*;
 
