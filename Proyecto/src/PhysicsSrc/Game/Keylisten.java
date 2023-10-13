@@ -1,4 +1,6 @@
 package PhysicsSrc.Game;
+//capturar teclas a,w,s,d para el movimiento de jugador
+//fase de prueba
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

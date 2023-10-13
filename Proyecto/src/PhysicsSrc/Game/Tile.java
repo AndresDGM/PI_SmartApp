@@ -1,4 +1,6 @@
 package PhysicsSrc.Game;
+//conjunto de imagenes que conforman el mapa
+//fase de prueba
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

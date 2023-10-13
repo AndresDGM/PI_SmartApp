@@ -1,4 +1,6 @@
 package PhysicsSrc.Game;
+//area de accion para que las entidades puedan interatuar 
+//fase de prueba
 
 import javax.vecmath.Vector2f;
 import java.awt.*;

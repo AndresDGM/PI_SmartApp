@@ -1,4 +1,6 @@
 package PhysicsSrc.Game;
+//clase padre de las entidades (Jugador, enemigos, estructuras...)
+//fase de prueba
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

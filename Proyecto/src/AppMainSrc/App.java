@@ -18,6 +18,7 @@ public class App extends JFrame {
     public static JPanel lateralBar = new JPanel();
     
     public App(){
+        super("Smart App");
         setSize(1124, 800);
 
         lateralBar.setBounds(0,0, 50,getHeight());
@@ -44,6 +45,7 @@ public class App extends JFrame {
         add(menuMatematicas);
         add(menuAlgebra);
         add(menuFisica);
+        add(menuFisica.conceptos);
         add(menuFisica.carretera);
         add(menuHumanidades);
         setVisible(true);

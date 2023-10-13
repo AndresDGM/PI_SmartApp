@@ -1,8 +1,8 @@
 package PhysicsSrc.Game;
+//fase de prueba
 
 import javax.vecmath.Vector2f;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Jugador extends Entity{
 

@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package PhysicsSrc.Game;
+//balas para los cañones Proximamente
+//fase de prueba
 
 import java.awt.*;
 

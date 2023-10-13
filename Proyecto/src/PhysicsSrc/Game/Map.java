@@ -1,4 +1,6 @@
 package PhysicsSrc.Game;
+//mapa del juego
+//fase de prueba
 
 import javax.swing.*;
 import javax.vecmath.Vector2f;

@@ -1,5 +1,6 @@
 package AppMainSrc;//Menu de Fisica
 
+import PhysicsSrc.ConceptosFisisca;
 import PhysicsSrc.Mru.Carretera;
 
 import javax.swing.*;
@@ -12,27 +13,29 @@ public class PhysicsMenu extends JPanel {
     public Carretera carretera = new Carretera();
 
     private Button boton = new Button();
-
+    
+    private Button botont = new Button();
+    
+    public ConceptosFisisca conceptos = new ConceptosFisisca();
+    
     public PhysicsMenu(){
         setBounds(50, 0,1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
-        boton.setLocation(364, 300);
+        boton.setLocation(552, 300);
         boton.setTitulo("Movimiento");
+        botont.setLocation(181, 300);
+        botont.setTitulo("Conceptos");
         boton.setContenido(carretera, this);
+        botont.setContenido(conceptos, this);
         titulo.setBounds(410, 54,255, 46);
         titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(new Color(255,255,255));
         titulo.setFont(new Font("Arial", titulo.getFont().getStyle(),24));
         add(boton);
+        add(botont);
         add(titulo);
         setVisible(false);
-    }
-
-    //reescala y posiciona los componentes segun el tamaño del contenedor
-    public void actBounds(){
-        titulo.setBounds((int) (getWidth()*0.38), (int) (getHeight()*0.067),
-                (int) (getWidth()*0.238), (int) (getHeight()*0.063));
     }
 }
