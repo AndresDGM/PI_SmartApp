@@ -47,6 +47,7 @@ public class App extends JFrame {
         add(menuAlgebra);
         add(menuFisica);
         add(menuHumanidades);
+        add(menuHumanidades.caps);
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
 

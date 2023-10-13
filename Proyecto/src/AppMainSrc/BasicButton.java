@@ -73,6 +73,7 @@ public abstract class BasicButton extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
+              
                 int r,g,b;
                 if( color.getRed() < 251) r = color.getRed() + 5;
                 else r = color.getRed();
