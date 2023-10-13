@@ -1,3 +1,5 @@
+package AppMainSrc;
+
 //boton basico encargado de mostra y ocultar secciones de la aplicacion
 
 import javax.swing.*;

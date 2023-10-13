@@ -1,12 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package HumanidadesPack;
 
-/**
- *
- * @author USUARIO
- */
+import AppMainSrc.BasicButton;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
@@ -20,10 +14,6 @@ import javax.swing.JScrollPane;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-/**
- *
- * @author suare
- */
 public class CapitulosHuma extends JPanel{
     
     private String[] texts;
@@ -140,17 +130,17 @@ public class CapitulosHuma extends JPanel{
 
     public void setTexts() {
         
-        URL cap1 = getClass().getResource("imagenes/ods4-1.png");
-        URL cap2 = getClass().getResource("imagenes/ods4-2.png");
-        URL cap3 = getClass().getResource("imagenes/ods4-3.png");
-        URL cap4 = getClass().getResource("imagenes/ods4-4.png");
-        URL cap5 = getClass().getResource("imagenes/ods4-5.png");
-        URL cap6 = getClass().getResource("imagenes/ods4-6.png");
-        URL cap7_1 = getClass().getResource("imagenes/ods4-7-1.png");
-        URL cap7_2 = getClass().getResource("imagenes/ods4-7-2.png");
-        URL cap8 = getClass().getResource("imagenes/ods4-8.png");
-        URL cap9 = getClass().getResource("imagenes/ods4-9.png");
-        URL cap10 = getClass().getResource("imagenes/ods4-10.png");
+        URL cap1 = getClass().getResource("Imagenes/ods4-1.png");
+        URL cap2 = getClass().getResource("Imagenes/ods4-2.png");
+        URL cap3 = getClass().getResource("Imagenes/ods4-3.png");
+        URL cap4 = getClass().getResource("Imagenes/ods4-4.png");
+        URL cap5 = getClass().getResource("Imagenes/ods4-5.png");
+        URL cap6 = getClass().getResource("Imagenes/ods4-6.png");
+        URL cap7_1 = getClass().getResource("Imagenes/ods4-7-1.png");
+        URL cap7_2 = getClass().getResource("Imagenes/ods4-7-2.png");
+        URL cap8 = getClass().getResource("Imagenes/ods4-8.png");
+        URL cap9 = getClass().getResource("Imagenes/ods4-9.png");
+        URL cap10 = getClass().getResource("Imagenes/ods4-10.png");
         
         texts = new String[]{
     //capitulo 1

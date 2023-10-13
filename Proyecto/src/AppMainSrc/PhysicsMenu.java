@@ -1,13 +1,17 @@
-//menu de matematicas
+package AppMainSrc;
+
+//Menu de Fisica
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class MathMenu extends JPanel {
+public class PhysicsMenu extends JPanel {
 
-    private JLabel titulo = new JLabel("Matematicas II");
+    private JLabel titulo = new JLabel("Fisica");
 
-    public MathMenu(){
+    public PhysicsMenu(){
         setSize(1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
