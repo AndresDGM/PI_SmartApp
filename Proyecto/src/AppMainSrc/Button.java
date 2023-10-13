@@ -1,7 +1,5 @@
 package AppMainSrc;//boton basico encargado de mostra y ocultar secciones de la aplicacion
 
-import AppMainSrc.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

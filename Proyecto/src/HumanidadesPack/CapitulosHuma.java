@@ -130,9 +130,9 @@ public class CapitulosHuma extends JPanel{
 
     public void setTexts() {
         
-        URL cap1 = getClass().getResource("Imagenes/ods4-1.png");
-        URL cap2 = getClass().getResource("Imagenes/ods4-2.png");
-        URL cap3 = getClass().getResource("Imagenes/ods4-3.png");
+        URL cap1 = getClass().getResource("src/Imagenes/ods4-1.png");
+        URL cap2 = getClass().getResource("src/Imagenes/ods4-2.png");
+        URL cap3 = getClass().getResource("src/Imagenes/ods4-3.png");
         URL cap4 = getClass().getResource("Imagenes/ods4-4.png");
         URL cap5 = getClass().getResource("Imagenes/ods4-5.png");
         URL cap6 = getClass().getResource("Imagenes/ods4-6.png");

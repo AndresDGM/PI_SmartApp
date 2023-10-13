@@ -32,7 +32,7 @@ public class MainMenu extends JPanel {
     }
 
     //asigna tamaño, coordenadas y recursos correspondientes para cada componente
-   public void iniciarComponentes(){
+    public void iniciarComponentes(){
         botones[0].setBounds(153, 150, 341, 250);
         botones[0].setTitulo("Matematicas");
         botones[0].setImagenBoton("src/Imagenes/mate.png");

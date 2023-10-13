@@ -2,6 +2,11 @@
   <library name="vecmath">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/VecMath/vecmath.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/djep-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ext-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jep-2.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfreechart-1.0.19.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
