@@ -56,8 +56,7 @@ public class RoundTextField extends JPanel {
 
     public JTextField getTextField() {
         return textField;
-    }
-    
+    }    
     public void setTam(int w, int h){
         setSize(w, h);
         textField.setSize(w-6, h-6);

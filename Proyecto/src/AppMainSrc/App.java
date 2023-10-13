@@ -18,6 +18,7 @@ public class App extends JFrame {
     public static JPanel lateralBar = new JPanel();
     
     public App(){
+        super("Smart App");
         setSize(1124, 800);
 
         lateralBar.setBounds(0,0, 50,getHeight());
@@ -34,7 +35,7 @@ public class App extends JFrame {
 
         ImageIcon icon = new ImageIcon("src/Imagenes/logo.png");
         setIconImage(icon.getImage());
-        setLocale(null);
+        setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(46, 46, 46));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
@@ -44,6 +45,8 @@ public class App extends JFrame {
         add(menuMatematicas);
         add(menuAlgebra);
         add(menuFisica);
+        add(menuFisica.conceptos);
+        add(menuFisica.carretera);
         add(menuHumanidades);
         add(menuHumanidades.caps);
         add(menuMatematicas.graficadora);

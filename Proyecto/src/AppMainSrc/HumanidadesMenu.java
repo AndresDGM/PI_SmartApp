@@ -2,7 +2,6 @@ package AppMainSrc;
 
 //Menu de humanidades
 
-import AppMainSrc.App;
 import AppMainSrc.RoundBorder;
 import AppMainSrc.BackButton;
 import AppMainSrc.BasicButton;

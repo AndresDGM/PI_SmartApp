@@ -6,7 +6,6 @@ Modificar el color de la gráfica
  */
 package MathSource;
 
-import java.awt.Color;
 import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
