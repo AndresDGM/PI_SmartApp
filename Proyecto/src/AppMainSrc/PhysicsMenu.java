@@ -1,6 +1,4 @@
-package AppMainSrc;
-
-//Menu de Fisica
+package AppMainSrc;//Menu de Fisica
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,11 +20,5 @@ public class PhysicsMenu extends JPanel {
         titulo.setFont(new Font("Arial", titulo.getFont().getStyle(),24));
         add(titulo);
         setVisible(false);
-    }
-
-    //reescala y posiciona los componentes segun el tamaño del contenedor
-    public void actBounds(){
-        titulo.setBounds((int) (getWidth()*0.38), (int) (getHeight()*0.067),
-                (int) (getWidth()*0.238), (int) (getHeight()*0.063));
     }
 }

@@ -1,6 +1,4 @@
-package AppMainSrc;
-
-//boton para retroceder los contenidos
+package AppMainSrc;//boton para retroceder los contenidos
 
 import javax.swing.*;
 import java.awt.*;

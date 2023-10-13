@@ -1,6 +1,4 @@
-package AppMainSrc;
-
-//boton basico encargado de mostra y ocultar secciones de la aplicacion
+package AppMainSrc;//boton basico encargado de mostra y ocultar secciones de la aplicacion
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,7 +56,7 @@ public class Button extends JPanel {
 
     //escuchante del raton para que la clase se comporte como un boton
     private void accionMouse() {
-        
+
         MouseListener m = new MouseListener() {
             /*logica al clickear el mouse, desactiva el contenedor, activa el contenido
             y activa el boton de volver a la vez que agrega el contenido visitado actual
@@ -112,15 +110,11 @@ public class Button extends JPanel {
     
     public void setImagenBoton(String source){
         ImageIcon imagen = new ImageIcon(source);
+        float scale = (float)  imagenBoton.getHeight()/imagen.getIconHeight();
         Icon icon = new ImageIcon(
-                imagen.getImage().getScaledInstance(imagenBoton.getWidth(), imagenBoton.getHeight(),Image.SCALE_DEFAULT));
+                imagen.getImage().getScaledInstance((int) (imagen.getIconWidth()*scale), (int) (imagen.getIconHeight()*scale), Image.SCALE_DEFAULT));
+        imagenBoton.setSize((int) (imagen.getIconWidth()*scale), (int) (imagen.getIconHeight()*scale));
+        imagenBoton.setLocation(getWidth()/2 - imagenBoton.getWidth()/2,10);
         imagenBoton.setIcon(icon);
     }
-
-    //mantiene la imagen en el centro del boton al redimencionar
-    public void actBounds(){
-        int x = getWidth()/2 - imagenBoton.getWidth()/2;
-        imagenBoton.setLocation(x,5);
-    }
-
 }

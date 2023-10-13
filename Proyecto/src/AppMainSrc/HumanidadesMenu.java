@@ -208,5 +208,4 @@ public class HumanidadesMenu extends JPanel {
                 imagen.getImage().getScaledInstance(paneltitulo.getWidth(), paneltitulo.getHeight(),Image.SCALE_DEFAULT));
         paneltitulo.setIcon(icon);
     }
-    
 }

@@ -73,6 +73,7 @@ public abstract class BasicButton extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
+<<<<<<< HEAD
               
                 int r,g,b;
                 if( color.getRed() < 251) r = color.getRed() + 5;
@@ -85,6 +86,11 @@ public abstract class BasicButton extends JPanel {
                 else b = color.getBlue();
                 
                 setBackground(new Color(r, g, b));
+=======
+                setBackground(new Color(color.getRed() + 5,
+                                        color.getGreen() + 5,
+                                        color.getBlue() + 5));
+>>>>>>> algebra
             }
 
             @Override
