@@ -1,6 +1,9 @@
+/*Boton con bordes redondeados para proposito general
+se hizo a la clase abstracto para definir al momento de
+instanciar que va a hacer el boton
+ */
+
 package AppMainSrc;
-
-
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,9 +18,9 @@ public abstract class BasicButton extends JPanel {
 
     private Color color = new Color(77, 77, 77);
 
-    private int arcW = 10;
+    private int arcW = 10;//redondeo horizontal
 
-    private int arcH = 10;
+    private int arcH = 10;//redondeo vertical
 
     public BasicButton(int w, int h, String texto){
         setSize(w, h);
@@ -70,9 +73,18 @@ public abstract class BasicButton extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                setBackground(new Color(color.getRed() + 5,
-                                        color.getGreen() + 5,
-                                        color.getBlue() + 5));
+              
+                int r,g,b;
+                if( color.getRed() < 251) r = color.getRed() + 5;
+                else r = color.getRed();
+                
+                if( color.getGreen()< 251) g = color.getGreen()+ 5;
+                else g = color.getGreen();
+                
+                if( color.getBlue()< 251) b = color.getBlue()+ 5;
+                else b = color.getBlue();
+                
+                setBackground(new Color(r, g, b));
             }
 
             @Override
@@ -83,7 +95,7 @@ public abstract class BasicButton extends JPanel {
         addMouseListener(m);
     }
 
-    public abstract void clickEvent();
+    public abstract void clickEvent();//funcion abstracta para definirle al boton que funcion va a realizar
 
     public JLabel getText() {
         return text;
