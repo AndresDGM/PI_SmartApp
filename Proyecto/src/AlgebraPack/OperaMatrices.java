@@ -55,12 +55,10 @@ public class OperaMatrices {
                 int l = 0;
                 for (int m = 0; m < tam; m++) {
                     if(m != j){
-                        fila[l] = mat[k][m];
+                        menor[a][l] = mat[k][m];
                         l++;
                     }
                 }
-                for (int m = 0; m < tam-1; m++)
-                    menor[a][m] = fila[m];
                 a++;
             }
         }
