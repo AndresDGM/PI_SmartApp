@@ -29,17 +29,16 @@ public class OperaMatrices {
     public static double det(double[][] mat){
         double det = 0;
         int coFat = 1;
-        if(mat.length == 1)
+        int matTam = mat.length;
+        if(matTam == 1)
             return mat[0][0];
 
-        if(mat.length == 2)
+        if(matTam == 2)
             return mat[0][0]*mat[1][1]-mat[0][1]*mat[1][0];
 
-        if(mat.length > 2) {
-            for(int i = 0; i < mat.length; i++){
-                det += coFat * mat[0][i] * det(getMenor(mat, 0, i));
-                coFat *= -1;
-            }
+        for(int i = 0; i < matTam; i++){
+            det += coFat * mat[0][i] * det(getMenor(mat, 0, i));
+            coFat *= -1;    
         }
         return det;
     }
