@@ -1,7 +1,20 @@
 package AlgebraPack;
 
-public class OperaMatrices {
+import java.awt.Color;
+import javax.swing.JPanel;
 
+public class OperaMatrices extends JPanel{
+    
+    public OperaMatrices(){
+        setSize(1074, 800);
+        setSize(1074, 800);
+        setLayout(null);
+        setLocation(50,0);
+        setBackground(new Color(46,46,46));
+    }
+    public void initBotones(){
+        
+    }
     //funcion para multipicar matrices (futuro apartado del menu de algebra)
     public static double[][] Multiplicar(double[][] mat, double[][] mat2) {
 

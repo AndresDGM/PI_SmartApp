@@ -51,8 +51,17 @@ public class App extends JFrame {
         add(menuHumanidades.caps);
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
-        add(menuAlgebra.gaussJordan);
-        add(menuAlgebra.detCalculator);
+       // add(menuAlgebra.gaussJordan);
+       // add(menuAlgebra.detCalculator);
+        add(menuAlgebra.subMenuAlgOpera);
+        add(menuAlgebra.subMenuAlgExam);
+        add(menuAlgebra.subMenuAlgExam.examenAlgebra);
+        add(menuAlgebra.subMenuAlgExam.teoriaAlgebra);
+        add(menuAlgebra.subMenuAlgOpera.detCalculator);
+        add(menuAlgebra.subMenuAlgOpera.gaussJordan);
+        add(menuAlgebra.subMenuAlgOpera.operaMatrices);
+        add(menuAlgebra.subMenuAlgOpera.operaVectores );
+        
         setVisible(true);
     }
 
