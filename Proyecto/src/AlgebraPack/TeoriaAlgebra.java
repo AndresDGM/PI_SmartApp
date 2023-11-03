@@ -43,7 +43,7 @@ public class TeoriaAlgebra  extends JPanel{
             @Override
             public void clickEvent() {
                 Capitulos[capCont].setVisible(false);
-                if (capCont < 9) {
+                if (capCont < 1) {
                     Capitulos[capCont + 1].setVisible(true);
                     capCont++;
                     titulo.setText("Capitulo " + (capCont + 1));
@@ -67,8 +67,8 @@ public class TeoriaAlgebra  extends JPanel{
                     capCont--;
                     titulo.setText("Capitulo " + (capCont + 1));
                 } else {
-                    Capitulos[9].setVisible(true);
-                    capCont = 9;
+                    Capitulos[1].setVisible(true);
+                    capCont = 1;
                     titulo.setText("Capitulo " + (capCont + 1));
                 }
             }
@@ -113,6 +113,7 @@ public class TeoriaAlgebra  extends JPanel{
             Capitulos[i].setVisible(false);
             add(Capitulos[i]);
         };
+        Capitulos[0].setVisible(true);
 
     }
 

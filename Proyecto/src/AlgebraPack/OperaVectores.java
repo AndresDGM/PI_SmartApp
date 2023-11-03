@@ -18,6 +18,10 @@ import javax.swing.JPanel;
  * @author juanes
  */
 public class OperaVectores extends JPanel{
+
+    public OperaVectores() {
+        setVisible(false);
+    }
     double vector1[], vector2[];
     int tam;
     //obtener tamaño y obtener valores se puede reutilizar para las 3 operaciones con vectores

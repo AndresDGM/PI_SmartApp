@@ -11,6 +11,7 @@ public class OperaMatrices extends JPanel{
         setLayout(null);
         setLocation(50,0);
         setBackground(new Color(46,46,46));
+        setVisible(false);
     }
     public void initBotones(){
         

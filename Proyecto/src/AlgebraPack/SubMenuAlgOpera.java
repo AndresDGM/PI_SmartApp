@@ -33,22 +33,23 @@ public class SubMenuAlgOpera extends JPanel{
         
     }
     public void iniBotones(){
-        botones[0] = new AppMainSrc.Button();
+        botones[0] = new Button();
         botones[0].setContenido(gaussJordan, this);
         botones[0].setLocation(180, 140);
         botones[0].setImagenBoton("src/Imagenes/SistemaE.png");
         botones[0].setTitulo("Sistema de ecuaciones");
-        botones[1] = new AppMainSrc.Button();
+        botones[1] = new Button();
         botones[1].setContenido(detCalculator, this);
         botones[1].setLocation(552, 140);
         botones[1].setImagenBoton("src/Imagenes/imgDet.png");
         botones[1].setTitulo("Determinate");
-        botones[2] = new AppMainSrc.Button();
+        botones[2] = new Button();
         botones[2].setContenido(operaVectores, this);
         botones[2].setLocation(180, 420);
         botones[2].setImagenBoton("src/Imagenes/vector.jpg");
         botones[2].setTitulo("Operaciones Vectores");
-        botones[3] = new AppMainSrc.Button();
+        operaVectores.setVisible(false);//despues lo quitas y pasas al constructor
+        botones[3] = new Button();
         botones[3].setContenido(operaMatrices, this);
         botones[3].setLocation(552, 420);
         botones[3].setImagenBoton("src/Imagenes/Matrices.png");
