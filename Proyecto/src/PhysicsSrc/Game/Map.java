@@ -26,7 +26,7 @@ public class Map extends JPanel{
                         new Vector2f(tiles[i][j].getX(), tiles[i][j].getY()),
                         tiles[i][j].getWidth(), tiles[i][j].getHeight(), false));
                 add(tiles[i][j]);
-            }            
+            }
         }
     }
 }
