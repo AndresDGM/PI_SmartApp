@@ -25,6 +25,7 @@ public class ExamenAlgebra  extends JPanel{
         setBackground(new Color(46,46,46));
         border = new RoundBorder(720, 450, 50, 50, 5);
         border.setLocation(177, 173);
+        setVisible(false);
     }
     
 }

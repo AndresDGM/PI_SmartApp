@@ -3,6 +3,8 @@ package AppMainSrc;//Menu de algebra
 import AlgebraPack.DetCalculator;
 import AlgebraPack.ExamenAlgebra;
 import AlgebraPack.GaussJordan;
+import AlgebraPack.SubMenuAlgExam;
+import AlgebraPack.SubMenuAlgOpera;
 import AlgebraPack.TeoriaAlgebra;
 import javax.swing.*;
 import java.awt.*;
@@ -10,14 +12,18 @@ import java.awt.*;
 public class AlgebraMenu extends JPanel {
 
     public GaussJordan gaussJordan = new GaussJordan();
+    
+    public SubMenuAlgExam subMenuAlgExam = new SubMenuAlgExam();
 
+    public SubMenuAlgOpera subMenuAlgOpera = new SubMenuAlgOpera();
+    
     public DetCalculator detCalculator = new DetCalculator();
     
     public ExamenAlgebra examenAlgebra = new ExamenAlgebra();
     
     public TeoriaAlgebra teoriaAlgebra = new TeoriaAlgebra();
 
-    private Button[] botones = new Button[4];
+    private Button[] botones = new Button[2];
 
     private JLabel titulo = new JLabel("Algebra Lineal");
 
@@ -36,29 +42,17 @@ public class AlgebraMenu extends JPanel {
     }
 
     public void initBotones(){
-        botones[0] = new Button();
-        botones[0].setContenido(gaussJordan, this);
-        botones[0].setLocation(180, 140);
-        botones[0].setImagenBoton("src/Imagenes/SistemaE.png");
-        botones[0].setTitulo("Sistema de ecuaciones");
-        botones[1] = new Button();
-        botones[1].setContenido(detCalculator, this);
-        botones[1].setLocation(552, 140);
-        botones[1].setImagenBoton("src/Imagenes/imgDet.png");
-        botones[1].setTitulo("Determinate");
-        botones[2]= new Button();
-        botones[2].setContenido(examenAlgebra, this);
-        botones[2].setLocation(180, 420);
-        botones[2].setImagenBoton("src/Imagenes/examenalgebra.png");
-        botones[2].setTitulo("Examen de diagnostico");
-        botones[3]= new Button();
-        botones[3].setContenido(teoriaAlgebra, this);
-        botones[3].setLocation(552, 420);
-        botones[3].setImagenBoton("src/Imagenes/algebrateoria.png");
-        botones[3].setTitulo("Definiciones");
+        botones[0]= new AppMainSrc.Button();
+        botones[0].setContenido(subMenuAlgOpera, this);
+        botones[0].setLocation(552, 300);
+        botones[0].setImagenBoton("src/Imagenes/algebrateoria.png");
+        botones[0].setTitulo("Matrices y Vectores");
+        botones[1]= new AppMainSrc.Button();
+        botones[1].setContenido(subMenuAlgExam, this);
+        botones[1].setLocation(181,300);
+        botones[1].setImagenBoton("src/Imagenes/examenalgebra.png");
+        botones[1].setTitulo("Conceptos y Examen");
         add(botones[0]);
         add(botones[1]);
-        add(botones[2]);
-        add(botones[3]);
     }
 }
