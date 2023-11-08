@@ -139,4 +139,29 @@ public class OperaMatrices extends JPanel{
             vec[i] += aux*vec[a];
         }
     }
+    
+    //se enarga de encontrar la inversa de la matriz
+    public static double[][] MatrizInversa(double[][] mat) {
+        int n = mat.length;
+        double[][] matrizInversa = new double[n][n];
+
+        // Calcula el determinante de la matriz original
+        double determinante = det(mat);
+
+        if (determinante == 0) {
+            // La matriz no tiene inversa
+            return null;
+        }
+
+        // Calcula la matriz adjunta
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                double cofactor = det(getMenor(mat, i, j));
+                matrizInversa[j][i] = cofactor / determinante;
+            }
+        }
+
+        return matrizInversa;
+    }
+
 }

@@ -59,7 +59,7 @@ public class App extends JFrame {
         add(menuAlgebra.subMenuAlgExam.teoriaAlgebra);
         add(menuAlgebra.subMenuAlgOpera.detCalculator);
         add(menuAlgebra.subMenuAlgOpera.gaussJordan);
-        add(menuAlgebra.subMenuAlgOpera.operaMatrices);
+        add(menuAlgebra.subMenuAlgOpera.invCalculator);
         add(menuAlgebra.subMenuAlgOpera.operaVectores );
         
         setVisible(true);

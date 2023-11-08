@@ -14,6 +14,8 @@ public class SubMenuAlgOpera extends JPanel{
     
     public OperaVectores operaVectores = new OperaVectores();
     
+    public InvCalculator invCalculator = new InvCalculator();
+    
     private JLabel titulo = new JLabel("Matrices y vectores");
     
     private Button[] botones = new Button[4];
@@ -50,10 +52,10 @@ public class SubMenuAlgOpera extends JPanel{
         botones[2].setTitulo("Operaciones Vectores");
         operaVectores.setVisible(false);//despues lo quitas y pasas al constructor
         botones[3] = new Button();
-        botones[3].setContenido(operaMatrices, this);
+        botones[3].setContenido(invCalculator, this);
         botones[3].setLocation(552, 420);
         botones[3].setImagenBoton("src/Imagenes/Matrices.png");
-        botones[3].setTitulo("Operaciones Matrices");
+        botones[3].setTitulo("Calcular Inversa");
         add(botones[0]);
         add(botones[1]);
         add(botones[2]);
