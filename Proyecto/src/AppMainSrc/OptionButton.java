@@ -79,6 +79,7 @@ public class OptionButton extends JPanel {
 
     public void setClicked(boolean clicked) {
         this.clicked = clicked;
+        selected.setVisible(clicked);
     }
 
     public boolean isClicked() {

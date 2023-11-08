@@ -48,11 +48,13 @@ public class App extends JFrame {
         add(menuFisica.conceptos);
         add(menuFisica.carretera);
         add(menuHumanidades);
-        add(menuHumanidades.caps);
+        add(menuHumanidades.menucaps.caps);
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
         add(menuAlgebra.gaussJordan);
         add(menuAlgebra.detCalculator);
+        add(menuHumanidades.regis);
+        add(menuHumanidades.menucaps);
         setVisible(true);
     }
 

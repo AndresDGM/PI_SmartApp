@@ -83,5 +83,20 @@ public class RoundBorder extends JPanel {
         this.h = h;
         setSize(getWidth(), h);
     }
+
+    @Override
+    public void setSize(int width, int height) {
+        super.setSize(width, height); 
+        h = height;
+        w = width;
+    }
+
+    public int getStroke() {
+        return stroke;
+    }
+    
+    
+    
+    
     
 }

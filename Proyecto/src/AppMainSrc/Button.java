@@ -34,6 +34,10 @@ public class Button extends JPanel {
         setVisible(true);
     }
 
+    Button(String click_me) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public JPanel getContenido() {
         return contenido;
     }
