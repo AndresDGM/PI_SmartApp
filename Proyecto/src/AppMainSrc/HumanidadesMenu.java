@@ -7,6 +7,7 @@ import AppMainSrc.RoundBorder;
 import AppMainSrc.BackButton;
 import AppMainSrc.BasicButton;
 import HumanidadesPack.CapitulosHuma;
+import HumanidadesPack.EnviarCorreo;
 import javax.swing.*;
 import java.awt.*;
 
@@ -24,8 +25,12 @@ public class HumanidadesMenu extends JPanel {
     public BackButton menup = new BackButton();
     
     public CapitulosHuma caps = new CapitulosHuma();
+   
+    //HumanidadesPack.EnviarCorreo c;
     
     private RoundBorder border = new RoundBorder();
+    
+    BasicButton correo;
     
     public HumanidadesMenu() {
 
@@ -178,6 +183,20 @@ public class HumanidadesMenu extends JPanel {
         add(capitulos[9]);
     }
     
+    correo = new BasicButton(180, 98, "Enviar correo") {
+            @Override
+            public void clickEvent() {
+                evento_enviar();
+            }
+        };
+        correo.setLocation(518, 358);
+        add(correo);
+        
+    public void evento_enviar(){
+        EnviarCorreo ev = new EnviarCorreo(this);
+        setVisible(false);
+    }
+    
     public void funBoton(int i){
         caps.setVisible(true);
         caps.getCapitulos()[i].setVisible(true);
@@ -197,6 +216,7 @@ public class HumanidadesMenu extends JPanel {
         b.getAntContenidos().add(caps);
     }
 
+    
     public void ocultarCaps(){
         for (int i = 0; i < 10; i++) {
             caps.getCapitulos()[i].setVisible(false);
@@ -208,4 +228,8 @@ public class HumanidadesMenu extends JPanel {
                 imagen.getImage().getScaledInstance(paneltitulo.getWidth(), paneltitulo.getHeight(),Image.SCALE_DEFAULT));
         paneltitulo.setIcon(icon);
     }
+
+    
+
+   
 }
