@@ -233,6 +233,7 @@ public class Game extends JPanel implements Runnable{
         jugador.setLocation((int) vector.x, (int) vector.y);
         jugador.setHitBox(hitBox);
         jugador.setSalud(10);
+        jugador.setScore(0);
         initEnemigos();
         initCanons();
         render();

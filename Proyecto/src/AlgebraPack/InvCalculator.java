@@ -30,7 +30,7 @@ public class InvCalculator extends JPanel {
         tamText.setHorizontalAlignment(JLabel.CENTER);
         warning.setForeground(new Color(214, 20, 45));
         warning.setFont(new Font("Arial", Font.PLAIN, 18));
-        warning.setBounds(437, 85,200, 50);
+        warning.setBounds(412, 85,250, 50);
         warning.setHorizontalAlignment(JLabel.CENTER);
         warning.setVisible(false);
         warning2.setForeground(new Color(214, 20, 45));
@@ -83,24 +83,34 @@ public class InvCalculator extends JPanel {
     }
     
     public void resolver(){
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                mat[i][j] = matriz[i][j].getNumText();
+        
+        warning.setVisible(false);
+        warning2.setVisible(false);
+        try {
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz.length; j++) {
+                    mat[i][j] = matriz[i][j].getNumText();
+                }
             }
-        }
-        double [][] matrizinv = OperaMatrices.MatrizInversa(mat);
-        if(matrizinv == null){
-            warning2.setText("No existe inversa");
-            warning2.setVisible(true);
-            return;
-        }
-        //llenar la matriz
-        for(int i=0; i<matriz.length; i++){
-            for(int j=0;j<matriz.length;j++){
-                matriz[i][j].setText(Double.toString(matrizinv[i][j]));
+            double[][] matrizinv = OperaMatrices.MatrizInversa(mat);
+            if (matrizinv == null) {
+                warning2.setText("No existe inversa");
+                warning2.setVisible(true);
+                return;
             }
+            //llenar la matriz
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz.length; j++) {
+                    matriz[i][j].setText(Double.toString(matrizinv[i][j]));
+                    matriz[i][j].getTextField().setHorizontalAlignment(JTextField.LEFT);
+                }
+            }
+            matrizText.setText("A^-1= ");
+        }catch(NumberFormatException e){
+            warning.setText("Ingrese valores numericos");
+            warning.setVisible(true);
         }
-        matrizText.setText("A^-1= ");
+        
     }
     //inicia la matriz con el valor ingesado por el usuario 
     public void initMat(){
@@ -136,26 +146,36 @@ public class InvCalculator extends JPanel {
     }
     
     public void limpiar(){
-        for (int i = 0; i < matriz.length; i++) {
+            warning.setVisible(false);
+            warning2.setVisible(false);        for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
                 matriz[i][j].setText("0");
+                matriz[i][j].getTextField().setHorizontalAlignment(JTextField.CENTER);
             }
         }
         matrizText.setText("A = ");
         warning2.setVisible(false);
     }
     public void cargar(){//borra los elemtontos del contenedor y vuelve a inicializar las matrices con el nuevo valor ingresado
-        if(matriz != null) { //se limita a un tamaño de 6 para no tener errores de diseño (probablemente temporal hasta implementar ScrollBars)
-            if(tamInput.getNumText() > 0 && tamInput.getNumText() < 7) {
-                for (int i = 0; i < matriz.length; i++) {
-                    for (int j = 0; j < matriz.length; j++) {
-                        matriz[i][j].setVisible(false);
-                        remove(matriz[i][j]);
+        
+        warning.setVisible(false);
+         warning2.setVisible(false);
+        try{
+            if(matriz != null) { //se limita a un tamaño de 6 para no tener errores de diseño
+                if(tamInput.getNumText() > 0 && tamInput.getNumText() < 7) {
+                    for (int i = 0; i < matriz.length; i++) {
+                        for (int j = 0; j < matriz.length; j++) {
+                            matriz[i][j].setVisible(false);
+                            remove(matriz[i][j]);
+                        }
                     }
                 }
+                matrizText.setText("A = ");
             }
-            matrizText.setText("A = ");
+            initMat();
+        }catch(NumberFormatException e){
+            warning.setText("Ingrese un tamaño valido");
+            warning.setVisible(true);
         }
-        initMat();
     }
 }

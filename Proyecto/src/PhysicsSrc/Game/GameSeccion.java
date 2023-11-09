@@ -26,9 +26,9 @@ public class GameSeccion extends JPanel {
         setBounds(50, 0,1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
-        botonGuia.setLocation(552, 300);
+        botonGuia.setLocation(552, 250);
         botonGuia.setTitulo("Como Jugar?");
-        botonMecanicas.setLocation(181, 300);
+        botonMecanicas.setLocation(181, 250);
         botonMecanicas.setTitulo("Mecanicas");
         botonGuia.setContenido(guia, this);
         botonMecanicas.setContenido(mecanicas, this);
