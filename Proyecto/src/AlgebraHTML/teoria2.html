@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Algebra</title>
+</head>
+<body style=" background-color: #2e2e2e; color:rgb(255, 255, 255) ">
+    <header>
+        <h1 style="text-align:center; font-family: Aria;">Conceptos Algebra Lineal</h1>
+        <h2 style="font-family: Aria;">Sistema de ecuaciones lineales</h2>
+        <p style="font-family: Comic Sans MS;">
+            En álgebra lineal, las ecuaciones lineales son expresiones matemáticas que 
+            <br> involucran variables lineales (variables elevadas a la primera potencia) y 
+            <br> coeficientes constantes, y se igualan a una constante. El objetivo es encontrar
+            <br> los valores de las variables que hacen que la ecuación sea verdadera, lo que a
+            <br> menudo se hace resolviendo para las variables desconocidas. fundamentales 
+            <br> para modelar y resolver problemas en diversas disciplinas, como la física,
+            <br>  la ingeniería y la economía.
+        </p>
+        <h2 style="font-family: Aria;">Linealidad</h2>
+        <p style="font-family: Comic Sans MS;">
+            Un operador es lineal si cumple las dos cerraduras:
+            <br>cerradura Suma:<br>
+            <img src="imagenes/CerraduraSuma.png" alt="cerradura suma"> <br>
+            <br> Cerradura Mulptiplicacion por eslacar: <br>
+            <img src="imagenes/CerraduraMultiplicacion.png" alt="cerradura Mulptiplicacion"> 
+            <br> Un sistema de ecuaciones es un conjunto de dos o más ecuaciones algebraicas que 
+            <br> involucran variables desconocidas y se resuelven juntas para encontrar los valores 
+            <br> de esas variables que hacen que todas las ecuaciones sean verdaderas al mismo tiempo.
+            <br> Estos sistemas se utilizan para modelar y resolver una variedad de problemas
+            <br> matemáticos y del mundo real. 
+        </p>
+        <h2 style="font-family: Aria;">Concepto de solución en sistemas de ecuaciones</h2>
+        <p style="font-family: Comic Sans MS;">
+            Un sistema de ecuaciones tiene solución cuando existe al menos un conjunto de valores para 
+            <br> las variables desconocidas que satisface todas las ecuaciones del sistema de manera 
+            <br>simultánea. En otras palabras, las soluciones son los valores que hacen que todas las 
+            <br>ecuaciones sean verdaderas al mismo tiempo.</p>
+        <h3 style="font-family: Aria;">Solucion Unica</h3>
+        <p style="font-family: Comic Sans MS;">
+            El sistema tiene una única solución, lo que significa que existe un solo conjunto de valores 
+            <br> para las variables que satisface todas las ecuaciones.
+            <br>2x+3y=7 
+            <br>4x-5y=2
+            <br>6x-2y=9</p>
+        <img src="imagenes/unicasolucion.png" alt="sistema de unica solución"> <br>
+        <h3 style="font-family: Aria;">Infinitas Soluciones</h3>
+        <p style="font-family:Comic Sans MS;">
+            Un sistema de ecuaciones con infinitas soluciones se puede lograr creando un conjunto 
+            <br> de ecuaciones lineales que sean linealmente dependientes.
+            <br> Esto significa que las ecuaciones son múltiplos unas de otras o son equivalentes, 
+            <br>lo que conduce a un sistema con un número infinito de soluciones.
+            <br>2x-y=1
+            <br>4x-2y=2
+            <br>6x-3y=3</p> 
+        <img src="imagenes/infinitasolucion.png" alt="Sistema de infinitas soluciones"> <br>
+        <h3 style="font-family: Aria;">Cero Soluciones</h3>
+        <p style="font-family: Comic Sans MS ;">
+            cuando dos ecuaciones en un sistema tienen la misma pendiente y no son idénticas, el sistema 
+            <br> puede no tener solución. Esto se debe a que las dos rectas son paralelas y nunca se cruzan, 
+            <br> lo que significa que no hay ningún punto que satisfaga ambas ecuaciones al mismo tiempo.
+            <br> 2x+y=3
+            <br> 2x+y=4
+        </p>
+        <img src="imagenes/sinsolucion.png" alt="Sistema sin solucion"> <br>
+        <h2 style="font-family: Aria;">¿Como solucionar un sistema?</h2>
+        <p style="font-family: Comic Sans MS ;">
+        Existe 4 metodos  para solucionar un sistema: 
+        <br>•Igualacion
+        <br>•Sustitucion
+        <br>•Reduccion
+        <br>•Determinantes</p>
+        <br><h3 style="font-family: Aria;">•Igualacion</h3>
+        <p style="font-family: Comic Sans MS ;">
+            <br>•Selecciona dos ecuaciones del sistema y despeja la misma variable en ambas ecuaciones. Esto
+            <br> implica que se debe obtener la variable sola en un lado de la ecuacion y los terminos constantes 
+            <br> en el otro lado.<br>
+            <br>•Iguala las expresiones obtenidas en el paso anterior. Esto significa que se igualan las dos 
+            <br> expresiones que representan la misma variable.<br>
+            <br>•Resuelve la ecuación resultante para encontrar el valor de la variable despejada.<br>
+            <br>•Sustituye el valor obtenido en cualquiera de las ecuaciones originales para encontrar
+            <br> el valor de la otra variable.<br>
+            <br>Verifica la solución encontrada sustituyendo los valores de las variables en todas las 
+            <br> ecuaciones originales. Si todas las ecuaciones se cumplen, entonces has encontrado la 
+            <br>solución del sistema de ecuaciones.
+        </p>
+        <br><h3 style="font-family: Aria;">•Sustitucion</h3>
+        <p style="font-family: Comic Sans MS ;">
+            <br>•Selecciona una de las ecuaciones del sistema y despeja una variable en términos de las otras
+            <br> variables. Esto implica que se debe obtener la variable sola en un lado de la ecuación y los
+            <br> términos constantes y las otras variables en el otro lado.<br>
+            <br>•Sustituye la expresión obtenida en el paso anterior en todas las demás ecuaciones del sistema
+            <br> en lugar de la variable correspondiente. Esto crea un nuevo sistema de ecuaciones con una
+            <br> variable menos.<br>
+            <br>•Resuelve el nuevo sistema de ecuaciones resultante. Puedes utilizar otros métodos como
+            <br> sustitución, reducción o determinantes para resolver este nuevo sistema.<br>
+            <br>•Sustituye los valores obtenidos en el paso anterior en la expresión despejada de la variable
+            <br> en el primer paso. Esto te dará el valor de la variable despejada.<br>
+            <br>•Sustituye el valor encontrado en el paso anterior en cualquiera de las ecuaciones originales
+            <br> para encontrar el valor de la otra variable.<br>
+            <br>•Verifica la solución encontrada sustituyendo los valores de las variables en todas las
+            <br> ecuaciones originales. Si todas las ecuaciones se cumplen, entonces has encontrado la solución
+            <br> del sistema de ecuaciones.
+        </p>
+        <br><h3 style="font-family: Aria;">•Determinante</h3>
+        <p style="font-family: Comic Sans MS ;">
+            <br>•Encontramos el determinante del sistema por cualquiera de los metodos.<br>
+            <br>•Remplazamos los coeficientes de x por el vector solucion y sacamos el determinante de nuevo y
+            <br>obtenemos el determinante de x.<br>
+            <br>•Lo mismo del paso anterior pero con los coeficientes de y.<br>
+            <br>•Dividimos el determinante de x por el determinante del sistema y asi obtenemos el valor de x,
+            <br> hacemos lo mismo en el caso de y.
+        </p>
+        <br><h3 style="font-family: Aria;">•Reduccion</h3>
+        <p style="font-family: Comic Sans MS ;">
+            <br>•Selecciona dos ecuaciones del sistema y elige una variable para eliminar. Multiplica una o
+            <br> ambas ecuaciones por un número adecuado para que los coeficientes de esa variable sean iguales
+            <br> en ambas ecuaciones pero con signos opuestos.<br>
+            <br>•Suma o resta las dos ecuaciones obtenidas en el paso anterior para eliminar la variable elegida.
+            <br> Esto creará una nueva ecuación con una variable menos.<br>
+            <br>•Repite los pasos 2 y 3 con otras dos ecuaciones del sistema, eligiendo otra variable para eliminar.<br>
+            <br>•Continúa eliminando variables de esta manera hasta que quede una sola ecuación con una sola variable.<br>
+            <br>•Resuelve la ecuación resultante para encontrar el valor de la variable.<br>
+            <br>•Sustituye el valor encontrado en cualquiera de las ecuaciones originales para encontrar el valor de
+            <br> la otra variable.<br>
+        </p>
+    </header>
+</body>

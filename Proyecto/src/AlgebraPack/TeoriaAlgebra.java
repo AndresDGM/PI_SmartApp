@@ -5,48 +5,133 @@
 package AlgebraPack;
     
 import AppMainSrc.BasicButton;
-import AppMainSrc.RoundBorder;
-import AppMainSrc.RoundTextField;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Desktop;
+import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URISyntaxException;
+import javax.swing.JEditorPane;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 
 public class TeoriaAlgebra  extends JPanel{
     //variables
-    private RoundBorder border;
+    private JScrollPane[] Capitulos = new JScrollPane[5];
+
+    private JLabel titulo = new JLabel();
+
+    private BasicButton botonSiguiente, botonAnterior;
+
+    int capCont = 0;
 
     public TeoriaAlgebra(){
-        setSize(1074, 800);
+        setBounds(50, 0, 1074, 800);
+        setBackground(new Color(46, 46, 46));
         setLayout(null);
-        setLocation(50,0);
-        setBackground(new Color(46,46,46));
-        border = new RoundBorder(720, 450, 50, 50, 5);
-        border.setLocation(177, 173);
+        titulo.setHorizontalAlignment(JLabel.CENTER);
+        titulo.setVerticalAlignment(JLabel.CENTER);
+        titulo.setForeground(new Color(255, 255, 255));
+        titulo.setFont(new Font("Arial", Font.PLAIN, 24));
+        titulo.setBounds(457, 10, 160, 50);
+        InitCaps();
+         botonSiguiente = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                Capitulos[capCont].setVisible(false);
+                if (capCont < 4) {
+                    Capitulos[capCont + 1].setVisible(true);
+                    capCont++;
+                    titulo.setText("Capitulo " + (capCont + 1));
+                } else {
+                    Capitulos[0].setVisible(true);
+                    capCont = 0;
+                    titulo.setText("Capitulo " + (capCont + 1));
+                }
+            }
+        };
+        botonSiguiente.setLocation(850, 700);
+        botonSiguiente.setText("Siguiente");
+        add(botonSiguiente);
+        
+        botonAnterior = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                Capitulos[capCont].setVisible(false);
+                if (capCont > 0) {
+                    Capitulos[capCont - 1].setVisible(true);
+                    capCont--;
+                    titulo.setText("Capitulo " + (capCont + 1));
+                } else {
+                    Capitulos[4].setVisible(true);
+                    capCont = Capitulos.length - 1;
+                    titulo.setText("Capitulo " + (capCont + 1));
+                }
+            }
+        };
+        botonAnterior.setLocation(50, 700);
+        botonAnterior.setText("Anterior");
+        add(botonAnterior);
+        add(titulo);
+        setVisible(false); 
+    }
+    public void InitCaps() {
+        for (int i = 0; i < Capitulos.length; i++) {
+
+            JEditorPane jep = new JEditorPane();
+            File file = new File("src/AlgebraHTML/teoria"+ (i + 1) +".html");
+            try {
+                jep.setPage(file.toURI().toURL());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            jep.setBounds(0, 0, 700, 650);
+            jep.setBackground(new Color(46, 46, 46));
+            jep.setBorder(null);
+            jep.setEditable(false);
+            jep.addHyperlinkListener(new HyperlinkListener() {
+                @Override
+                public void hyperlinkUpdate(HyperlinkEvent e) {
+                    if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                        if (Desktop.isDesktopSupported()) {
+                            try {
+                                Desktop.getDesktop().browse(e.getURL().toURI());
+                            } catch (IOException | URISyntaxException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            });
+            Capitulos[i] = new JScrollPane(jep);
+            Capitulos[i].setBounds(187, 100, 700, 550);
+            Capitulos[i].setBorder(null);
+            Capitulos[i].setVisible(false);
+            add(Capitulos[i]);
+        };
+        Capitulos[0].setVisible(true);
+        titulo.setText("Capitulo 1");
+        add(titulo);
     }
 
-    public static void main(String[] args) {
-        JFrame j = new JFrame("sus");
-        j.setLayout(null);
-        j.setSize(1000, 1000);
-        j.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        j.setLocationRelativeTo(null);
-        JEditorPane jep = new JEditorPane();
-        File file = new File("src/AlgebraPack/HTML/pregunta_1.html");
-        try {
-            jep.setPage(file.toURI().toURL());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        jep.setSize(900,900);
-        jep.setEditable(false);
-        JScrollPane jsp = new JScrollPane(jep);
-        jsp.setBounds(50, 50, 900, 900);
-        j.add(jsp);
-        j.setVisible(true);
+    public JScrollPane[] getCapitulos() {
+        return Capitulos;
+    }
+
+    public JLabel getTitulo() {
+        return titulo;
+    }
+
+    public int getCapCont() {
+        return capCont;
+    }
+
+    public void setCapCont(int capCont) {
+        this.capCont = capCont;
     }
 
 }

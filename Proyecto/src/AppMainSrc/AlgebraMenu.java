@@ -1,7 +1,7 @@
 package AppMainSrc;//Menu de algebra
 
 import AlgebraPack.DetCalculator;
-import AlgebraPack.ExamenAlgebra;
+import AlgebraPack.InvCalculator;
 import AlgebraPack.GaussJordan;
 import AlgebraPack.TeoriaAlgebra;
 import javax.swing.*;
@@ -13,7 +13,7 @@ public class AlgebraMenu extends JPanel {
 
     public DetCalculator detCalculator = new DetCalculator();
     
-    public ExamenAlgebra examenAlgebra = new ExamenAlgebra();
+    public InvCalculator invCalculator = new InvCalculator();
     
     public TeoriaAlgebra teoriaAlgebra = new TeoriaAlgebra();
 
@@ -47,10 +47,10 @@ public class AlgebraMenu extends JPanel {
         botones[1].setImagenBoton("src/Imagenes/imgDet.png");
         botones[1].setTitulo("Determinate");
         botones[2]= new Button();
-        botones[2].setContenido(examenAlgebra, this);
+        botones[2].setContenido(invCalculator, this);
         botones[2].setLocation(180, 420);
-        botones[2].setImagenBoton("src/Imagenes/examenalgebra.png");
-        botones[2].setTitulo("Examen de diagnostico");
+        botones[2].setImagenBoton("src/Imagenes/Matrices.png");
+        botones[2].setTitulo("Calcular Inversa");
         botones[3]= new Button();
         botones[3].setContenido(teoriaAlgebra, this);
         botones[3].setLocation(552, 420);

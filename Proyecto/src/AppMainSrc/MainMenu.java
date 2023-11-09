@@ -39,7 +39,7 @@ public class MainMenu extends JPanel {
 
         botones[1].setBounds(561, 150, 341,250);
         botones[1].setTitulo("Algebra Lineal");
-        botones[1].setImagenBoton("src/Imagenes/Algebra.png");
+        botones[1].setImagenBoton("src/Imagenes/algebrateoria.png");
 
         botones[2].setBounds(153, 450, 341, 250);
         botones[2].setTitulo("Fisica");

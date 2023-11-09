@@ -3,9 +3,8 @@ package PhysicsSrc.Game;
 //fase de prueba
 
 import javax.vecmath.Vector2f;
-import java.awt.*;
 
-public class Collider extends Rectangle {
+public class Collider {
 
     private Vector2f vector;
 
@@ -17,7 +16,6 @@ public class Collider extends Rectangle {
 
     
     public Collider(Vector2f vector, int w, int h, boolean solid){
-        super((int) vector.x,(int) vector.y, w, h);
         this.vector = vector;
         this.w = w;
         this.h = h;
@@ -25,8 +23,20 @@ public class Collider extends Rectangle {
     }
     
     public boolean Collition(Collider c){
-        return (vector.x < c.vector.x + c.w &&  vector.x + w > c.vector.x &&
-                vector.y < c.vector.y + c.h && vector.y + h < c.vector.y);
+        if (w<= 0 || h <= 0|| c.w <= 0 || c.h <= 0) {
+            return false;
+        }
+        return (c.vector.x + c.w >= vector.x &&
+                c.vector.y + c.h >= vector.y &&
+                c.vector.x <= vector.x + w &&
+                c.vector.y <= vector.y + h);
+    }
+
+    public boolean contains(Vector2f v){
+        return (v.x >= vector.x &&
+                v.y >= vector.y &&
+                v.x < vector.x + w &&
+                v.y < vector.y + h);
     }
 
     public Vector2f getVector() {

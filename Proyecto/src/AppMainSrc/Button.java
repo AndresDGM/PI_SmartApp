@@ -118,3 +118,4 @@ public class Button extends JPanel {
         imagenBoton.setIcon(icon);
     }
 }
+
