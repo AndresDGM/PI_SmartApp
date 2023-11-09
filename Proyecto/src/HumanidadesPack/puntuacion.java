@@ -23,6 +23,8 @@ public class puntuacion extends JPanel {
     private DefaultCategoryDataset dataset;
     private Registro registro;
     BasicButton volver;
+    
+    
 
     public puntuacion(Registro registro) {
 
@@ -35,6 +37,7 @@ public class puntuacion extends JPanel {
             @Override
             public void clickEvent() {
                 evento_volver();
+                
             }
         };
         volver.setText("volver");

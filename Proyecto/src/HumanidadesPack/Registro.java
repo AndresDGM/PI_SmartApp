@@ -33,7 +33,7 @@ public class Registro extends JPanel {
     
     RoundComboBox genero;
     
-    BasicButton guardar,limpiar,test,tabla_score;
+    BasicButton guardar,limpiar,test,tabla_score,enviar;
     
     private int puntaje;
     
@@ -123,7 +123,7 @@ public class Registro extends JPanel {
             @Override
             public void clickEvent() {
                  evento_guardar();
-                 e.test3();
+                 
                  
             }
         };
@@ -132,7 +132,7 @@ public class Registro extends JPanel {
         guardar.getText().setVerticalAlignment(JLabel.CENTER);
         guardar.getText().setHorizontalAlignment(JLabel.CENTER);
         guardar.getText().setSize(160, 54);
-        guardar.setLocation(370, 600);
+        guardar.setLocation(460, 600);
         guardar.setLayout(null);
         guardar.setColor(new Color(0, 188, 255));
         guardar.setForeground(Color.WHITE);
@@ -155,13 +155,31 @@ public class Registro extends JPanel {
         test.getText().setVerticalAlignment(JLabel.CENTER);
         test.getText().setHorizontalAlignment(JLabel.CENTER);
         test.getText().setSize(160, 54);
-        test.setLocation(170, 600);
+        test.setLocation(260, 600);
         test.setLayout(null);
         test.setColor(new Color(0, 188, 255));
         test.setForeground(Color.WHITE);
         
 
         add(test);
+        
+        enviar = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                e.test3();
+            }
+        };
+        
+        enviar.setText("enviar inf");
+        enviar.setBounds(60, 600, 160, 54);
+        enviar.getText().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
+        enviar.getText().setVerticalAlignment(JLabel.CENTER);
+        enviar.getText().setHorizontalAlignment(JLabel.CENTER);
+        enviar.getText().setSize(160, 54);
+        enviar.setLayout(null);
+        enviar.setColor(new Color(0, 188, 255));
+        enviar.setForeground(Color.WHITE);
+        add(enviar);
         
         
         limpiar = new BasicButton() {
@@ -175,7 +193,7 @@ public class Registro extends JPanel {
         limpiar.getText().setVerticalAlignment(JLabel.CENTER);
         limpiar.getText().setHorizontalAlignment(JLabel.CENTER);
         limpiar.getText().setSize(160, 54);
-        limpiar.setLocation(570, 600);
+        limpiar.setLocation(660, 600);
         limpiar.setLayout(null);
         limpiar.setColor(new Color(0, 188, 255));
         limpiar.setForeground(Color.WHITE);
@@ -196,7 +214,7 @@ public class Registro extends JPanel {
         tabla_score.getText().setVerticalAlignment(JLabel.CENTER);
         tabla_score.getText().setHorizontalAlignment(JLabel.CENTER);
         tabla_score.getText().setSize(160, 54);
-        tabla_score.setLocation(770, 600);
+        tabla_score.setLocation(860, 600);
         tabla_score.setLayout(null);
         tabla_score.setColor(new Color(0, 188, 255));
         tabla_score.setForeground(Color.WHITE);
@@ -212,7 +230,7 @@ public class Registro extends JPanel {
        jtApe.requestFocus();
     }
 
-    private void evento_guardar() {
+    public void evento_guardar() {
         FileWriter fw = null;
         boolean error = false;
         
@@ -265,6 +283,7 @@ public class Registro extends JPanel {
         jCorre.setVisible(flag);
         genero.setVisible(flag);
         titulo.setVisible(flag);
+        enviar.setVisible(flag);
         AppMainSrc.App.lateralBar.getComponent(1).setVisible(flag);  
         repaint();
     }
