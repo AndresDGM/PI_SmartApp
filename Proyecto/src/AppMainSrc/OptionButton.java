@@ -16,9 +16,11 @@ public class OptionButton extends JPanel {
     private boolean clicked = false;
 
     private OptionButton[] obs;
+    
+    private String dato;
 
     public OptionButton(OptionButton[] obs){
-        setSize(500,50);
+        setSize(600,50);
         setBackground(new Color(46,46,46));
         setLayout(null);
         this.obs = obs;
@@ -29,7 +31,7 @@ public class OptionButton extends JPanel {
         selected.setBackground(new Color(46, 46, 46));
         selected.setTam(26,26);
         selected.setLocation(12,12);
-        text.setBounds(55, 0, 460, 50);
+        text.setBounds(55, 0, 550, 50);
         text.setHorizontalAlignment(JLabel.LEFT);
         text.setVerticalAlignment(JLabel.CENTER);
         text.setFont(new Font("Arial",text.getFont().getStyle(),18));
@@ -79,6 +81,7 @@ public class OptionButton extends JPanel {
 
     public void setClicked(boolean clicked) {
         this.clicked = clicked;
+        selected.setVisible(clicked);
     }
 
     public boolean isClicked() {
@@ -94,11 +97,12 @@ public class OptionButton extends JPanel {
     }
 
     public void setText(String text) {
-        this.text.setText(text);
+        this.text.setText("<html><p align=left>" + text + "</p></html>");
+        dato = text;
     }
 
     public String getText() {
-        return text.getText();
+        return dato;
     }
 
     public void setBorde(RoundBorder border) {
