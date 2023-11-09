@@ -14,8 +14,10 @@ public class Tile extends JPanel {
 
     public BufferedImage image = null;
 
+
+
     public Tile(){
-        setSize(100,100);
+        setSize(96,96);
         initImage();
         setOpaque(false);
         setVisible(true);

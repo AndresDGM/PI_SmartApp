@@ -2,13 +2,10 @@ package PhysicsSrc.Game;
 //codigo en construccion del juego en el que aplicaran los vectores
 //fase de prueba
 
-import AppMainSrc.BasicButton;
-
-import javax.imageio.ImageIO;
+import java.awt.Color;
 import javax.swing.*;
 import javax.vecmath.Vector2f;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+import java.util.ArrayList;
 
 public class Game extends JPanel implements Runnable{
 
@@ -19,124 +16,182 @@ public class Game extends JPanel implements Runnable{
     private int fps = 0;
 
     private final float speed = 40;
-    
-    private static Jugador jugador;
-    
-    private Enemy enemigos;
-    
-    private Map mapa = new Map();
 
-    private static boolean gameRun = true;
+    private Thread hilo;
 
-    private Keylisten teclas = new Keylisten(this);
+    private GameMenu menu;
 
-    private BasicButton boton;
+    private Jugador jugador;
+    
+    private ArrayList<Enemy> enemigos = new ArrayList<>();
+
+    private ArrayList<Canon> canons = new ArrayList<>();
+    
+    private final Map mapa = new Map();
+
+    private boolean gameRun = true, gamePause = false;
+
+    private int[][] enemyPos = {{0,0}, {400,200}, {700,570}, {500,570},{500,100}};
+
+    private int[][] canonsPos = {{382,572}, {572,97}, {762,382}};
+
+    private final Keylisten teclas = new Keylisten(this);
+
+    private InfoBar infoBar;
 
     public Game(){
         Vector2f vector = new Vector2f(200,200);
-        Vector2f vector2 = new Vector2f(0,0);
-        Vector2f vectorCol2 = new Vector2f(16,19);
         Vector2f vectorCol = new Vector2f(225,216);
-        //Collider hitBox = new Collider(vectorCol, 42, 44, true);
         Collider hitBox = new Collider(vectorCol, 59, 68, false);
-        Collider hitBox2 = new Collider(vectorCol2, 53, 69, false);
-        jugador = new Jugador(vector, hitBox);
-        enemigos = new Enemy(vector2, hitBox2);
-        boton = new BasicButton() {
-            @Override
-            public void clickEvent() {
-                salir();
-            }
-        };
-        boton.setLocation(457, 10);
+        hilo = new Thread(this);
+        menu = new GameMenu(this);
+        add(menu);
+        jugador = new Jugador(vector, hitBox, this);
+        infoBar = new InfoBar(this);
         setSize(1074, 800);
         setFocusable(true);
-        importImgSrc();
+        setBackground(new Color(46,46,46));
         setLayout(null);
+        add(infoBar);
         add(jugador);
-        add(enemigos);
         add(mapa);
+        initEnemigos();
+        initCanons();
+        addKeyListener(teclas);
+        addMouseListener(jugador);
         setVisible(true);
     }
-    
-    public void importImgSrc(){
-        jugador.setSpriteSize(100,100);
-        enemigos.setSpriteSize(100, 100);
-        BufferedImage sprite = null;
-        BufferedImage sprite2 = null;
-        try {
-            sprite = ImageIO.read(
-                    getClass().getClassLoader().getResource("PhysicsSrc/Sprites/SpriteCat-0001.png"));
-            sprite2 = ImageIO.read(
-                    getClass().getClassLoader().getResource("PhysicsSrc/Sprites/ProfeSprite-0001.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
+
+    public void initCanons(){
+        for (int i = 0; i < canonsPos.length; i++) {
+            Vector2f v = new Vector2f(canonsPos[i][0],canonsPos[i][1]);
+            Vector2f vc = new Vector2f(canonsPos[i][0],canonsPos[i][1]);
+            Collider c = new Collider(vc,100, 100, false);
+            canons.add(new Canon(v, c, this));
+            add(canons.get(i), getComponentZOrder(mapa));
         }
-        jugador.setSpriteSheet(sprite);
-        enemigos.setSpriteSheet(sprite2);
     }
+
+    public void removeCanons(){
+        for (Canon c: canons){
+            for (Bullet b: c.getBullets()) {
+                remove(b);
+            }
+            c.getBullets().clear();
+            remove(c);
+        }
+        canons.clear();
+    }
+
+    public void initEnemigos(){
+        for (int i = 0; i < enemyPos.length; i++) {
+            Vector2f v = new Vector2f(enemyPos[i][0],enemyPos[i][1]);
+            Vector2f vc = new Vector2f(enemyPos[i][0] + 16, enemyPos[i][1] + 19);
+            Collider c = new Collider(vc,65, 69, false);
+            enemigos.add(new Enemy(v, c, this));
+            add(enemigos.get(i), getComponentZOrder(mapa));
+        }
+    }
+
+    public void removeEnemys(){
+        for (Enemy e: enemigos) remove(e);
+        enemigos.clear();
+    }
+
     public void gameUpdate(){
+        jugador.attack();
         getCollitions();
         moverJugador();
         moverEnemigos();
+        moverBalas();
+        infoBar.infoBarUpdate();
+        checkWin();
         render();
     }
 
     public void moverJugador(){
-        if(teclas.arriba.presionado){
-            Vector2f v = new Vector2f(0,-1);
-            v.scale((float) deltaTime * speed);
-            jugador.move(v);
-        }
-        if(teclas.abajo.presionado){
-            Vector2f v = new Vector2f(0,1);
-            v.scale((float) deltaTime * speed);
-            jugador.move(v);
-        }
-        if(teclas.der.presionado){
-            Vector2f v = new Vector2f(1,0);
-            v.scale((float) deltaTime * speed);
-            jugador.move(v);
-        }
-        if(teclas.izq.presionado){
-            Vector2f v = new Vector2f(-1,0);
-            v.scale((float) deltaTime * speed);
-            jugador.move(v);
-        }
+        jugador.move();
     }
 
     public void moverEnemigos(){
-        Vector2f v = new Vector2f(jugador.vector.x, jugador.vector.y);
-        Vector2f v2 = new Vector2f(enemigos.vector.x, enemigos.vector.y);
-        v.sub(v2);
-        v.normalize();
-        v.scale((float) deltaTime * speed * 0.5f);
-        enemigos.move(v);
+        for (int i = 0; i < enemigos.size(); i++) {
+            enemigos.get(i).move();
+        }
+    }
+
+    public void moverBalas(){
+
+        for (int i = 0; i < canons.size() ; i++) {
+            for (int j = 0; j < canons.get(i).getBullets().size(); j++) {
+                canons.get(i).getBullets().get(j).move();
+            }
+        }
+
+        for (int i = 0; i < jugador.getProyectiles().size(); i++) {
+            jugador.getProyectiles().get(i).move();
+        }
     }
 
     public void render(){
         jugador.repaint();
-        enemigos.repaint();
+        for (int i = 0; i < enemigos.size(); i++) {
+            enemigos.get(i).repaint();
+        }
+
+        for (int i = 0; i < canons.size(); i++) {
+            canons.get(i).repaint();
+        }
+        repaint();
     }
 
-    public static Jugador getJugador() {
+    public Jugador getJugador() {
         return jugador;
     }
 
-    public static void gameOver(){
-        gameRun = false;
-        JOptionPane.showMessageDialog(null, "Game over");
+    public void gameOver(){
+        menu.gameOverMode();
     }
 
     public void getCollitions(){
-        boolean b = enemigos.hitBox.Collition(jugador.hitBox);
-        if(b) {
-            enemigos.attack();
+
+        for (int i = 0; i < canons.size(); i++) {
+            canons.get(i).attack();
+        }
+
+        for (int i = jugador.getProyectiles().size() - 1; i >= 0; i--) {
+
+            for (int j = 0; j < enemigos.size(); j++) {
+                if(jugador.getProyectiles().size() > 0) {
+                    if (jugador.getProyectiles().get(i).hitBox.Collition(enemigos.get(j).getHitBox())){
+                        jugador.getProyectiles().get(i).attack(enemigos.get(j));
+                        i = jugador.getProyectiles().size() - 1;
+                    }
+                }
+            }
+
+            for (int j = 0; j < canons.size(); j++) {
+                if(jugador.getProyectiles().size() > 0){
+                    if(jugador.getProyectiles().get(i).hitBox.Collition(canons.get(j).hitBox)) {
+                        jugador.getProyectiles().get(i).attack(canons.get(j));
+                        i = jugador.getProyectiles().size() - 1;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < enemigos.size(); i++)
+            enemigos.get(i).attack();
+
+        for (int i = 0; i < canons.size(); i++) {
+            for (int j = 0; j < canons.get(i).getBullets().size(); j++) {
+                if(canons.get(i).getBullets().get(j).hitBox.Collition(jugador.hitBox))
+                    canons.get(i).getBullets().get(j).attack();
+            }
         }
     }
 
     public synchronized void star(){
-        new Thread(this).start();
+        hilo.start();
     }
 
     @Override
@@ -147,44 +202,116 @@ public class Game extends JPanel implements Runnable{
         long lastCheck = System.currentTimeMillis();
 
         while(gameRun){
+            if(teclas.esc.presionado) menu.pauseGame();
             long now = System.nanoTime();
-            if(now - lastTime >= nanoFps){
+            if(now - lastTime >= nanoFps && !gamePause){
                 gameUpdate();
                 lastTime = now;
                 fps++;
             }
 
-            if(System.currentTimeMillis() - lastCheck >= 1000){
+            if(System.currentTimeMillis() - lastCheck >= 1000 && !gamePause){
                 lastCheck = System.currentTimeMillis();
                 deltaTime = (double) 1/fps;
-                System.out.println(fps);
+                infoBar.getFps().setText("Fps: " + fps);
                 fps = 0;
             }
         }
     }
 
-    public void salir() {
-        if (gameRun){
-            gameRun = false;
-            setDefault();
-            boton.setText("Comenzar");
-        }else{
-            gameRun = true;
-            star();
-            boton.setText("Detener");
-        }
+    public void checkWin(){
+        if(enemigos.size() == 0 && canons.size() == 0) menu.winMode();
     }
 
     public void setDefault(){
+        removeEnemys();
+        removeCanons();
         Vector2f vector = new Vector2f(200,200);
-        Vector2f vector2 = new Vector2f(0,0);
-        //Vector2f vectorCol = new Vector2f(216,210);
         Vector2f vectorCol = new Vector2f(225,216);
-        //Collider hitBox = new Collider(vectorCol, 42, 44, true);
         Collider hitBox = new Collider(vectorCol, 59, 68, false);
-        Collider hitBox2 = new Collider(vector2, 100, 100, false);
-        jugador = new Jugador(vector, hitBox);
-        enemigos = new Enemy(vector2, hitBox2);
+        jugador.setVector(vector);
+        jugador.setLocation((int) vector.x, (int) vector.y);
+        jugador.setHitBox(hitBox);
+        jugador.setSalud(10);
+        initEnemigos();
+        initCanons();
+        render();
+    }
+
+    public Map getMapa() {
+        return mapa;
+    }
+
+    public double getDeltaTime() {
+        return deltaTime;
+    }
+
+    public void setDeltaTime(double deltaTime) {
+        this.deltaTime = deltaTime;
+    }
+
+    public int getFpsLimit() {
+        return fpsLimit;
+    }
+
+    public int getFps() {
+        return fps;
+    }
+
+    public void setFps(int fps) {
+        this.fps = fps;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public ArrayList<Enemy> getEnemigos() {
+        return enemigos;
+    }
+
+    public void setEnemigos(ArrayList<Enemy> enemigos) {
+        this.enemigos = enemigos;
+    }
+
+    public ArrayList<Canon> getCanons() {
+        return canons;
+    }
+
+    public void setCanon(ArrayList<Canon> canons) {
+        this.canons = canons;
+    }
+
+    public boolean isGameRun() {
+        return gameRun;
+    }
+
+    public void setGameRun(boolean gameRun) {
+        this.gameRun = gameRun;
+    }
+
+    public Keylisten getTeclas() {
+        return teclas;
+    }
+
+    public InfoBar getInfoBar() {
+        return infoBar;
+    }
+
+    public void setGamePause(boolean gamePause) {
+        this.gamePause = gamePause;
+    }
+
+    public boolean isGamePause() {
+        return gamePause;
+    }
+
+    public GameMenu getMenu() {
+        return menu;
     }
 
     public static void main(String[] args) {
@@ -196,6 +323,7 @@ public class Game extends JPanel implements Runnable{
         g.setVisible(true);
         g.star();
         ven.add(g);
+        g.setGamePause(false);
         ven.setVisible(true);
     }
 }

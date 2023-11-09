@@ -26,10 +26,17 @@ public class Collider {
         if (w<= 0 || h <= 0|| c.w <= 0 || c.h <= 0) {
             return false;
         }
-        return (c.vector.x + c.w > vector.x &&
-                c.vector.y + c.h > vector.y &&
-                c.vector.x < vector.x + w &&
-                c.vector.y < vector.y + h);
+        return (c.vector.x + c.w >= vector.x &&
+                c.vector.y + c.h >= vector.y &&
+                c.vector.x <= vector.x + w &&
+                c.vector.y <= vector.y + h);
+    }
+
+    public boolean contains(Vector2f v){
+        return (v.x >= vector.x &&
+                v.y >= vector.y &&
+                v.x < vector.x + w &&
+                v.y < vector.y + h);
     }
 
     public Vector2f getVector() {

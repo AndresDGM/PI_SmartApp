@@ -15,6 +15,8 @@ public class Keylisten implements KeyListener {
     public Key abajo = new Key();
     public Key izq = new Key();
     public Key der = new Key();
+    public Key shift = new Key();
+    public Key esc = new Key();
 
     public class Key{
         public boolean presionado = false;
@@ -38,17 +40,17 @@ public class Keylisten implements KeyListener {
     }
 
     public void isKeyPressed(int keyCode, boolean pressed){
-        if (keyCode == KeyEvent.VK_A){
-            izq.isPressed(pressed);
-        }
-        if (keyCode == KeyEvent.VK_D){
-            der.isPressed(pressed);
-        }
-        if (keyCode == KeyEvent.VK_W){
-            arriba.isPressed(pressed);
-        }
-        if (keyCode == KeyEvent.VK_S){
-            abajo.isPressed(pressed);
-        }
+
+        if (keyCode == KeyEvent.VK_A) izq.isPressed(pressed);
+
+        if (keyCode == KeyEvent.VK_D) der.isPressed(pressed);
+
+        if (keyCode == KeyEvent.VK_W) arriba.isPressed(pressed);
+
+        if (keyCode == KeyEvent.VK_S) abajo.isPressed(pressed);
+
+        if (keyCode == KeyEvent.VK_SHIFT) shift.isPressed(pressed);
+
+        if (keyCode == KeyEvent.VK_ESCAPE) esc.isPressed(pressed);
     }
 }

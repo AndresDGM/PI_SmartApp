@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GaussJordan/GaussJordan.iml" filepath="$PROJECT_DIR$/GaussJordan/GaussJordan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PI_SmartApp.iml" filepath="$PROJECT_DIR$/.idea/PI_SmartApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proyecto/Proyecto.iml" filepath="$PROJECT_DIR$/Proyecto/Proyecto.iml" />
+    </modules>
+  </component>
+</project>

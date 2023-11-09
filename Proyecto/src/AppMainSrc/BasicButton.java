@@ -51,7 +51,6 @@ public abstract class BasicButton extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(getBackground());
         g2.fillRoundRect(3,3,getWidth()-6,getHeight()-6, arcW, arcH);
-        //Rectangle.Double
         super.paint(g);
     }
 
