@@ -27,11 +27,13 @@ public class MathMenu extends JPanel {
         bderivada = new Button();
         bderivada.setContenido(derivar, this);
         bderivada.setTitulo("Derivar");
-        bderivada.setLocation(571, 140);
+        bderivada.setImagenBoton("src/Imagenes/calculadora.png");
+        bderivada.setLocation(571, 200);
         bgrafica = new Button();
+        bgrafica.setImagenBoton("src/Imagenes/grafico.png");
         bgrafica.setContenido(graficadora, this);
         bgrafica.setTitulo("Graficadora");
-        bgrafica.setLocation(200, 140);
+        bgrafica.setLocation(200, 200);
         add(bgrafica);
         add(bderivada);
         add(titulo);

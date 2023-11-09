@@ -3,12 +3,12 @@ package AppMainSrc;
 /**
  *
  * @author Andres Guevara
- * @author Sebastian Morales
+ * @author Sebastian Morales    
  * @author Juan Santiago
  * @author Nicolas Gutierrez
- * @author Miguel
+ * @author Miguel+
  */
-public class Proyecto {
+public class Proyecto { 
 
     /**
      * @param args the command line arguments

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3536b7af-f19d-462d-b820-65447afbf611" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/PI_SmartApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/JOML.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Proyecto.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/vecmath.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GaussJordan/GaussJordan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Canon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Guia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/InfoBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Mecanicas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Proyectil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteBullet-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCanon-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCanonMouth-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCatHit-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCatHit-0002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDogHit-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDogHit-0002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteHeart-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpritePen-0001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpritePenCharge-0001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/Proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Proyecto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/AlgebraPack/TeoriaAlgebra.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AlgebraPack/TeoriaAlgebra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/BasicButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/BasicButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/PhysicsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/PhysicsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/RoundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/RoundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Collider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Keylisten.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Keylisten.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0001.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AndresDGM&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e69776de-a1e1-4ced-bf64-f719348c9375" />
+        <option name="url" value="https://github.com/AndresDGM/PI_SmartApp.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2XiSC0i8bpfAYkgkElci4C7rlHj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/OneDrive/Documentos/GitHub/PI_SmartApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\OneDrive\Documentos\GitHub\PI_SmartApp\Proyecto\src\PhysicsSrc\Sprites" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Proyecto">
+    <configuration name="Game" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="PhysicsSrc.Game.Game" />
+      <module name="Proyecto" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Proyecto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AppMainSrc.Proyecto" />
+      <module name="Proyecto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AppMainSrc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Game" />
+      <item itemvalue="Application.Proyecto" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Proyecto" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3536b7af-f19d-462d-b820-65447afbf611" name="Changes" comment="" />
+      <created>1699110284643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699110284643</updated>
+      <workItem from="1699110285945" duration="809000" />
+      <workItem from="1699113552230" duration="22883000" />
+      <workItem from="1699150710843" duration="12172000" />
+      <workItem from="1699196549242" duration="29976000" />
+      <workItem from="1699273714663" duration="32047000" />
+      <workItem from="1699362174864" duration="28106000" />
+      <workItem from="1699449252242" duration="42913000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -16,7 +16,6 @@ public class Derivada extends JPanel{
     BasicButton derivar, borrar;
     RoundTextField ingresar, resultado;
     String expresion;
-    CalcularDerivada dv = new CalcularDerivada();
     JLabel advertencia = new JLabel("No has ingresado una función para derivar");
 
     public Derivada() {
@@ -94,6 +93,7 @@ public class Derivada extends JPanel{
             @Override
             public void clickEvent() {
                 evento_derivar();
+                resultado.setEditable(true);
             }
         };
         derivar.setText("Derivar");
@@ -107,6 +107,7 @@ public class Derivada extends JPanel{
             @Override
             public void clickEvent() {
                 evento_borrar();
+                resultado.setEditable(false);
             }
         };
         borrar.setText("Borrar");
@@ -123,9 +124,8 @@ public class Derivada extends JPanel{
             resultado.setText(""); // Limpiar el campo de resultado
         }else{
            expresion = ingresar.getText(); //se obtiene la información ingresada en el jtextfield
-           dv.setFuncion(expresion); //se le envía a la clase Calcular derivada la expresion
-           dv.derivar(); //se llama al método derivar
-           resultado.setText(dv.getDerivada());  //se obtiene escribe el resultado obtenido en el jtextfield 
+           CalcularDerivada dev = new CalcularDerivada(expresion); //se le envía a la clase Calcular derivada la expresion
+           resultado.setText(dev.getDerivada());  //se obtiene escribe el resultado obtenido en el jtextfield 
            advertencia.setVisible(false);
         }  
     }
