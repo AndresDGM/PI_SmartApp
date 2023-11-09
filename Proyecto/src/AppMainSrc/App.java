@@ -54,6 +54,7 @@ public class App extends JFrame {
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
        // add(menuAlgebra.gaussJordan);
+<<<<<<< HEAD
        // add(menuAlgebra.detCalculator);
         add(menuAlgebra.subMenuAlgOpera);
         add(menuAlgebra.subMenuAlgExam);
@@ -64,6 +65,14 @@ public class App extends JFrame {
         add(menuAlgebra.subMenuAlgOpera.operaMatrices);
         add(menuAlgebra.subMenuAlgOpera.operaVectores );
 
+=======
+       // add(menuAlgebra.detCalculator);;
+        add(menuAlgebra.teoriaAlgebra);
+        add(menuAlgebra.detCalculator);
+        add(menuAlgebra.gaussJordan);
+        add(menuAlgebra.invCalculator);
+        
+>>>>>>> algebra2
         setVisible(true);
     }
 

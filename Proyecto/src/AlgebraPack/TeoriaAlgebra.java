@@ -21,7 +21,7 @@ import javax.swing.event.HyperlinkListener;
 
 public class TeoriaAlgebra  extends JPanel{
     //variables
-    private JScrollPane[] Capitulos = new JScrollPane[2];
+    private JScrollPane[] Capitulos = new JScrollPane[5];
 
     private JLabel titulo = new JLabel();
 
@@ -43,7 +43,7 @@ public class TeoriaAlgebra  extends JPanel{
             @Override
             public void clickEvent() {
                 Capitulos[capCont].setVisible(false);
-                if (capCont < 1) {
+                if (capCont < 4) {
                     Capitulos[capCont + 1].setVisible(true);
                     capCont++;
                     titulo.setText("Capitulo " + (capCont + 1));
@@ -67,8 +67,8 @@ public class TeoriaAlgebra  extends JPanel{
                     capCont--;
                     titulo.setText("Capitulo " + (capCont + 1));
                 } else {
-                    Capitulos[1].setVisible(true);
-                    capCont = 1;
+                    Capitulos[4].setVisible(true);
+                    capCont = Capitulos.length - 1;
                     titulo.setText("Capitulo " + (capCont + 1));
                 }
             }
@@ -114,7 +114,8 @@ public class TeoriaAlgebra  extends JPanel{
             add(Capitulos[i]);
         };
         Capitulos[0].setVisible(true);
-
+        titulo.setText("Capitulo 1");
+        add(titulo);
     }
 
     public JScrollPane[] getCapitulos() {
