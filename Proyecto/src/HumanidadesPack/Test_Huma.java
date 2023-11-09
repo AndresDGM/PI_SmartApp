@@ -10,81 +10,81 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Test_Huma extends JPanel {
-
-    BasicButton responder, limpiar;
     
     
-    
+    BasicButton responder, limpiar,test;
     private int puntaje = 0;
     private int preguntasMostradas = 0;
     private int cantidadPreguntas = 5;
     private ArrayList<Integer> preguntasMostradasList = new ArrayList<>();
     private String[] preguntas = {
-        " ¿Cuál es el desafío principal en la educación superior en Centroamérica y República Dominicana?",
-        " ¿Qué función debe cumplir la universidad según el Objetivo 4 de los ODS?",
-        " ¿Qué organismo ha consensuado el PIRESC IV para abordar desafíos en la educación superior?",
-        " ¿Qué busca la educación ambiental según el capítulo 3?",
-        " ¿Por qué la Educación Superior es clave para el desarrollo sostenible?",
-        " ¿Qué desafío se menciona en el capítulo 5 en relación a la educación en América Latina?",
-        " ¿Cuál es el objetivo del Objetivo 4 de los ODS?",
-        " ¿Qué cátedra han firmado la Universidad Complutense y la Alianza de la Sanidad Privada Española?",
-        " ¿Qué han tenido que adaptar muchas empresas debido a la pandemia?",
-        " ¿Cuál es la importancia de abordar la brecha digital en la educación en línea?",
-        " ¿Qué ha expuesto la pandemia en el ámbito educativo?",
-        " ¿Qué función debe cumplir la educación en derechos humanos en la recuperación de la COVID-19?",
-        " ¿Qué deben conceder las instituciones  financieras internacionales a los países según el capítulo 10?",
-        " ¿Cuál es el objetivo del PIRESC IV?",
-        " ¿Qué dimensiones integra el desarrollo sostenible en la actualidad?",
-        " ¿Qué papel tienen las empresas en la consecución del ODS 4?",
-        " ¿Cuál es la función social que debe cumplir la universidad según el Objetivo 4 de los ODS?",
-        " ¿Qué organismo respalda la cátedra extraordinaria Salud sostenible y responsable?",
-        " ¿Cuál es el desafío principal mencionado en el capítulo 2 en la educación debido a la pandemia de COVID-19?",
-        " ¿Qué busca la educación ambiental?",
-        " ¿Cuál es el objetivo del Objetivo 4 de los ODS?",
-        " ¿Qué desafío se menciona en el capítulo 5 en relación a la educación en América Latina?",
-        " ¿Qué han tenido que adaptar muchas empresas debido a la pandemia?",
-        " ¿Qué importancia tiene abordar la brecha digital en la educación en línea?",
-        " ¿Qué ha expuesto la pandemia en el ámbito educativo?",
-        " ¿Qué función debe cumplir la educación en derechos humanos en la recuperación de la COVID-19?",
-        " ¿Qué deben conceder las instituciones financieras internacionales a los países según el capítulo 10?",
-        " ¿Cuál es el objetivo del PIRESC IV?",
-        " ¿Qué papel tienen las empresas en la consecución del ODS 4?",
-        " ¿Cuál es la función social que debe cumplir la universidad según el Objetivo 4 de los ODS?"
+        " ¿Cuál es el objetivo del ODS #4 de la ONU?",
+        " ¿Qué niveles de educación abarca el ODS 4?",
+        " ¿Cuál es uno de los temas tratados en los capítulos relacionados con el ODS 4?",
+        " ¿Cuál es una de las metas específicas del ODS #4?",
+        " Aumentar la producción de energía eléctrica",
+        " ¿Qué significa educación inclusiva?",
+        " ¿Por qué es importante capacitar a los docentes?",
+        " ¿Cuál es el impacto global de la educación de calidad?",
+        " ¿Por qué se considera la tecnología una gran herramienta en la educación?",
+        " ¿Por qué es crucial tener una infraestructura educativa sólida?",
+        " ¿En qué consisten las becas y ayudas para estudiantes?",
+        " ¿¿Cuál es la importancia del ODS #4?",
+        " ¿Cuál es el rango de edades que abarca el ODS #4?",
+        " ¿Qué papel juegan los gobiernos en la implementación del ODS 4?",
+        " ¿Por qué es esencial garantizar que todos los niños tengan acceso a la educación?",
+        " ¿Cuál es uno de los temas tratados en los capítulos relacionados con el ODS 4?",
+        " ¿Cuál es uno de los objetivos de las becas y apoyos para estudiantes?",
+        " ¿Cuál es el impacto global de una educación de calidad?",
+        " ¿Por qué es importante capacitar a los docentes?",
+        " ¿Cuál es el papel de la tecnología en la educación?",
+        " ¿Cuál es la importancia de una infraestructura educativa sólida?",
+        " ¿En qué consisten las becas y ayudas para estudiantes?",
+        " ¿Qué representa el ODS #4 de la ONU?",
+        " ¿Cuál es el alcance de la educación inclusiva?",
+        " ¿Por qué es esencial capacitar a los docentes en la actualidad?",
+        " ¿Cuál es la importancia de expandir la educación de calidad a nivel global?",
+        " ¿Por qué se considera la tecnología una herramienta valiosa en la educación?",
+        " ¿Cuál es el impacto de una infraestructura educativa sólida en los estudiantes?",
+        " ¿Cuál es uno de los beneficios de las becas y apoyos para estudiantes?",
+        " ¿Cuál es la principal conclusión del ODS #4?"
+       
     };
 
     private String[][] respuestas = {
-        {"A) Problemas de calidad", "B) Problemas de financiación", "C) Problemas de gestión"},
-        {"A) Función económica", "B) Función social en equidad y calidad", "C) Función política"},
-        {"A) UNESCO", "B) Consejo Superior Universitario Centroamericano (CSUCA)", "C) Organización de Estados Americanos (OEA"},
-        {"A) Generar críticas al desarrollo sostenible", "B) Conciliar el desarrollo y el medio ambiente", "C) Promover el antropocentrismo"},
-        {"A) Porque forma a profesionales del pasado", "B) Porque produce conocimiento innovador", "C) Porque no está relacionada con los ODS"},
-        {"A) Falta de financiación", "B) Brecha de ingresos entre trabajadores con educación universitaria", "C) Cierre de escuelas debido a la pandemia"},
+        {"A) Garantizar la igualdad de género", "B) Promover el acceso a la salud", "C) Garantizar una educación inclusiva y de calidad"},
+        {"A) Solo la educación primaria", "B) Solo la educación secundaria", "C) Desde la educación preescolar hasta la formación técnica y profesional"},
+        {"A) Agricultura sostenible", "B) Acceso a la educación", "C) Tecnología espacial"},
+        {"A) Reducir la desigualdad de ingresos", "B) Fomentar la educación de calidad desde temprana edad", "C) Aumentar la producción de energía eléctrica"},
+        {"A) Para garantizar que todos tengan habilidades de lectura, escritura y matemáticas", "B) Para aumentar la producción agrícola", "C) Para desarrollar infraestructura vial"},
+        {"A) Para reducir la calidad de la educación", "B) Para mantener las mismas metodologías de enseñanza antiguas", "C) Para asegurar que los docentes enseñen de manera excelente y de calidad"},
         {"A) Garantizar una educación de calidad para todos", "B) Eliminar la educación", "C) Promover la educación en línea"},
-        {"A) Cátedra de Astronomía", "B) Cátedra de Salud sostenible y responsable", "C) Cátedra de Historia del Arte"},
-        {"A) Su ubicación", "B) Su estructura de precios", "C) Su enfoque en la educación"},
-        {"A) Mejorar la comunicación interna de las empresas", "B) Facilitar la educación en línea", "C) Promover la educación en derechos humanos"},
-        {"A) La falta de interés en la educación", "B) Las disparidades educativas preexistentes", "C) La sobreabundancia de recursos educativos"},
-        {"A) Proteger la financiación de la educación", "B) Promover el acceso a la educación", "C) Proteger, respetar y promover los derechos humanos"},
-        {"A) Espacio fiscal suficiente", "B) Más restricciones financieras", "C) Recursos adicionales"},
-        {"A) Promover la educación en línea", "B) Abordar desafíos en la educación superior", "C) Eliminar la educación superior"},
-        {"A) Solo la dimensión económica", "B) Las dimensiones económica, social y ambiental", "C) Las dimensiones social y política"},
-        {"A) Ningún papel", "B) Contribuir a mejorar el acceso a la educación y fomentar la innovación", "C) Limitar el acceso a la educación"},
-        {"A) Plantear problemas prioritarios de su entorno", "B) Promover la exclusión en la educación", "C) Ignorar los problemas de la sociedad"},
-        {"A) La ONU", "B) La CEOE", "C) El Banco Mundial"},
-        {"A) Cierre masivo de escuelas", "B) Falta de profesores", "C) Exceso de recursos educativos"},
-        {"A) Promover la degradación ambiental", "B) Solucionar la problemática ambiental", "C) Ignorar el medio ambiente"},
-        {"A) Promover la brecha digital", "B) Garantizar una educación de calidad para todos", "C) Eliminar la educación"},
-        {"A) Brecha de ingresos entre trabajadores con educación universitaria ", "B) Falta de recursos educativos", "C) Exceso de inversión en educación"},
-        {"A) Su ubicación ", "B) Su enfoque en la educación ", "CSu estructura de precios "},
-        {"A) Facilitar la educación en línea ", "B) Mejorar la comunicación interna de las empresas", "C) Promover la educación en derechos humanos "},
-        {"A) La falta de recursos educativos", "B) Las disparidades educativas preexistentes", "C)  La sobreabundancia de profesores"},
-        {"A) Proteger, respetar y promover los derechos humanos", "B) Promover la exclusión social", "C) Limitar el acceso a la educación"},
-        {"A) Espacio fiscal suficiente", "B) Más restricciones financieras", "C) Recursos adicionales"},
-        {"A) Promover la educación en línea", "B) Abordar desafíos en la educación superior", "C) Eliminar la educación superior"},
-        {"A) Limitar el acceso a la educación", "B) Contribuir a mejorar el acceso a la educación y fomentar la innovación", "C) Ningún papel"},
-        {"A) Ignorar los problemas de la sociedad", "B) Promover la exclusión en la educación", "C) Plantear problemas prioritarios de su entorno"},};
+        {"A) Reducir la igualdad de género", "B) Aumentar la producción de petróleo", "C) Contribuir al desarrollo y el bienestar de las personas en todo el mundo"},
+        {"A) Porque optimiza el tiempo y proporciona acceso a recursos educativos", "B) Porque no es accesible para la mayoría de los estudiantes", "C) Porque no requiere acceso a Internet"},
+        {"A) Para fomentar la discriminación en el sistema educativo", "B) Para garantizar la igualdad de acceso a una educación de calidad", "C) Para limitar la adaptabilidad a las necesidades educativas cambiantes"},
+        {"A) En proporcionarles materiales de lujo", "B) En limitar el acceso a la educación", "C) En ayudar a los estudiantes que no tienen recursos económicos a financiar su educación"},
+        {"A) Promover la igualdad de ingresos", "B) Garantizar una educación inclusiva, equitativa y de calidad para todos", "C) Reducir la inversión en infraestructura educativa"},
+        {"A) Solo niños en edad preescolar", "B) Niños y niñas de 6 a 10 años", "C) Desde la educación preescolar hasta la formación técnica y profesional"},
+        {"A) Un papel importante", "B) Ningún papel", "C)  Un papel secundario"},
+        {"A) Para limitar el acceso a la educación según la religión", "B) Para promover la igualdad de género", "C) Porque es un derecho fundamental y es crucial para el desarrollo futuro"},
+        {"A) Acceso a la educación", "B) Desarrollo de la tecnología espacial", "C) Promoción de la agricultura sostenible"},
+        {"A) Reducir la inversión en educación", "B) Limitar el acceso a la educación", "C) Ayudar a estudiantes sin recursos financieros a financiar su educación"},
+        {"A) Aumentar la producción de petróleo", "B) Contribuir al desarrollo y el bienestar de las personas en todo el mundo", "C) Fomentar la igualdad de ingresos"},
+        {"A) Para mantener las metodologías de enseñanza antiguas", "B) Para garantizar que los docentes enseñen de manera excelente y de calidad", "C) Para reducir la calidad de la educación"},
+        {"A) Reemplazar completamente la educación tradicional", "B) Mantener la educación tradicional sin cambios", "C) Optimizar el tiempo y proporcionar acceso a recursos educativos"},
+        {"A) Garantizar entornos de aprendizaje seguros y bien equipados", "B) Reducir la adaptabilidad a las necesidades educativas cambiantes", "C) Limitar la igualdad de acceso a una educación de calidad"},
+        {"A) En promover la discriminación en la educación", "B) En reducir la calidad de la educación", "C) En ayudar a los estudiantes que no tienen recursos económicos a financiar su educación"},
+        {"A) Un enfoque en la conservación de la biodiversidad ", "B) Una estrategia para reducir la producción de alimentos", "C) Un compromiso con la educación inclusiva, equitativa y de calidad"},
+        {"A) Limitar la educación solo a personas discapacitadas ", "B) Garantizar que todos los alumnos tengan acceso a la educación sin importar su condición", "C) Limitar la educación solo a un grupo religioso "},
+        {"A) Para mantener las mismas metodologías de enseñanza antiguas ", "B) ) Para reducir la calidad de la educación", "C) Para garantizar que los docentes enseñen de manera excelente y de calidad "},
+        {"A) Reducir el impacto positivo en la sociedad", "B) Fomentar la discriminación en la educación", "C)  Contribuir al desarrollo y el bienestar de más personas en todo el mundo"},
+        {"A) Porque optimiza el tiempo y proporciona acceso a recursos educativos", "B) Porque reemplaza por completo la educación tradicional", "C) Porque no requiere acceso a Internet"},
+        {"A) Limitar la igualdad de acceso a una educación de calidad", "B) Garantizar entornos de aprendizaje seguros y bien equipados", "C) Reducir la adaptabilidad a las necesidades educativas cambiantes"},
+        {"A) Limitar el acceso a la educación", "B) Reducir la calidad de la educación", "C) Ayudar a estudiantes sin recursos financieros a financiar su educación"},
+        {"A) Garantizar una educación inclusiva y equitativa de calidad para todos los niños, niñas y adolescentes del mundo", "B) Promover la igualdad de ingresos", "C) Garantizar una educación de calidad solo para algunos grupos"},};
+       
 
-    String[] respuestasCorrectas = {"A", "B", "B", "B", "B", "B", "A", "B", "C", "A", "B", "C", "A", "B", "B", "B", "B", "A", "A", "B", "B", "C", "A", "B", "A", "B", "A", "B", "A", "C"};
+    String[] respuestasCorrectas = {"C", "C", "B", "B", "A", "B", "C", "C", "A", "B", "C", "B", "C", "A", "C", "A", "C", "B", "B", "C", "A", "C", "C", "B", "C", "C", "A", "B", "C", "A"};
 
     private JLabel labelPregunta,labelrespuesta,adv;
     private OptionButton[] opciones;
@@ -167,11 +167,13 @@ public class Test_Huma extends JPanel {
         limpiar.setLayout(null);
         limpiar.setColor(new Color(0, 188, 255));
         limpiar.setForeground(Color.WHITE);
-
+        
         add(limpiar);
-
+      
         mostrarPregunta();
     }
+
+    
 
     private void mostrarPregunta() {
         if (preguntasMostradas < cantidadPreguntas) {
@@ -222,7 +224,7 @@ public class Test_Huma extends JPanel {
                     puntaje++; // Incrementa el puntaje en caso de respuesta correcta
                     System.out.println("Respuesta correcta. Puntaje actual: " + puntaje);
                 }
-
+                
                 limpiarRespuestas();
                 preguntasMostradas++;
                 if (preguntasMostradas < cantidadPreguntas) {
@@ -259,20 +261,7 @@ public class Test_Huma extends JPanel {
         registro.setPuntaje(puntaje);
         registro.ocultar(true);
     }
-    /*private void mostrarResultado() {
-        
-
-        // Establece el puntaje en la instancia de Registro
-        if (registro != null) {
-            registro.setPuntaje(puntaje);
-        }
-
-        if (registro != null) {
-            registro.setVisible(true);
-            setVisible(false);
-        }
-    }
-*/
+   
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Registro registro = new Registro(); // Crea una instancia de Registro
@@ -280,4 +269,6 @@ public class Test_Huma extends JPanel {
             registro.setVisible(true); // Muestra la ventana de Registro
         });
     }
+    
+   
 }

@@ -21,6 +21,9 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import AppMainSrc.RoundComboBox;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class Registro extends JPanel {
     
@@ -36,11 +39,15 @@ public class Registro extends JPanel {
     
     public estructura e = new estructura();
     
+
+    
+    
     //public Test_Huma c = new Test_Huma(this);
     
     //public puntuacion p = new puntuacion(this);
     
     public Registro(){
+        
         
         setSize(1074, 800);
         setLocation(50, 0);
@@ -48,6 +55,10 @@ public class Registro extends JPanel {
         setLayout(null);
         crearGUI();
         setVisible(false);
+        
+        
+        
+        
        
     }
 
@@ -62,35 +73,36 @@ public class Registro extends JPanel {
         titulo.setBounds(400, 100, 300, 30);
         titulo.setForeground(Color.WHITE);
         titulo.setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 25));
+        titulo.setVisible(true);
         add(titulo);
         
         jApe = new JLabel("Apellidos:");
-        jApe.setBounds(150, 250, 120, 30);
+        jApe.setBounds(290, 300, 120, 30);
         jApe.setForeground(Color.WHITE);
         add(jApe);
         jtApe = new RoundTextField(200, 40);
-        jtApe.setLocation(220, 250);
+        jtApe.setLocation(360, 300);
         jtApe.setText("");
         jtApe.getTextField().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
         add(jtApe);
         
         
         jNom = new JLabel("Nombres:");
-        jNom.setBounds(150, 350,120,30);
+        jNom.setBounds(290, 400,120,30);
         jNom.setForeground(Color.WHITE);
         add(jNom);
         jtNom = new RoundTextField(200, 40);
-        jtNom.setLocation(220, 350);
+        jtNom.setLocation(360, 400);
         jtNom.setText("");
         jtNom.getTextField().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
         add(jtNom);
         
         jCorre = new JLabel("Correo:");
-        jCorre.setBounds(150, 450,120,30);
+        jCorre.setBounds(290, 500,120,30);
         jCorre.setForeground(Color.WHITE);
         add(jCorre);
         jtCorre = new RoundTextField(200, 40);
-        jtCorre.setLocation(220, 450);
+        jtCorre.setLocation(360, 500);
         jtCorre.setText("");
         jtCorre.getTextField().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
         add(jtCorre);
@@ -104,7 +116,7 @@ public class Registro extends JPanel {
         genero.setSize(200, 40);
         genero.setColor(new Color(46,46,46));
         genero.getBorde().setBackground(Color.white);
-        genero.setLocation(450, 250);
+        genero.setLocation(590, 300);
         add(genero);
         
         guardar = new BasicButton() {
@@ -112,6 +124,7 @@ public class Registro extends JPanel {
             public void clickEvent() {
                  evento_guardar();
                  e.test3();
+                 
             }
         };
         guardar.setText("Guardar");
@@ -119,7 +132,7 @@ public class Registro extends JPanel {
         guardar.getText().setVerticalAlignment(JLabel.CENTER);
         guardar.getText().setHorizontalAlignment(JLabel.CENTER);
         guardar.getText().setSize(160, 54);
-        guardar.setLocation(300, 600);
+        guardar.setLocation(370, 600);
         guardar.setLayout(null);
         guardar.setColor(new Color(0, 188, 255));
         guardar.setForeground(Color.WHITE);
@@ -142,7 +155,7 @@ public class Registro extends JPanel {
         test.getText().setVerticalAlignment(JLabel.CENTER);
         test.getText().setHorizontalAlignment(JLabel.CENTER);
         test.getText().setSize(160, 54);
-        test.setLocation(100, 600);
+        test.setLocation(170, 600);
         test.setLayout(null);
         test.setColor(new Color(0, 188, 255));
         test.setForeground(Color.WHITE);
@@ -162,7 +175,7 @@ public class Registro extends JPanel {
         limpiar.getText().setVerticalAlignment(JLabel.CENTER);
         limpiar.getText().setHorizontalAlignment(JLabel.CENTER);
         limpiar.getText().setSize(160, 54);
-        limpiar.setLocation(500, 600);
+        limpiar.setLocation(570, 600);
         limpiar.setLayout(null);
         limpiar.setColor(new Color(0, 188, 255));
         limpiar.setForeground(Color.WHITE);
@@ -183,7 +196,7 @@ public class Registro extends JPanel {
         tabla_score.getText().setVerticalAlignment(JLabel.CENTER);
         tabla_score.getText().setHorizontalAlignment(JLabel.CENTER);
         tabla_score.getText().setSize(160, 54);
-        tabla_score.setLocation(700, 600);
+        tabla_score.setLocation(770, 600);
         tabla_score.setLayout(null);
         tabla_score.setColor(new Color(0, 188, 255));
         tabla_score.setForeground(Color.WHITE);
@@ -219,8 +232,10 @@ public class Registro extends JPanel {
             String plan_tmp = (String) genero.getSelectedItem();
             
             
+            
+            
             try {
-                fw.write(ape_tmp+";"+nom_tmp+";"+coe_tmp+";"+plan_tmp+";"+puntaje +"\r\n");
+                fw.write(ape_tmp+";"+nom_tmp+";"+coe_tmp+";"+plan_tmp+";"+ puntaje + "\r\n");
                     
              
             
@@ -249,6 +264,7 @@ public class Registro extends JPanel {
         jNom.setVisible(flag);
         jCorre.setVisible(flag);
         genero.setVisible(flag);
+        titulo.setVisible(flag);
         AppMainSrc.App.lateralBar.getComponent(1).setVisible(flag);  
         repaint();
     }
@@ -259,7 +275,7 @@ public class Registro extends JPanel {
             JOptionPane.showMessageDialog(null, "Error al guardar en el archivo");
         }
     }
-
+     
     
     }
 

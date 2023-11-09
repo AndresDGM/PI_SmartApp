@@ -70,7 +70,7 @@ public class HumanidadesMenu extends JPanel {
         
         capitulos.setContenido(menucaps, this);
         capitulos.setTitulo("menu capitulos");
-        capitulos.setLocation(181, 300);
+        capitulos.setLocation(181, 300);       
         add(capitulos);
         
         

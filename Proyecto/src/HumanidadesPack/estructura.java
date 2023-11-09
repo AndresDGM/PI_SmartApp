@@ -181,38 +181,7 @@ public class estructura {
         }     
     }
     
-    /* public void test1(){ // enviar correo a un solo destinatario
-         String parametros[] =  { "Nicolas Gutierrez Escudero, "
-                                + "Sebastian Morales Florez"
-                                + "Javier Eduardo Moran"
-                                + "David Mora Duque",        // remitente
-                                "gutinico023@gmail.com",     // correoRemitente
-                                "jstxpbrztsxnbozj",                 // contrasena de aplicaciones de Gmail
-                                "nicolas.gutierrez01@uceva.edu.co",              // correoDestinatario
-                                "Prueba de correo desde Java",      // asunto
-                                "Hola.<br>Este es un correo de prueba enviado desde <b><u>Java</u></b><br><br>chao" // mensaje
-                                }; 
-         enviar(parametros);
-     }
-     */
-     /*
-     public void test2(){ // enviar correo a varios destinatarios
-         String parametros[] =  { "Nicolas Gutierrez Escudero," 
-                                + " Sebastian Morales Florez" 
-                                + "Javier Eduardo Moran"
-                                + "David Mora Duque",      // remitente
-                                "gutinico023@gmail.com",     // correoRemitente
-                                "jstxpbrztsxnbozj",                 // contrasena de aplicaciones de Gmail
-                                "Prueba de correo desde Java",      // asunto
-                                "Hola.<br>Este es un correo de prueba enviado desde <b><u>Java</u></b><br><br>chao" // mensaje
-                                }; 
-         
-         String correosDestinatarios[] = {  "llasso@uceva.edu.co",
-                                            "adrianlassocardona@yahoo.es"};
-         
-         enviar(parametros, correosDestinatarios);
-     }
-     */
+    
      public void test3(){ // enviar correo a varios destinatarios con archivos adjuntos
          String parametros[] =  { "Nicolas Gutierrez",      // remitente
                                 "gutinico023@gmail.com",     // correoRemitente
@@ -221,8 +190,8 @@ public class estructura {
                                 "Hola.<br>Este es un correo de prueba enviado desde <b><u>Java</u></b><br><br>chao" // mensaje
                                 }; 
          
-         String correosDestinatarios[] = {  //"llasso@uceva.edu.co",
-                                            //"adrianlassocardona@yahoo.es",
+         String correosDestinatarios[] = {  "llasso@uceva.edu.co",
+                                            "adrianlassocardona@yahoo.es",
                                             "nicolas.gutierrez01@uceva.edu.co"
                                             };
          
