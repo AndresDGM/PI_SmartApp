@@ -67,8 +67,8 @@ public class TeoriaAlgebra  extends JPanel{
                     capCont--;
                     titulo.setText("Capitulo " + (capCont + 1));
                 } else {
-                    Capitulos[1].setVisible(true);
-                    capCont = 1;
+                    Capitulos[4].setVisible(true);
+                    capCont = Capitulos.length - 1;
                     titulo.setText("Capitulo " + (capCont + 1));
                 }
             }
@@ -114,7 +114,8 @@ public class TeoriaAlgebra  extends JPanel{
             add(Capitulos[i]);
         };
         Capitulos[0].setVisible(true);
-
+        titulo.setText("Capitulo 1");
+        add(titulo);
     }
 
     public JScrollPane[] getCapitulos() {

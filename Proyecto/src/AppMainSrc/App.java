@@ -52,15 +52,11 @@ public class App extends JFrame {
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
        // add(menuAlgebra.gaussJordan);
-       // add(menuAlgebra.detCalculator);
-        add(menuAlgebra.subMenuAlgOpera);
-        add(menuAlgebra.subMenuAlgExam);
-        add(menuAlgebra.subMenuAlgExam.examenAlgebra);
-        add(menuAlgebra.subMenuAlgExam.teoriaAlgebra);
-        add(menuAlgebra.subMenuAlgOpera.detCalculator);
-        add(menuAlgebra.subMenuAlgOpera.gaussJordan);
-        add(menuAlgebra.subMenuAlgOpera.invCalculator);
-        add(menuAlgebra.subMenuAlgOpera.operaVectores );
+       // add(menuAlgebra.detCalculator);;
+        add(menuAlgebra.teoriaAlgebra);
+        add(menuAlgebra.detCalculator);
+        add(menuAlgebra.gaussJordan);
+        add(menuAlgebra.invCalculator);
         
         setVisible(true);
     }
