@@ -34,7 +34,7 @@ public class App extends JFrame {
         setContenidos();
 
         ImageIcon icon = new ImageIcon("src/Imagenes/logo.png");
-        menuFisica.seccionJuego.setApp(this);
+        menuFisica.setApp(this);
         setIconImage(icon.getImage());
         setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(46, 46, 46));
@@ -46,22 +46,18 @@ public class App extends JFrame {
         add(menuMatematicas);
         add(menuAlgebra);
         add(menuFisica);
-        add(menuFisica.conceptos);
-        add(menuFisica.carretera);
-        add(menuFisica.seccionJuego);
+        add(menuFisica.guia);
+        add(menuFisica.mecanicas);
         add(menuHumanidades);
         add(menuHumanidades.menucaps.caps);
         add(menuMatematicas.graficadora);
         add(menuMatematicas.derivar);
         add(menuAlgebra.teoriaAlgebra);
         add(menuAlgebra.detCalculator);
-<<<<<<< HEAD
         add(menuAlgebra.gaussJordan);
         add(menuAlgebra.invCalculator);
-=======
         add(menuHumanidades.regis);
         add(menuHumanidades.menucaps);
->>>>>>> Humanidades
         setVisible(true);
     }
 

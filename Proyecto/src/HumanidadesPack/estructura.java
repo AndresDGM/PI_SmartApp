@@ -12,7 +12,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class estructura {
+public class Estructura {
     
     public void enviar(String parametros[]){
         try{

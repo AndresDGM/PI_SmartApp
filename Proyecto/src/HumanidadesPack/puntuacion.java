@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class puntuacion extends JPanel {
+public class Puntuacion extends JPanel {
 
     private JFreeChart chart;
     private DefaultCategoryDataset dataset;
@@ -26,7 +26,7 @@ public class puntuacion extends JPanel {
     
     
 
-    public puntuacion(Registro registro) {
+    public Puntuacion(Registro registro) {
 
         setBounds(0, 0, 1074, 800);
         setBackground(new Color(46, 46, 46));

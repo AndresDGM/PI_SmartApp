@@ -2,6 +2,7 @@ package PhysicsSrc.Game;
 
 import AppMainSrc.App;
 import AppMainSrc.BasicButton;
+import AppMainSrc.PhysicsMenu;
 import AppMainSrc.RoundPanel;
 
 import javax.swing.*;
@@ -15,7 +16,7 @@ public class GameMenu extends RoundPanel {
 
     private Game game;
 
-    private GameSeccion gs;
+    private PhysicsMenu fisica;
 
     BasicButton[] botones = new BasicButton[4];
 
@@ -133,9 +134,9 @@ public class GameMenu extends RoundPanel {
         App.lateralBar.remove(botones[3]);
         game.setVisible(false);
         game.setGameRun(false);
-        gs.getApp().remove(game);
-        gs.getApp().removeKeyListener(game.getTeclas());
-        gs.setVisible(true);
+        fisica.getApp().remove(game);
+        fisica.getApp().removeKeyListener(game.getTeclas());
+        fisica.setVisible(true);
     }
     
      public void pricipalMenuMode(){
@@ -154,7 +155,7 @@ public class GameMenu extends RoundPanel {
         botones[3].setVisible(true);
     }
 
-    public void setGs(GameSeccion gs) {
-        this.gs = gs;
+    public void setGs(PhysicsMenu fisica) {
+        this.fisica = fisica;
     }
 }

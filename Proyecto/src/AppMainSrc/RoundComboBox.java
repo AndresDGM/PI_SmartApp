@@ -7,6 +7,7 @@ import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,22 +28,18 @@ public class RoundComboBox extends JPanel {
 
     private boolean expanded = false;
     
+    private boolean expanding = false;
+    
     private boolean painted = false;
 
-    private JLabel icon = new JLabel(new ImageIcon("src/images/RaphaelArrowdown.png"), JLabel.CENTER);
+    private JLabel icon = new JLabel((Icon) new ImageIcon("proyecto/src/Imagenes/comboIcon.png"), JLabel.CENTER);
 
     private int arc = 20;
-<<<<<<< HEAD
-
-    public RoundComboBox() {
-        setSize(200, 50);
-=======
     
     private boolean enable = true;
 
     public RoundComboBox() {
         
->>>>>>> Humanidades
         setBackground(Color.WHITE);
         setLayout(null);
         borde = new RoundBorder(207, 57, arc, arc, 2);
@@ -50,23 +47,16 @@ public class RoundComboBox extends JPanel {
         borde.setBackground(Color.black);
         items.add(new Item( "", this));
         items.get(0).setFocusable(true);
-        items.get(0).add(icon);
-        icon.setBounds(getWidth() - 50, 0, 50, 50);
+        items.get(0).add(icon, 0);
+        icon.setBounds(getWidth() - 40, 7, 35, 35);
         items.get(0).setLocation(0, 0);
-<<<<<<< HEAD
-=======
         setSize(200, 50);
->>>>>>> Humanidades
         add(borde);
         add(items.get(0));
         setVisible(true);
     }
 
-<<<<<<< HEAD
-    private class Item extends JPanel {
-=======
     public class Item extends JPanel {
->>>>>>> Humanidades
 
         private int w, h, arc;
 
@@ -79,11 +69,7 @@ public class RoundComboBox extends JPanel {
         private Color color;
         
         private JLabel text = new JLabel("");
-<<<<<<< HEAD
-
-=======
         
->>>>>>> Humanidades
         public Item(String dato, RoundComboBox r) {
             this.w = r.getWidth();
             this.h = r.getHeight();
@@ -95,11 +81,7 @@ public class RoundComboBox extends JPanel {
             text.setBounds(0, 0, getWidth(), getHeight());
             text.setText(dato);
             text.setHorizontalAlignment(JLabel.CENTER);
-<<<<<<< HEAD
-            text.setForeground(Color.black);
-=======
             text.setForeground(Color.white);
->>>>>>> Humanidades
             setBackground(r.getBackground());
             color = getBackground();
             add(text);
@@ -113,13 +95,6 @@ public class RoundComboBox extends JPanel {
             MouseListener m = new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-<<<<<<< HEAD
-                    if (r.isExpanded()) {
-                        r.items.get(0).setDato(dato);
-                        r.contractBox();
-                    } else {
-                        expandBox();
-=======
                     if(r.isEnable()){
                         if (r.isExpanded()) {
                             r.items.get(0).setDato(dato);
@@ -127,70 +102,27 @@ public class RoundComboBox extends JPanel {
                         } else {
                             expandBox();
                         }
->>>>>>> Humanidades
                     }
                 }
 
                 @Override
                 public void mousePressed(MouseEvent e) {
                     int r, g, b;
-<<<<<<< HEAD
-                    if (getBackground().getRed() > 14) {
-                        r = getBackground().getRed() - 15;
-                    } else {
-                        r = getBackground().getRed();
-                    }
-
-                    if (getBackground().getGreen() > 14) {
-                        g = getBackground().getGreen() - 15;
-                    } else {
-                        g = getBackground().getGreen();
-                    }
-
-                    if (getBackground().getBlue() > 14) {
-                        b = getBackground().getBlue() - 15;
-                    } else {
-                        b = getBackground().getBlue();
-                    }
-
-                    setBackground(new Color(r, g, b));
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-
-                    int r, g, b;
-                    if (getBackground() != color) {
-
-                        if (getBackground().getRed() < 241) {
-                            r = getBackground().getRed() + 15;
-=======
                     if(getR().isEnable()){
                         if (getBackground().getRed() > 14) {
                             r = getBackground().getRed() - 15;
->>>>>>> Humanidades
                         } else {
                             r = getBackground().getRed();
                         }
 
-<<<<<<< HEAD
-                        if (getBackground().getGreen() < 241) {
-                            g = getBackground().getGreen() + 15;
-=======
                         if (getBackground().getGreen() > 14) {
                             g = getBackground().getGreen() - 15;
->>>>>>> Humanidades
                         } else {
                             g = getBackground().getGreen();
                         }
 
-<<<<<<< HEAD
-                        if (getBackground().getBlue() < 241) {
-                            b = getBackground().getBlue() + 15;
-=======
                         if (getBackground().getBlue() > 14) {
                             b = getBackground().getBlue() - 15;
->>>>>>> Humanidades
                         } else {
                             b = getBackground().getBlue();
                         }
@@ -200,30 +132,6 @@ public class RoundComboBox extends JPanel {
                 }
 
                 @Override
-<<<<<<< HEAD
-                public void mouseEntered(MouseEvent e) {
-
-                    int r, g, b;
-                    if (color.getRed() > 14) {
-                        r = color.getRed() - 15;
-                    } else {
-                        r = color.getRed();
-                    }
-
-                    if (color.getGreen() > 14) {
-                        g = color.getGreen() - 15;
-                    } else {
-                        g = color.getGreen();
-                    }
-
-                    if (color.getBlue() > 14) {
-                        b = color.getBlue() - 15;
-                    } else {
-                        b = color.getBlue();
-                    }
-
-                    setBackground(new Color(r, g, b));
-=======
                 public void mouseReleased(MouseEvent e) {
 
                     int r, g, b;
@@ -279,16 +187,11 @@ public class RoundComboBox extends JPanel {
 
                         setBackground(new Color(r, g, b));
                     }
->>>>>>> Humanidades
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-<<<<<<< HEAD
-                    setBackground(color);
-=======
                     if(getR().isEnable()) setBackground(color);
->>>>>>> Humanidades
                 }
             };
             addMouseListener(m);
@@ -314,12 +217,6 @@ public class RoundComboBox extends JPanel {
             text.setText(dato);
         }
 
-<<<<<<< HEAD
-        public RoundComboBox getR() {
-            return r;
-        }
-        
-=======
         public String getDato() {
             return dato;
         }
@@ -344,7 +241,6 @@ public class RoundComboBox extends JPanel {
         public JLabel getText() {
             return text;
         }    
->>>>>>> Humanidades
         
     }
 
@@ -363,11 +259,7 @@ public class RoundComboBox extends JPanel {
         }
         items.add(i);
         int aux = items.indexOf(i);
-<<<<<<< HEAD
-        items.get(aux).setLocation(0, aux * 50);
-=======
         items.get(aux).setLocation(0, aux * getHeight());
->>>>>>> Humanidades
         items.get(aux).setVisible(false);
         items.get(aux).setFocusable(true);
         add(items.get(aux));
@@ -378,53 +270,39 @@ public class RoundComboBox extends JPanel {
             item.setVisible(false);
         }
         items.get(0).setVisible(true);
-<<<<<<< HEAD
-        setSize(getWidth(), 50);
-        borde.setH(57);
-=======
         setSize(getWidth(), items.get(0).getHeight() );
        
->>>>>>> Humanidades
         expanded = false;
     }
 
     private void expandBox() {
-<<<<<<< HEAD
-        for (Item item : items) {
-            item.setVisible(true);
-=======
         int i = 0;
+        expanded = true;
         for (Item item : items) {
             item.setVisible(true);
             item.setLocation(0, i*getHeight());
             i++;
->>>>>>> Humanidades
         }
         Thread run = new Thread(new Runnable() {
             @Override
             public void run() {
-<<<<<<< HEAD
-                for (int i = 50; i <= 50 * items.size(); i+=7) {
-=======
-                int n = getHeight();
-                for (int i = n; i <= n * items.size(); i+=7) {
->>>>>>> Humanidades
-                    try {
-                        Thread.sleep(1);
-                    } catch (Exception e) {
-                        System.out.println(e);
+                if(!expanding){
+                    expanding = true;
+                    int n = getHeight();
+                    for (int i = n; i <= n * items.size(); i+=7) {
+                        try {
+                            Thread.sleep(1);
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                        setBounds(getX(),getY(),getWidth(), i);
+                        borde.setH(i+7);
                     }
-<<<<<<< HEAD
-                    setSize(getWidth(), i);
-=======
-                    setBounds(getX(),getY(),getWidth(), i);
->>>>>>> Humanidades
-                    borde.setH(i+7);
+                    expanding = false;
                 }
             }
         });
         run.start();
-        expanded = true;
     }
 
     public boolean isPainted() {
@@ -438,9 +316,6 @@ public class RoundComboBox extends JPanel {
     public boolean isExpanded() {
         return expanded;
     }
-<<<<<<< HEAD
-}
-=======
     
     public String getSelectedItem(){
         return items.get(0).getDato();
@@ -485,10 +360,4 @@ public class RoundComboBox extends JPanel {
     public RoundBorder getBorde() {
         return borde;
     }
-
-    
-    
-    
-    
 }
->>>>>>> Humanidades

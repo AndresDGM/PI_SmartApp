@@ -3,27 +3,14 @@ package HumanidadesPack;
 
 
 import AppMainSrc.BasicButton;
-import AppMainSrc.Button;
 import AppMainSrc.RoundTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.FileWriter;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
 import AppMainSrc.RoundComboBox;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 public class Registro extends JPanel {
     
@@ -37,29 +24,15 @@ public class Registro extends JPanel {
     
     private int puntaje;
     
-    public estructura e = new estructura();
+    public Estructura e = new Estructura();
     
-
-    
-    
-    //public Test_Huma c = new Test_Huma(this);
-    
-    //public puntuacion p = new puntuacion(this);
-    
-    public Registro(){
-        
-        
+    public Registro(){       
         setSize(1074, 800);
         setLocation(50, 0);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
         crearGUI();
         setVisible(false);
-        
-        
-        
-        
-       
     }
 
         public void setPuntaje(int puntaje) {
@@ -109,7 +82,7 @@ public class Registro extends JPanel {
         
         
         genero = new RoundComboBox();
-        
+        genero.addItem("Seleccion un genero");
         genero.addItem("Mujer");
         genero.addItem("Hombre");
         genero.addItem("Otros");
@@ -203,7 +176,7 @@ public class Registro extends JPanel {
         tabla_score = new BasicButton() {
             @Override
             public void clickEvent() {
-                puntuacion score = new puntuacion (Registro.this); 
+                Puntuacion score = new Puntuacion (Registro.this); 
                 Registro.this.add(score);
                 score.setVisible(true);
                 ocultar(false);

@@ -4,17 +4,16 @@ import AppMainSrc.BasicButton;
 import AppMainSrc.OptionButton;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Test_Huma extends JPanel {
     
-    public estructura e = new estructura();
+    public Estructura e = new Estructura();
     BasicButton responder, limpiar,test,enviar;
     private int puntaje = 0;
-    private int preguntasMostradas = 0;
+    private int contPreg = 0;
     private int cantidadPreguntas = 5;
     private ArrayList<Integer> preguntasMostradasList = new ArrayList<>();
     private String[] preguntas = {
@@ -51,7 +50,7 @@ public class Test_Huma extends JPanel {
        
     };
 
-    private String[][] respuestas = {
+    private String[][] opcRespuestas = {
          {"A) Garantizar la igualdad de género", "B) Promover el acceso a la salud", "C) Garantizar una educación inclusiva y de calidad"},
          {"A) Solo la educación primaria", "B) Solo la educación secundaria", "C) Desde la educación preescolar hasta la formación técnica y profesional"},
          {"A) Agricultura sostenible", "B) Acceso a la educación", "C) Tecnología espacial"},
@@ -84,7 +83,7 @@ public class Test_Huma extends JPanel {
           {"A) Garantizar una educación inclusiva y equitativa de calidad para todos los niños, niñas y adolescentes del mundo", "B) Promover la igualdad de ingresos", "C) Garantizar una educación de calidad solo para algunos grupos"},};
        
 
-    String[] respuestasCorrectas = {"C", "C", "B", "B", "A", "B", "C", "C", "A", "B", "C", "B", "C", "A", "C", "A", "C", "B", "B", "C", "A", "C", "C", "B", "C", "C", "A", "B", "C", "A"};
+    String[] correctas = {"C", "C", "B", "B", "A", "B", "C", "C", "A", "B", "C", "B", "C", "A", "C", "A", "C", "B", "B", "C", "A", "C", "C", "B", "C", "C", "A", "B", "C", "A"};
 
     private JLabel labelPregunta,labelrespuesta,adv;
     private OptionButton[] opciones;
@@ -144,7 +143,7 @@ public class Test_Huma extends JPanel {
         responder = new BasicButton() {
             @Override
             public void clickEvent() {
-                verificarRespuesta();
+                comprovar();
             }
         };
         responder.setText("reponder");
@@ -182,29 +181,23 @@ public class Test_Huma extends JPanel {
     
 
     private void mostrarPregunta() {
-        if (preguntasMostradas < cantidadPreguntas) {
-            int ram;
-            do {
-                ram = random.nextInt(preguntas.length);
-            } while (preguntasMostradasList.contains(ram));
+        int ram = random.nextInt(preguntas.length);
+        
+        while (preguntasMostradasList.contains(ram));{
+            ram = random.nextInt(preguntas.length);
+         }
 
-            preguntasMostradasList.add(ram);
+        preguntasMostradasList.add(ram);
 
-            labelPregunta.setText("<html><p align=center>"+preguntas[ram]+"</p></html>");
-            labelPregunta.setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 25));
-            for (int i = 0; i < opciones.length; i++) {
-                opciones[i].setText(respuestas[ram][i]);
-                opciones[i].setClicked(false);
-            }
-        } else {
-            responder.setClicked(true);
-            labelrespuesta.setText("Puntaje final: " + puntaje + " de " + cantidadPreguntas);
-            labelrespuesta.setVisible(true);
-            responder.setText("volver");
+        labelPregunta.setText("<html><p align=center>"+preguntas[ram]+"</p></html>");
+        labelPregunta.setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 25));
+        for (int i = 0; i < opciones.length; i++) {
+            opciones[i].setText(opcRespuestas[ram][i]);
+            opciones[i].setClicked(false);
         }
     }
 
-    private void verificarRespuesta() {
+    private void comprovar() {
         int respuestaSeleccionada = -1;
 
         if (!responder.isClicked()) {
@@ -216,21 +209,19 @@ public class Test_Huma extends JPanel {
                 }
             }
 
-            if (respuestaSeleccionada == -1) {
-                adv.setVisible(true);
-            } else {
-                int preguntaActual = preguntasMostradasList.get(preguntasMostradas);
+            if (respuestaSeleccionada != -1)  {
+                int preguntaActual = preguntasMostradasList.get(contPreg);
                 String respuestaSeleccionadaTexto = opciones[respuestaSeleccionada].getText();
                 System.out.println("Pregunta actual: " + preguntas[preguntaActual]);
                 
-                if (respuestaSeleccionadaTexto.substring(0, 1).equals(respuestasCorrectas[preguntaActual])) {
+                if (respuestaSeleccionadaTexto.substring(0, 1).equals(correctas[preguntaActual])) {
                     puntaje++; // Incrementa el puntaje en caso de respuesta correcta
                     System.out.println("Respuesta correcta. Puntaje actual: " + puntaje);
                 }
                 
                 limpiarRespuestas();
-                preguntasMostradas++;
-                if (preguntasMostradas < cantidadPreguntas) {
+                contPreg++;
+                if (contPreg < cantidadPreguntas) {
                     mostrarPregunta();
                 } else {
                     responder.setClicked(true);
@@ -240,13 +231,10 @@ public class Test_Huma extends JPanel {
                     labelrespuesta.setVisible(true);
                     responder.setText("volver");
                 }
-            }
-        } else {
+                
+            }else adv.setVisible(true);
             
-            
-            evento_volver();
-            
-        }
+        } else evento_volver();
     }
 
     private void limpiarRespuestas() {
