@@ -4,6 +4,7 @@ y crear la gráfica.
  */
 package MathSource;
 
+import java.awt.List;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +31,7 @@ public final class EvaluarFunciones {
     XYSeries puntos_f1, puntos_f2;
     JFreeChart grafico;
     public String tipoRecta = "";
-    String maximo_minimof1 = "", maximo_minimof2 = "", mensaje = "";
+    String maximo_minimof1 = "", maximo_minimof2 = "", mensaje = "", raicesf1 = "", raicesf2 = "";
     ArrayList<double[]> puntosDeCorte = new ArrayList<>();
     DecimalFormat formatoDecimal = new DecimalFormat("#.##");
 
@@ -47,6 +48,7 @@ public final class EvaluarFunciones {
         graficar();
         tipo_funcion();
         DeterminarMaximos();
+        DeterminarRaices();
     }
 
     public void SetFuncion1(String valoresf1[]) {
@@ -164,6 +166,11 @@ public final class EvaluarFunciones {
         maximo_minimof1 = Maximos_Minimos(funcion1, derivada1);
         maximo_minimof2 = Maximos_Minimos(funcion2, derivada2);
     }
+    
+    public void DeterminarRaices(){
+        raicesf1 = "Raices: " + Raices(funcion1);
+        raicesf2 = "Raices: " + Raices(funcion2);
+    }
 
     public String Maximos_Minimos(String funcion, String derivada) {
         String cadena = "";
@@ -189,11 +196,10 @@ public final class EvaluarFunciones {
         BracketingNthOrderBrentSolver solver = new BracketingNthOrderBrentSolver();
         double tol = 1e-6;
 
-        try {
+            try {
             double puntosCriticos = solver.solve(1000, f, interf1_1, interf1_2, tol);
             jep.parseExpression(funcion);
             jep.addVariable("x", puntosCriticos);
-            //Math.round(puntosCriticos);
             double y = jep.getValue();
             double signo = segundaDerivada.value(puntosCriticos);
             if (signo < 0) {
@@ -206,11 +212,43 @@ public final class EvaluarFunciones {
         }
         return cadena;
     }
-
-    public String raices() {
-        String raiz = "";
-
-        return raiz;
+    
+    public String Raices(String funcion){
+        ArrayList<Double> puntos = new ArrayList<>();
+        JEP jep = new JEP();
+        jep.addStandardFunctions();
+        jep.addStandardConstants();
+        jep.setImplicitMul(true);
+        jep.addVariable("x", 0);
+        
+        UnivariateFunction f = (double d) -> {
+            jep.addVariable("x", d); // Actualiza el valor de x para evaluar la derivada en d
+            jep.parseExpression(funcion);
+            return jep.getValue();
+        };
+        
+        BracketingNthOrderBrentSolver solver = new BracketingNthOrderBrentSolver();
+        String cadena = "";
+        double tol = 1e-6;
+        while (true) {
+        try {
+            double punto = solver.solve(1000, f, interf1_1, interf1_2, tol);
+            puntos.add(punto);
+            interf1_1 = punto + tol; // Actualiza el límite inferior para la próxima búsqueda
+        } catch (Exception e) {
+            break;
+        }
+    }
+        if(cadena.isEmpty()){
+            cadena = "";
+            for (Double punto : puntos) {
+            cadena += "x: " + formatoDecimal.format(punto) + " ";
+        }
+        }
+        else{
+           cadena = "NaNa";
+        }
+        return cadena;
     }
 
     public String getMaximo_minimof1() {
@@ -231,6 +269,14 @@ public final class EvaluarFunciones {
 
     public String getTipoRecta() {
         return tipoRecta;
+    }
+
+    public String getRaicesf1() {
+        return raicesf1;
+    }
+
+    public String getRaicesf2() {
+        return raicesf2;
     }
 
     public String mensajesPuntosDeCorte() {

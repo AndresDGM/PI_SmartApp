@@ -11,9 +11,10 @@ import org.jfree.chart.ChartPanel;
 
 public class Graficadora extends JPanel {
 
-    JLabel titulo, funcion1, funcion2, enunciado, warning, tipo_recta, puntosCorte, derivada1, derivada2, Max_min1, Max_min2;
+    JLabel titulo, funcion1, funcion2, enunciado, warning, tipo_recta, puntosCorte, 
+            derivada1, derivada2, Max_min1, Max_min2, raices1, raices2;
     RoundTextField[] cajas = new RoundTextField[4];
-    JLabel[] informacion = new JLabel[6];
+    JLabel[] informacion = new JLabel[8];
     String[] info = new String[4];
     BasicButton borrar, graficar1, graficar2;
     EvaluarFunciones ev;
@@ -41,10 +42,10 @@ public class Graficadora extends JPanel {
     }
 
     private void crearGUI() {
-        RoundBorder bordePrincipal = new RoundBorder(450, 500, 30, 30, 3);
-        bordePrincipal.setLocation((int) (getWidth() * 0.047), (int) (getHeight() * 0.060));
-        bordePrincipal.setW((int) (getWidth() * 0.904));
-        bordePrincipal.setH((int) (getHeight() * 0.750));
+        RoundBorder bordePrincipal = new RoundBorder(450, 650, 30, 30, 3);
+        bordePrincipal.setLocation((int) (getWidth() * 0.050), (int) (getHeight() * 0.070));
+        bordePrincipal.setW((int) (getWidth() * 0.904));//9
+        bordePrincipal.setH((int) (getHeight() * 0.850));
         add(bordePrincipal);
 
         RoundBorder borde = new RoundBorder(450, 450, 30, 30, 3);
@@ -187,6 +188,24 @@ public class Graficadora extends JPanel {
         Max_min2.setFont(new Font("Anton", Max_min2.getFont().getStyle(), 15));
         Max_min2.setVisible(true);
         add(Max_min2);
+        
+        raices1 = new JLabel("Raices funcion1: ");
+        raices1.setBounds(75, 635, 150, 30);
+        raices1.setHorizontalAlignment(JLabel.RIGHT);
+        raices1.setVerticalAlignment(JLabel.CENTER);
+        raices1.setForeground(new Color(255, 255, 255));
+        raices1.setFont(new Font("Anton", raices1.getFont().getStyle(), 15));
+        raices1.setVisible(true);
+        add(raices1);
+        
+        raices2 = new JLabel("Raices funcion2: ");
+        raices2.setBounds(75, 670, 150, 30);
+        raices2.setHorizontalAlignment(JLabel.RIGHT);
+        raices2.setVerticalAlignment(JLabel.CENTER);
+        raices2.setForeground(new Color(255, 255, 255));
+        raices2.setFont(new Font("Anton", raices2.getFont().getStyle(), 15));
+        raices2.setVisible(true);
+        add(raices2);
     }
 
     private void crearCajas() {
@@ -334,6 +353,21 @@ public class Graficadora extends JPanel {
         informacion[5].setFont(new Font("Anton", informacion[5].getFont().getStyle(), 15));
         add(informacion[5]);
 
+        informacion[6].setBounds(150, 635, 250, 30);
+        informacion[6].setHorizontalAlignment(JLabel.RIGHT);
+        informacion[6].setText(ev.getRaicesf1());
+        informacion[6].setVerticalAlignment(JLabel.CENTER);
+        informacion[6].setForeground(new Color(255, 255, 255));
+        informacion[6].setFont(new Font("Anton", informacion[6].getFont().getStyle(), 15));
+        add(informacion[6]);
+        
+        informacion[7].setBounds(150, 670, 250, 30);
+        informacion[7].setHorizontalAlignment(JLabel.RIGHT);
+        informacion[7].setText(ev.getRaicesf2());
+        informacion[7].setVerticalAlignment(JLabel.CENTER);
+        informacion[7].setForeground(new Color(255, 255, 255));
+        informacion[7].setFont(new Font("Anton", informacion[7].getFont().getStyle(), 15));
+        add(informacion[7]);
         check = true;
     }
 
