@@ -22,10 +22,7 @@ public class PhysicsMenu extends JPanel {
     private BasicButton jugar;
     
     private App app;
-    
-        private RoundBorder border = new RoundBorder();
-
-    
+        
     public PhysicsMenu(){
         setBounds(50, 0,1074, 800);
         setBackground(new Color(46, 46, 46));
@@ -57,10 +54,6 @@ public class PhysicsMenu extends JPanel {
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(new Color(255,255,255));
         titulo.setFont(new Font("Arial", titulo.getFont().getStyle(),24));
-        border.setLocation(50, 37);
-        border.setW(970);
-        border.setH(700);
-        add(border);
         add(jugar);
         add(botonGuia);
         add(botonMecanicas);
