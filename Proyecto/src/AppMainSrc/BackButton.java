@@ -13,7 +13,7 @@ public class BackButton extends JPanel {
     private ArrayList<JPanel> antContenidos = new ArrayList<JPanel>();
         
     public BackButton() {
-        setBounds(0,50,50,50);
+        setBounds(0,0,50,50);
         setBackground(new Color(84,84,84));
         setOpaque(true);
         setLayout(null);
@@ -58,6 +58,8 @@ public class BackButton extends JPanel {
                 antContenidos.remove(iC);
                 if(iC - 1 == 0){
                     setVisible(false);
+                    App.lateralBar.getComponent(0).setVisible(true);
+                    App.lateralBar.getComponent(2).setVisible(true);
                 }
             }
 

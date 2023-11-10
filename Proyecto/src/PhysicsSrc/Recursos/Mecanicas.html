@@ -10,41 +10,67 @@
 <body style=" background-color: #2e2e2e; color:rgb(255, 255, 255) " <header>
     <h1 style="text-align:left; font-family: Comic Sans MS;">Implementacion de los vectores</h1>
     <p style="font-family: Comic Sans MS;" aling="left"><span style="font-size: 18px;">
-            la mayoria de las mecanicas de hacen funcionar el juego deben su comportamiento
+            La mayoria de las mecanicas de hacen funcionar el juego deben su comportamiento
             a las caracteristicas de los vectores y las operaciones que se puenden realizar entre
             estos.
         </span>
     </p>
-    <img src="wasd.png" alt="No se pudo cargar wasd img" style="float: right">
 
     <h1 style="text-align:left; font-family: Comic Sans MS;">Suma de vectores</h1>
     <p style="font-family: Comic Sans MS;" aling="left"><span style="font-size: 18px;">
             Como sabemos, la suma de vectores implica la adición de las componentes de un vector a otro con el fin de
-            obtener un vector resultante de mayor magnitud y posición final.
+            obtener un vector resultante de mayor magnitud y posición final.<br><br>
 
-            Gracias a esto al vector posicion de una entidad en el juego podemos añadirle distinto vectores con magnitudes especificas 
+            Gracias a esto al vector posicion de una entidad en el juego podemos añadirle vectores con magnitudes,
+            direccion y sentido especifico para llevar a cabo los movimientos.
         </span>
     </p>
-    <img src="catProyectil.png" alt="No se pudo cargar wasd img" style="float: right" width="200">
 
-
-    <h1 style="text-align:left; font-family: Comic Sans MS;">Como parar el juego?</h1>
+    <h1 style="text-align:left; font-family: Comic Sans MS;">Resta de vectores</h1>
 
     <p style="font-family: Comic Sans MS;" aling="left"><span style="font-size: 18px;">
-            con la tecla ESC o con el boton de la barra lateral puedes pausar el juego
-            esto desplegara un menu para poder reiniciar, reanudar o salir del juego
+            La resta de vectores resulta ser bastante mas interesante ya que el simple hecho
+            de sumar el opuesto de un vector con otro se obtiene mucha informacion de interes,
+            como lo podria ser la direccion de un objeto a otro ya que al restar el vector de
+            la posicion del objeto del que queremos conocer la direccion el otro nos permite
+            que un objeto sepa en todo momento la direccion al otro y la distancia.
+
         </span>
     </p>
-    <img src="pauseBoton.png" alt="No se pudo cargar pauseBoton img" style="margin-right: 10px;" width="400">
-    <img src="pauseMenu.png" alt="No se pudo cargar pauseMenu img" style="margin-right: 10px;">
+    <Center>
+        <img src="VectorSub.jpg" alt="No se pudo cargar wasd img" style="border-radius: 8mm;" width="400">
+    </Center>
 
-    <h1 style="text-align:left; font-family: Comic Sans MS;">cual es el objetivo?</h1>
+    <h1 style="text-align:left; font-family: Comic Sans MS;">Magnitud</h1>
 
     <p style="font-family: Comic Sans MS;" aling="left"><span style="font-size: 18px;">
-            Tu objetivo es derrotar a todos los enemigos en el mapa una vez lo hagas te
-            aparecera el menu de pausa pero con el mensaje de "Ganaste!!!" y te dara la
-            opcion de volver a jugar o salir del juego
+            La magnitud de los vectores en este contexto en bastante util para comparar
+            distancias entre objetos en convinacion con la resta de vetores, en este
+            caso obtamos por comparar magnitudes al cuadrado para no tener la necesidad
+            de calcular una raiz cuadrado y ahorrar recursos por ese lado, en terminos
+            generales la magnitud es utilizada obtener distancias y para establecer rangos
+            de deteccion.
         </span>
     </p>
+
+    <Center>
+        <img src="pythagorean_theorem_vectors.png" alt="No se pudo cargar wasd img" style="border-radius: 8mm;" width="400">
+    </Center>
+
+    <h1 style="text-align:left; font-family: Comic Sans MS;">Producto punto</h1>
+
+    <p style="font-family: Comic Sans MS;" aling="left"><span style="font-size: 18px;">
+            el producto punto es una operacion bastantan especial porque el resultado de este al ser dividido entre el
+            producto de las magnitudes los vector obtener el coseno del menor angulo formado por ambos, esto fue especialmente 
+            util para que distintos elementos graficos puedan ser rotados, esto se hace facilmente aprovechando el vector que 
+            resulta de la resta de vectores y hacer el producto con un vector que simule ser el eje x
+            para obtener el angulo con respecto al eje del objeto.
+        </span>
+    </p>
+
+    <Center>
+        <img src="dot_product_projection.png" alt="No se pudo cargar wasd img" style="border-radius: 8mm;" width="400">
+    </Center>
+
     </header>
 </body>

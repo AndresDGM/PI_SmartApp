@@ -9,6 +9,8 @@ public class Button extends JPanel {
 
     private JLabel titulo = new JLabel();
     
+    private int arc = 50;
+    
     private JLabel imagenBoton = new JLabel();
 
     //atributo que corresponde al objeto que contiene al boton
@@ -54,7 +56,7 @@ public class Button extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(getBackground());
-        g2.fillRoundRect(0,0,getWidth(),getHeight(),50,50);
+        g2.fillRoundRect(0,0,getWidth(),getHeight(),arc,arc);
         super.paintComponent(g);
     }
 
@@ -74,6 +76,8 @@ public class Button extends JPanel {
                 if(!b.isVisible()){
                     b.setVisible(true);
                 }
+                App.lateralBar.getComponent(0).setVisible(false);
+                App.lateralBar.getComponent(2).setVisible(false);
             }
 
             @Override
@@ -120,6 +124,14 @@ public class Button extends JPanel {
         imagenBoton.setSize((int) (imagen.getIconWidth()*scale), (int) (imagen.getIconHeight()*scale));
         imagenBoton.setLocation(getWidth()/2 - imagenBoton.getWidth()/2,10);
         imagenBoton.setIcon(icon);
+    }
+
+    public void setArc(int arc) {
+        this.arc = arc;
+    }
+
+    public JLabel getImagenBoton() {
+        return imagenBoton;
     }
 }
 

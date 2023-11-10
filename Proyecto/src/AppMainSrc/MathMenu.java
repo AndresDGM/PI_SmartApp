@@ -19,7 +19,7 @@ public class MathMenu extends JPanel {
         setLocation(50, 0);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
-        titulo.setBounds(460, 54,255, 46);
+        titulo.setBounds(409, 54,255, 46);
         titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setVerticalAlignment(JLabel.CENTER);
         titulo.setForeground(new Color(255,255,255));
@@ -28,12 +28,12 @@ public class MathMenu extends JPanel {
         bderivada.setContenido(derivar, this);
         bderivada.setTitulo("Derivar");
         bderivada.setImagenBoton("src/Imagenes/calculadora.png");
-        bderivada.setLocation(571, 200);
+        bderivada.setLocation(571, 275);
         bgrafica = new Button();
         bgrafica.setImagenBoton("src/Imagenes/grafico.png");
         bgrafica.setContenido(graficadora, this);
         bgrafica.setTitulo("Graficadora");
-        bgrafica.setLocation(200, 200);
+        bgrafica.setLocation(200, 275);
         add(bgrafica);
         add(bderivada);
         add(titulo);

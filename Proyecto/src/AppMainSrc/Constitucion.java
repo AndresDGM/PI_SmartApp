@@ -1,4 +1,8 @@
-package PhysicsSrc.Game;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package AppMainSrc;
 
 import java.awt.Color;
 import java.awt.Desktop;
@@ -6,16 +10,23 @@ import java.awt.Font;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import javax.swing.*;
+import javax.swing.JEditorPane;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-public class Mecanicas extends JPanel {
-     private JScrollPane js;
+/**
+ *
+ * @author david
+ */
+public class Constitucion extends JPanel{
+    private JScrollPane js;
     
-    private JLabel titulo = new JLabel("Mecanicas");
+    private JLabel titulo = new JLabel("Constitucion");
     
-    public Mecanicas(){
+    public Constitucion(){
         setBounds(50, 0, 1074, 800);
         setBackground(new Color(46, 46, 46));
         setLayout(null);
@@ -26,7 +37,7 @@ public class Mecanicas extends JPanel {
         titulo.setBounds(457, 10, 160, 50);
         add(titulo);
         JEditorPane jep = new JEditorPane();
-            File file = new File("src/PhysicsSrc/Recursos/Mecanicas.html");
+            File file = new File("src/Constitucion.html");
             try {
                 jep.setPage(file.toURI().toURL());
             } catch (IOException e) {

@@ -129,15 +129,15 @@ public class Graficadora extends JPanel {
             }
         };
         graficar2.setText("Graficar f2");
-        graficar2.setBounds(99, 340, 72, 40);
+        graficar2.setBounds(75, 340, 72, 40);
         graficar2.setColor(new Color(56, 184, 250));
         graficar2.getText().setForeground(new Color(46, 46, 46));
         graficar2.getText().setFont(new Font("Anton", graficar2.getFont().getStyle(), 17));
         botones.add(graficar2);
 
         tipo_recta = new JLabel("Tipo de recta");
-        tipo_recta.setBounds(50, 410, 150, 30);
-        tipo_recta.setHorizontalAlignment(JLabel.RIGHT);
+        tipo_recta.setBounds(75, 410, 150, 30);
+        tipo_recta.setHorizontalAlignment(JLabel.LEFT);
         tipo_recta.setVerticalAlignment(JLabel.CENTER);
         tipo_recta.setForeground(new Color(255, 255, 255));
         tipo_recta.setFont(new Font("Anton", funcion1.getFont().getStyle(), 15));
@@ -145,8 +145,8 @@ public class Graficadora extends JPanel {
         add(tipo_recta);
 
         puntosCorte = new JLabel("Puntos de corte");
-        puntosCorte.setBounds(70, 445, 150, 30);
-        puntosCorte.setHorizontalAlignment(JLabel.RIGHT);
+        puntosCorte.setBounds(75, 445, 150, 30);
+        puntosCorte.setHorizontalAlignment(JLabel.LEFT);
         puntosCorte.setVerticalAlignment(JLabel.CENTER);
         puntosCorte.setForeground(new Color(255, 255, 255));
         puntosCorte.setFont(new Font("Anton", funcion1.getFont().getStyle(), 15));
@@ -154,8 +154,8 @@ public class Graficadora extends JPanel {
         add(puntosCorte);
 
         derivada1 = new JLabel("Derivada funcion 1");
-        derivada1.setBounds(90, 480, 150, 30);
-        derivada1.setHorizontalAlignment(JLabel.RIGHT);
+        derivada1.setBounds(75, 480, 150, 30);
+        derivada1.setHorizontalAlignment(JLabel.LEFT);
         derivada1.setVerticalAlignment(JLabel.CENTER);
         derivada1.setForeground(new Color(255, 255, 255));
         derivada1.setFont(new Font("Anton", funcion1.getFont().getStyle(), 15));
@@ -163,26 +163,26 @@ public class Graficadora extends JPanel {
         add(derivada1);
 
         derivada2 = new JLabel("Derivada funcion 2");
-        derivada2.setBounds(90, 520, 150, 30);
-        derivada2.setHorizontalAlignment(JLabel.RIGHT);
+        derivada2.setBounds(75, 520, 150, 30);
+        derivada2.setHorizontalAlignment(JLabel.LEFT);
         derivada2.setVerticalAlignment(JLabel.CENTER);
         derivada2.setForeground(new Color(255, 255, 255));
         derivada2.setFont(new Font("Anton", funcion1.getFont().getStyle(), 15));
         derivada2.setVisible(true);
         add(derivada2);
 
-        Max_min1 = new JLabel("Maximo - Minimo:");
+        Max_min1 = new JLabel("Max - Min:");
         Max_min1.setBounds(75, 560, 150, 30);
-        Max_min1.setHorizontalAlignment(JLabel.RIGHT);
+        Max_min1.setHorizontalAlignment(JLabel.LEFT);
         Max_min1.setVerticalAlignment(JLabel.CENTER);
         Max_min1.setForeground(new Color(255, 255, 255));
         Max_min1.setFont(new Font("Anton", Max_min1.getFont().getStyle(), 15));
         Max_min1.setVisible(true);
         add(Max_min1);
 
-        Max_min2 = new JLabel("Maximo - Minimo:");
+        Max_min2 = new JLabel("Max - Min:");
         Max_min2.setBounds(75, 600, 150, 30);
-        Max_min2.setHorizontalAlignment(JLabel.RIGHT);
+        Max_min2.setHorizontalAlignment(JLabel.LEFT);
         Max_min2.setVerticalAlignment(JLabel.CENTER);
         Max_min2.setForeground(new Color(255, 255, 255));
         Max_min2.setFont(new Font("Anton", Max_min2.getFont().getStyle(), 15));
@@ -191,7 +191,7 @@ public class Graficadora extends JPanel {
         
         raices1 = new JLabel("Raices funcion1: ");
         raices1.setBounds(75, 635, 150, 30);
-        raices1.setHorizontalAlignment(JLabel.RIGHT);
+        raices1.setHorizontalAlignment(JLabel.LEFT);
         raices1.setVerticalAlignment(JLabel.CENTER);
         raices1.setForeground(new Color(255, 255, 255));
         raices1.setFont(new Font("Anton", raices1.getFont().getStyle(), 15));
@@ -200,7 +200,7 @@ public class Graficadora extends JPanel {
         
         raices2 = new JLabel("Raices funcion2: ");
         raices2.setBounds(75, 670, 150, 30);
-        raices2.setHorizontalAlignment(JLabel.RIGHT);
+        raices2.setHorizontalAlignment(JLabel.LEFT);
         raices2.setVerticalAlignment(JLabel.CENTER);
         raices2.setForeground(new Color(255, 255, 255));
         raices2.setFont(new Font("Anton", raices2.getFont().getStyle(), 15));

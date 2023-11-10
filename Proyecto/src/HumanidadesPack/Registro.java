@@ -16,7 +16,7 @@ public class Registro extends JPanel {
     
     JLabel jApe,jNom,jCorre,titulo;
     
-    RoundTextField jtApe,jtNom,jtCorre;
+    RoundTextField jtCod,jtNom,jtCorre;
     
     RoundComboBox genero;
     
@@ -49,15 +49,15 @@ public class Registro extends JPanel {
         titulo.setVisible(true);
         add(titulo);
         
-        jApe = new JLabel("Apellidos:");
+        jApe = new JLabel("Codigo:");
         jApe.setBounds(290, 300, 120, 30);
         jApe.setForeground(Color.WHITE);
         add(jApe);
-        jtApe = new RoundTextField(200, 40);
-        jtApe.setLocation(360, 300);
-        jtApe.setText("");
-        jtApe.getTextField().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
-        add(jtApe);
+        jtCod = new RoundTextField(200, 40);
+        jtCod.setLocation(360, 300);
+        jtCod.setText("");
+        jtCod.getTextField().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
+        add(jtCod);
         
         
         jNom = new JLabel("Nombres:");
@@ -196,11 +196,11 @@ public class Registro extends JPanel {
     }
 
     private void evento_limpiar() {
-       jtApe.setText("");
+       jtCod.setText("");
        jtNom.setText("");
        jtCorre.setText("");
        genero.setItemSelected(0);
-       jtApe.requestFocus();
+       jtCod.requestFocus();
     }
 
     public void evento_guardar() {
@@ -217,7 +217,7 @@ public class Registro extends JPanel {
         }
         if (!error) {
             
-            String ape_tmp = jtApe.getText();
+            String ape_tmp = jtCod.getText();
             String nom_tmp = jtNom.getText();
             String coe_tmp = jtCorre.getText();
             String plan_tmp = (String) genero.getSelectedItem();
@@ -244,7 +244,7 @@ public class Registro extends JPanel {
     }
     
     public void ocultar(boolean flag){
-        jtApe.setVisible(flag);
+        jtCod.setVisible(flag);
         jtNom.setVisible(flag);
         jtCorre.setVisible(flag);
         guardar.setVisible(flag);

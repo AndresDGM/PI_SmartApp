@@ -4,18 +4,15 @@ import AppMainSrc.BasicButton;
 import AppMainSrc.OptionButton;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Test_Huma extends JPanel {
     
     public Estructura e = new Estructura();
-    BasicButton responder, limpiar,test,enviar;
+    private BasicButton responder, limpiar,sig,ant;
     private int puntaje = 0;
     private int contPreg = 0;
     private int cantidadPreguntas = 5;
-    private ArrayList<Integer> preguntasMostradasList = new ArrayList<>();
     private String[] preguntas = {
          " ¿Cuál es el objetivo del ODS #4 de la ONU?",
          " ¿Qué niveles de educación abarca el ODS 4?",
@@ -83,13 +80,13 @@ public class Test_Huma extends JPanel {
           {"A) Garantizar una educación inclusiva y equitativa de calidad para todos los niños, niñas y adolescentes del mundo", "B) Promover la igualdad de ingresos", "C) Garantizar una educación de calidad solo para algunos grupos"},};
        
 
-    String[] correctas = {"C", "C", "B", "B", "A", "B", "C", "C", "A", "B", "C", "B", "C", "A", "C", "A", "C", "B", "B", "C", "A", "C", "C", "B", "C", "C", "A", "B", "C", "A"};
+    private String[] correctas = {"C", "C", "B", "B", "A", "B", "C", "C", "A", "B", "C", "B", "C", "A", "C", "A", "C", "B", "B", "C", "A", "C", "C", "B", "C", "C", "A", "B", "C", "A"};
+    
+    private int[][] quest = new int[2][5];
 
     private JLabel labelPregunta,labelrespuesta,adv;
     private OptionButton[] opciones;
     private Random random = new Random();
-    private ActionListener actionListener;
-
     private Registro registro;
 
     public Test_Huma(Registro registro) {
@@ -172,27 +169,59 @@ public class Test_Huma extends JPanel {
         limpiar.setLayout(null);
         limpiar.setColor(new Color(0, 188, 255));
         limpiar.setForeground(Color.WHITE);
-        
         add(limpiar);
+        
+        sig = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                sig();
+            }
+        };
+        sig.setText("Siguiente");
+        sig.setBounds(750, 650, 160, 54);
+        sig.getText().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
+        sig.getText().setVerticalAlignment(JLabel.CENTER);
+        sig.getText().setHorizontalAlignment(JLabel.CENTER);
+        sig.getText().setSize(160, 54);
+        sig.setLayout(null);
+        sig.setColor(new Color(0, 188, 255));
+        sig.setForeground(Color.WHITE);
+        add(sig);
+        
+        ant = new BasicButton() {
+            @Override
+            public void clickEvent() {
+                ant();
+            }
+        };
+        ant.setText("Anterior");
+        ant.setBounds(150, 650, 160, 54);
+        ant.getText().setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 14));
+        ant.getText().setVerticalAlignment(JLabel.CENTER);
+        ant.getText().setHorizontalAlignment(JLabel.CENTER);
+        ant.getText().setSize(160, 54);
+        ant.setLayout(null);
+        ant.setColor(new Color(0, 188, 255));
+        ant.setForeground(Color.WHITE);
+        add(ant);
+        
+        Ramdons();
       
         mostrarPregunta();
     }
-
     
-
+    public void Ramdons(){
+        for (int i = 0; i < quest[0].length; i++) {
+            quest[0][i] = random.nextInt(preguntas.length);
+            quest[1][i] = -1;
+        }
+    }
+    
     private void mostrarPregunta() {
-        int ram = random.nextInt(preguntas.length);
-        
-        while (preguntasMostradasList.contains(ram));{
-            ram = random.nextInt(preguntas.length);
-         }
-
-        preguntasMostradasList.add(ram);
-
-        labelPregunta.setText("<html><p align=center>"+preguntas[ram]+"</p></html>");
+        labelPregunta.setText("<html><p align=center>"+preguntas[quest[0][contPreg]]+"</p></html>");
         labelPregunta.setFont(new Font("Lucida Bright", Font.TYPE1_FONT, 25));
         for (int i = 0; i < opciones.length; i++) {
-            opciones[i].setText(opcRespuestas[ram][i]);
+            opciones[i].setText(opcRespuestas[quest[0][contPreg]][i]);
             opciones[i].setClicked(false);
         }
     }
@@ -205,18 +234,17 @@ public class Test_Huma extends JPanel {
                 for (int i = 0; i < opciones.length; i++) {
                 if (opciones[i].isClicked()) {
                     respuestaSeleccionada = i;  
+                    quest[1][contPreg] = i;
                     break;
                 }
             }
 
             if (respuestaSeleccionada != -1)  {
-                int preguntaActual = preguntasMostradasList.get(contPreg);
+                int preguntaActual = quest[0][contPreg];
                 String respuestaSeleccionadaTexto = opciones[respuestaSeleccionada].getText();
-                System.out.println("Pregunta actual: " + preguntas[preguntaActual]);
                 
                 if (respuestaSeleccionadaTexto.substring(0, 1).equals(correctas[preguntaActual])) {
                     puntaje++; // Incrementa el puntaje en caso de respuesta correcta
-                    System.out.println("Respuesta correcta. Puntaje actual: " + puntaje);
                 }
                 
                 limpiarRespuestas();
@@ -247,6 +275,28 @@ public class Test_Huma extends JPanel {
         return puntaje;
     }
 
+    public void sig(){
+        if(contPreg < 4){
+            contPreg++;
+            mostrarPregunta();
+            limpiarRespuestas();
+        }
+    }
+    
+    public void ant(){
+        if(contPreg > 0 && !responder.isClicked()){
+            contPreg--;
+            mostrarPregunta();
+            if(quest[1][contPreg] != -1){
+                if (opciones[quest[1][contPreg]].getText().substring(0, 1).equals(correctas[quest[0][contPreg]]))
+                    puntaje--;
+                opciones[quest[1][contPreg]].setClicked(true);
+                quest[1][contPreg] = -1;
+                System.out.println(puntaje);
+            }
+        }
+    }
+    
     public void evento_volver(){
         registro.remove(this);
         responder.setClicked(true);
