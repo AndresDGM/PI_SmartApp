@@ -2,7 +2,6 @@
 package HumanidadesPack;
 
 import java.util.Properties;
-import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.Multipart;
 import javax.mail.Session;
