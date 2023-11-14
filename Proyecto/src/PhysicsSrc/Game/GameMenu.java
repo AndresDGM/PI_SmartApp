@@ -129,12 +129,11 @@ public class GameMenu extends RoundPanel {
     }
 
     public void endGame(){
-        App.lateralBar.getComponent(0).setVisible(true);
         App.lateralBar.getComponent(1).setVisible(true);
         App.lateralBar.remove(botones[3]);
         game.setVisible(false);
         game.setGameRun(false);
-        fisica.getApp().remove(game);
+         fisica.getApp().remove(game);
         fisica.getApp().removeKeyListener(game.getTeclas());
         fisica.setVisible(true);
     }
@@ -158,4 +157,10 @@ public class GameMenu extends RoundPanel {
     public void setGs(PhysicsMenu fisica) {
         this.fisica = fisica;
     }
+
+    public PhysicsMenu getFisica() {
+        return fisica;
+    }
+    
+    
 }

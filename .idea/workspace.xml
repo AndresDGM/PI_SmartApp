@@ -5,61 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3536b7af-f19d-462d-b820-65447afbf611" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/PI_SmartApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/JOML.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Proyecto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_netbeans_modules_java_j2seproject_copylibstask2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/vecmath.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GaussJordan/GaussJordan.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Canon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameSeccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Guia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/InfoBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Mecanicas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Proyectil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteBullet-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCanon-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCanonMouth-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCatHit-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCatHit-0002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDog-0004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDogHit-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteDogHit-0002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteHeart-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpritePen-0001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpritePenCharge-0001.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/Proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/Proyecto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/AlgebraPack/TeoriaAlgebra.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AlgebraPack/TeoriaAlgebra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/BasicButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/BasicButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/PhysicsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/PhysicsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/RoundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/AppMainSrc/RoundPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Collider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Keylisten.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Keylisten.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Sprites/SpriteCat-0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proyecto/src/PhysicsSrc/Game/GameMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +119,7 @@
       <workItem from="1699273714663" duration="32047000" />
       <workItem from="1699362174864" duration="28106000" />
       <workItem from="1699449252242" duration="42913000" />
+      <workItem from="1699723773244" duration="164000" />
     </task>
     <servers />
   </component>

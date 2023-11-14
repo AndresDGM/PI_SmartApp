@@ -71,6 +71,7 @@ public class PhysicsMenu extends JPanel {
         juego.setLocation(50, 0);
         app.add(juego);
         app.addKeyListener(juego.getTeclas());
+        app.requestFocus();
         setVisible(false);
     }
     
